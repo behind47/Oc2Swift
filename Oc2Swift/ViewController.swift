@@ -13,43 +13,54 @@ struct ViewModel {
     var callback : (() -> Void)?
 }
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModels.count
-    }
-    
-    
+public class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let tableView : UITableView
     var viewModels : [ViewModel]
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.view.addSubview(tableView)
+        tableView.frame = self.view.frame
+        tableView.reloadData()
     }
-
-    required init?(coder: NSCoder) {
+    
+    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         tableView = UITableView()
         viewModels = [ViewModel]()
-        super.init(coder: coder)
-        tableView.delegate = self
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         viewModels.append(ViewModel.init(title: "native add", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(C2OcTestVC(), animated: true)
         }))
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    required init?(coder: NSCoder) {
+        tableView = UITableView()
+        viewModels = [ViewModel]()
+        super.init(coder: coder)
+        viewModels.append(ViewModel.init(title: "native add", subTitle: "测试", callback: {
+            self.navigationController?.pushViewController(C2OcTestVC(), animated: true)
+        }))
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell() as UITableViewCell
         cell.textLabel?.text = viewModels[indexPath.row].title
         cell.detailTextLabel?.text = viewModels[indexPath.row].subTitle
         return cell
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModels[indexPath.row].callback
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModels.count
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModels[indexPath.row].callback.unsafelyUnwrapped()
     }
 }
 
