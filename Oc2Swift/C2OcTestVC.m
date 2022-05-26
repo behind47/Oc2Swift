@@ -27,7 +27,7 @@
 
 - (void)showFlutter {
     FlutterEngine *flutterEngine = ((AppDelegate *)UIApplication.sharedApplication.delegate).flutterEngine;
-    FlutterViewController *flutterViewController = [[FlutterViewController alloc] initWithEngine:flutterEngine
+    CustomFlutterVC *flutterViewController = [[CustomFlutterVC alloc] initWithEngine:flutterEngine
                                                                                          nibName:nil bundle:nil];
     [self.navigationController pushViewController:flutterViewController animated:TRUE];
 }
