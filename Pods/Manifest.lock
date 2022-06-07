@@ -1,0 +1,35 @@
+PODS:
+  - bridge (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - FlutterPluginRegistrant (0.0.1):
+    - bridge
+    - Flutter
+  - learnflutter (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - bridge (from `../../learnflutter/.ios/.symlinks/plugins/bridge/ios`)
+  - Flutter (from `../../learnflutter/.ios/Flutter/engine`)
+  - FlutterPluginRegistrant (from `../../learnflutter/.ios/Flutter/FlutterPluginRegistrant`)
+  - learnflutter (from `../../learnflutter/.ios/Flutter`)
+
+EXTERNAL SOURCES:
+  bridge:
+    :path: "../../learnflutter/.ios/.symlinks/plugins/bridge/ios"
+  Flutter:
+    :path: "../../learnflutter/.ios/Flutter/engine"
+  FlutterPluginRegistrant:
+    :path: "../../learnflutter/.ios/Flutter/FlutterPluginRegistrant"
+  learnflutter:
+    :path: "../../learnflutter/.ios/Flutter"
+
+SPEC CHECKSUMS:
+  bridge: 19e67a95fbc57851d07b6d3ca114a09188599452
+  Flutter: bdfa2e8fe0e2880a2c6a58a0b1a8675c262a07af
+  FlutterPluginRegistrant: 86e9ed3702fb562c94a2bbb541c4fded61f946ba
+  learnflutter: 725b5a0f03f936907572b9d081a3741bc35895b6
+
+PODFILE CHECKSUM: 998f1751f417a15167981a1d9e0abe72d4839ed7
+
+COCOAPODS: 1.11.3

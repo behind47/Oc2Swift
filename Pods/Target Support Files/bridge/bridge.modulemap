@@ -1,0 +1,6 @@
+module bridge {
+  umbrella header "bridge-umbrella.h"
+
+  export *
+  module * { export * }
+}

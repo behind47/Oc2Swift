@@ -1,0 +1,6 @@
+module Pods_Oc2Swift {
+  umbrella header "Pods-Oc2Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

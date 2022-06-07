@@ -7,6 +7,7 @@
 
 import UIKit
 import Flutter
+import FlutterPluginRegistrant
 
 @UIApplicationMain
 @objcMembers
@@ -16,8 +17,8 @@ public class AppDelegate: FlutterAppDelegate {
 
     public override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GeneratedPluginRegistrant.register(with: self)
         self.flutterEngine.run()
-        
         return true
     }
 

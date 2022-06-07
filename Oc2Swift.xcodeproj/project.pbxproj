@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
-		283029FD283C83330069A8E7 /* Flutter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A0A792283B84E900A6C2EF /* Flutter.xcframework */; };
-		283029FE283C83330069A8E7 /* Flutter.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28A0A792283B84E900A6C2EF /* Flutter.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		28302A00283C83530069A8E7 /* App.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A0A78B283B844D00A6C2EF /* App.xcframework */; };
-		28302A01283C83530069A8E7 /* App.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28A0A78B283B844D00A6C2EF /* App.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		28302A02283C83550069A8E7 /* learnflutter.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A0A78F283B844F00A6C2EF /* learnflutter.xcframework */; };
-		28302A03283C83550069A8E7 /* learnflutter.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28A0A78F283B844F00A6C2EF /* learnflutter.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		28A0A797283B893D00A6C2EF /* PlatformPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A796283B893D00A6C2EF /* PlatformPlugin.swift */; };
 		28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A798283B9C6700A6C2EF /* CutomFlutterVC.swift */; };
 		28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A79B283BAC5A00A6C2EF /* native_add.cpp */; };
 		28B038752835081C007B3817 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038742835081C007B3817 /* AppDelegate.swift */; };
@@ -27,6 +20,7 @@
 		28B038962835081E007B3817 /* Oc2SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038952835081E007B3817 /* Oc2SwiftUITests.swift */; };
 		28B038982835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */; };
 		28B038A528350888007B3817 /* CustomNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038A428350888007B3817 /* CustomNavVC.swift */; };
+		8277357EED5C82F9E19ECA86 /* libPods-Oc2Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF0CFF1FF96DF28F2F435F4 /* libPods-Oc2Swift.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,31 +40,14 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		283029FF283C83330069A8E7 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				283029FE283C83330069A8E7 /* Flutter.xcframework in Embed Frameworks */,
-				28302A01283C83530069A8E7 /* App.xcframework in Embed Frameworks */,
-				28302A03283C83550069A8E7 /* learnflutter.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		0508B686EF25B21245ABBA2D /* Pods-Oc2Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2Swift.debug.xcconfig"; path = "Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		0508B686EF25B21245ABBA2D /* Pods-Oc2Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2Swift.debug.xcconfig"; path = "../Oc2Swift/Pods/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		2827C2D32835F46500330685 /* C2OcTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2OcTestVC.h; sourceTree = "<group>"; };
 		2827C2D42835F47000330685 /* Oc2Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
 		28A0A78B283B844D00A6C2EF /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = App.xcframework; path = Flutter/Debug/App.xcframework; sourceTree = "<group>"; };
 		28A0A78F283B844F00A6C2EF /* learnflutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = learnflutter.xcframework; path = Flutter/Debug/learnflutter.xcframework; sourceTree = "<group>"; };
 		28A0A792283B84E900A6C2EF /* Flutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Flutter.xcframework; path = ../Pods/Flutter/Flutter.xcframework; sourceTree = "<group>"; };
-		28A0A796283B893D00A6C2EF /* PlatformPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformPlugin.swift; sourceTree = "<group>"; };
 		28A0A798283B9C6700A6C2EF /* CutomFlutterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutomFlutterVC.swift; sourceTree = "<group>"; };
 		28A0A79B283BAC5A00A6C2EF /* native_add.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = native_add.cpp; sourceTree = "<group>"; };
 		28A0A79C283BAC5A00A6C2EF /* native_add.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = native_add.hpp; sourceTree = "<group>"; };
@@ -88,7 +65,7 @@
 		28B038952835081E007B3817 /* Oc2SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oc2SwiftUITests.swift; sourceTree = "<group>"; };
 		28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oc2SwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		28B038A428350888007B3817 /* CustomNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavVC.swift; sourceTree = "<group>"; };
-		BA4E9D41921C719DDFEB62CF /* Pods-Oc2Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2Swift.release.xcconfig"; path = "Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift.release.xcconfig"; sourceTree = "<group>"; };
+		BA4E9D41921C719DDFEB62CF /* Pods-Oc2Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2Swift.release.xcconfig"; path = "../Oc2Swift/Pods/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift.release.xcconfig"; sourceTree = "<group>"; };
 		BEF0CFF1FF96DF28F2F435F4 /* libPods-Oc2Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Oc2Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,9 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				283029FD283C83330069A8E7 /* Flutter.xcframework in Frameworks */,
-				28302A00283C83530069A8E7 /* App.xcframework in Frameworks */,
-				28302A02283C83550069A8E7 /* learnflutter.xcframework in Frameworks */,
+				8277357EED5C82F9E19ECA86 /* libPods-Oc2Swift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +98,6 @@
 		28A0A795283B891E00A6C2EF /* flutterPlugins */ = {
 			isa = PBXGroup;
 			children = (
-				28A0A796283B893D00A6C2EF /* PlatformPlugin.swift */,
 				28A0A798283B9C6700A6C2EF /* CutomFlutterVC.swift */,
 			);
 			path = flutterPlugins;
@@ -226,10 +200,11 @@
 			buildConfigurationList = 28B0389B2835081E007B3817 /* Build configuration list for PBXNativeTarget "Oc2Swift" */;
 			buildPhases = (
 				43B4A8C42366F27A0CA14BA5 /* [CP] Check Pods Manifest.lock */,
+				31F676FA2E51222A4D21EB27 /* [CP-User] Run Flutter Build learnflutter Script */,
 				28B0386D2835081C007B3817 /* Sources */,
 				28B0386E2835081C007B3817 /* Frameworks */,
 				28B0386F2835081C007B3817 /* Resources */,
-				283029FF283C83330069A8E7 /* Embed Frameworks */,
+				917D51EB7F21C98750DA6379 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,6 +323,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		31F676FA2E51222A4D21EB27 /* [CP-User] Run Flutter Build learnflutter Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Run Flutter Build learnflutter Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../../learnflutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
 		43B4A8C42366F27A0CA14BA5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,6 +355,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		917D51EB7F21C98750DA6379 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -384,7 +386,6 @@
 				28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */,
 				2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */,
 				28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */,
-				28A0A797283B893D00A6C2EF /* PlatformPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +573,7 @@
 					"\"${PODS_ROOT}/Flutter\"",
 					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flutter\"",
 					"\"$(PROJECT_DIR)/Flutter/Debug/\"",
+					"\"$(PROJECT_DIR)/Flutter/\"",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Oc2Swift/Info.plist;
