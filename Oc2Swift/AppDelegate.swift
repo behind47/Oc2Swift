@@ -29,7 +29,7 @@ public class AppDelegate: FlutterAppDelegate {
             debugPrint("Injection注入失败\(error)")
         }
         #endif
-        GeneratedPluginRegistrant.register(with: self)
+//        GeneratedPluginRegistrant.register(with: self)
         self.flutterEngine.run()
         return true
     }
