@@ -13,6 +13,8 @@
 @implementation C2OcTestVC
 
 - (void)viewDidLoad {
+    float sWidth = [UIScreen mainScreen].bounds.size.width;
+    
     [super viewDidLoad];
     // Make a button to call the showFlutter function when pressed.
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -23,6 +25,11 @@
     button.backgroundColor = UIColor.blueColor;
     button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
     [self.view addSubview:button];
+    
+    UIView *topicView = [UIView new];
+    topicView.frame = CGRectMake(80.0, 260.0, sWidth, 100);
+    topicView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:topicView];
 }
 
 - (void)showFlutter {
@@ -30,5 +37,11 @@
     CustomFlutterVC *flutterViewController = [[CustomFlutterVC alloc] initWithEngine:flutterEngine
                                                                                          nibName:nil bundle:nil];
     [self.navigationController pushViewController:flutterViewController animated:TRUE];
+}
+
+- (void)injected {
+#if DEBUG
+    [self viewDidLoad];
+#endif
 }
 @end

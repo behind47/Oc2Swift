@@ -13,7 +13,7 @@ struct ViewModel {
     var callback : (() -> Void)?
 }
 
-public class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource {
     let tableView : UITableView
     var viewModels : [ViewModel]
 

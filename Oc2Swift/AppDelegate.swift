@@ -17,6 +17,18 @@ public class AppDelegate: FlutterAppDelegate {
 
     public override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        #if DEBUG
+        do {
+            let injectionBundle = Bundle.init(path: "/Users/behind47/Downloads/InjectionIII.app/Contents/Resources/iOSInjection.bundle")
+            if let bundle = injectionBundle {
+                try bundle.loadAndReturnError()
+            } else {
+                debugPrint("Injection注入失败,未能检测到Injection")
+            }
+        } catch {
+            debugPrint("Injection注入失败\(error)")
+        }
+        #endif
         GeneratedPluginRegistrant.register(with: self)
         self.flutterEngine.run()
         return true
