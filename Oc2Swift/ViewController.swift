@@ -31,17 +31,22 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         tableView = UITableView()
         viewModels = [ViewModel]()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        viewModels.append(ViewModel.init(title: "native add", subTitle: "测试", callback: {
-            self.navigationController?.pushViewController(C2OcTestVC(), animated: true)
-        }))
+        commonInit()
     }
     
     required init?(coder: NSCoder) {
         tableView = UITableView()
         viewModels = [ViewModel]()
         super.init(coder: coder)
+        commonInit()
+    }
+    
+    func commonInit() {
         viewModels.append(ViewModel.init(title: "native add", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(C2OcTestVC(), animated: true)
+        }))
+        viewModels.append(ViewModel.init(title: "iOS布局流程", subTitle: "测试", callback: {
+            self.navigationController?.pushViewController(LayoutTestVC(), animated: true)
         }))
     }
     
