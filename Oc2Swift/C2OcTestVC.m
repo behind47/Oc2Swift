@@ -4,6 +4,7 @@
 //
 //  Created by behind47 on 2022/5/19.
 //
+/// 这个页面用来测试Oc到flutter的交互，目前可以打开flutter页面
 
 #import <Foundation/Foundation.h>
 #import "C2OcTestVC.h"
@@ -32,6 +33,7 @@
     [self.view addSubview:topicView];
 }
 
+/// flutter页面的入口
 - (void)showFlutter {
     FlutterEngine *flutterEngine = ((AppDelegate *)UIApplication.sharedApplication.delegate).flutterEngine;
     CustomFlutterVC *flutterViewController = [[CustomFlutterVC alloc] initWithEngine:flutterEngine
@@ -39,6 +41,7 @@
     [self.navigationController pushViewController:flutterViewController animated:TRUE];
 }
 
+/// InjectionIII需要的方法，在这个hook里的方法会在热更新触发时被调用
 - (void)injected {
 #if DEBUG
     [self viewDidLoad];
