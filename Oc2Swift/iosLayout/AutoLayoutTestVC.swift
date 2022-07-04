@@ -23,7 +23,6 @@ open class AutoLayoutTestVC : BaseVC {
         autoTopicView.snp.makeConstraints { make in
             make.left.right.equalTo(self.view)
             make.top.equalTo(self.view).offset(200)
-            make.height.equalTo(50)
         }
         
         let title = UILabel()
@@ -32,7 +31,6 @@ open class AutoLayoutTestVC : BaseVC {
         title.snp.makeConstraints { make in
             make.left.right.equalTo(self.view)
             make.top.equalTo(autoTopicView.snp.bottom)
-            make.height.equalTo(20)
         }
         
         let subTitle = UILabel()
@@ -41,7 +39,6 @@ open class AutoLayoutTestVC : BaseVC {
         subTitle.snp.makeConstraints { make in
             make.left.right.equalTo(self.view)
             make.top.equalTo(title.snp.bottom)
-            make.height.equalTo(20)
         }
         
         let autoTopicView2 = AutoTopicView()
@@ -49,7 +46,6 @@ open class AutoLayoutTestVC : BaseVC {
         autoTopicView2.snp.makeConstraints { make in
             make.left.right.equalTo(self.view)
             make.top.equalTo(subTitle.snp.bottom)
-            make.height.equalTo(50)
         }
     }
     
@@ -77,17 +73,14 @@ class AutoTopicView : UIView {
         title.text = "autoTtitle"
         self.addSubview(title)
         title.snp.makeConstraints { make in
-            make.left.right.equalTo(self)
-            make.top.equalTo(self)
-            make.height.equalTo(30)
+            make.top.left.right.equalTo(self)
         }
         
         let autoTopicCell = AutoTopicCell()
         self.addSubview(autoTopicCell)
         autoTopicCell.snp.makeConstraints { make in
-            make.left.right.equalTo(self)
+            make.left.right.bottom.equalTo(self)
             make.top.equalTo(title.snp.bottom)
-            make.bottom.equalTo(self)
         }
     }
     
@@ -114,13 +107,19 @@ class AutoTopicView : UIView {
 class AutoTopicCell : UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = .yellow
         let title = UILabel()
         title.text = "AutoTopicCell"
         self.addSubview(title)
         title.snp.makeConstraints { make in
-            make.left.top.right.equalTo(self)
-            make.height.equalTo(30)
+            make.left.top.bottom.equalTo(self)
+        }
+        
+        let rightTitle = UILabel()
+        rightTitle.text = "rightTitle"
+        self.addSubview(rightTitle)
+        rightTitle.snp.makeConstraints { make in
+            make.top.right.bottom.equalTo(self)
         }
     }
     
