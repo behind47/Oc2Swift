@@ -5,6 +5,8 @@ load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 target :Oc2Swift do
   install_all_flutter_pods(flutter_application_path)
+  
+  pod 'SnapKit', '~> 5.6.0'
 end
 
 post_install do |installer|

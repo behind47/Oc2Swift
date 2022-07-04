@@ -7,12 +7,18 @@ PODS:
     - Flutter
   - learnflutter (0.0.1):
     - Flutter
+  - SnapKit (5.6.0)
 
 DEPENDENCIES:
   - bridge (from `../../learnflutter/.ios/.symlinks/plugins/bridge/ios`)
   - Flutter (from `../../learnflutter/.ios/Flutter/engine`)
   - FlutterPluginRegistrant (from `../../learnflutter/.ios/Flutter/FlutterPluginRegistrant`)
   - learnflutter (from `../../learnflutter/.ios/Flutter`)
+  - SnapKit (~> 5.6.0)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
 
 EXTERNAL SOURCES:
   bridge:
@@ -29,7 +35,8 @@ SPEC CHECKSUMS:
   Flutter: bdfa2e8fe0e2880a2c6a58a0b1a8675c262a07af
   FlutterPluginRegistrant: 86e9ed3702fb562c94a2bbb541c4fded61f946ba
   learnflutter: 725b5a0f03f936907572b9d081a3741bc35895b6
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 998f1751f417a15167981a1d9e0abe72d4839ed7
+PODFILE CHECKSUM: 7244e5029a634573d97b740ec6a7ff691c6b9477
 
 COCOAPODS: 1.11.3

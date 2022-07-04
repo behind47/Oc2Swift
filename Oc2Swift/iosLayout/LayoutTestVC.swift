@@ -33,6 +33,11 @@ open class LayoutTestVC : BaseVC {
         super.viewLayoutMarginsDidChange()
         NSLog("\(#file) \(String(describing: object_getClass(self))) \(#function)")// step 1, 2
     }
+    
+    open override func updateViewConstraints() {
+        super.updateViewConstraints()
+        NSLog("\(#file) \(String(describing: object_getClass(self))) \(#function)")
+    }
 }
 
 class TopicView : UIView {
@@ -66,6 +71,11 @@ class TopicView : UIView {
         super.layoutMarginsDidChange()
         NSLog("\(#file) \(String(describing: object_getClass(self))) \(#function)")
     }
+    
+    override func updateConstraints() {
+        super.updateConstraints()
+        NSLog("\(#file) \(String(describing: object_getClass(self))) \(#function)")
+    }
 }
 
 class TopicCell : UIView {
@@ -89,6 +99,11 @@ class TopicCell : UIView {
     
     override func layoutMarginsDidChange() {
         super.layoutMarginsDidChange()
+        NSLog("\(#file) \(String(describing: object_getClass(self))) \(#function)")
+    }
+    
+    override func updateConstraints() {
+        super.updateConstraints()
         NSLog("\(#file) \(String(describing: object_getClass(self))) \(#function)")
     }
 }
