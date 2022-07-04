@@ -112,14 +112,23 @@ class AutoTopicCell : UIView {
         title.text = "AutoTopicCell"
         self.addSubview(title)
         title.snp.makeConstraints { make in
-            make.left.top.bottom.equalTo(self)
+            make.left.top.equalTo(self)
         }
         
         let rightTitle = UILabel()
         rightTitle.text = "rightTitle"
         self.addSubview(rightTitle)
         rightTitle.snp.makeConstraints { make in
-            make.top.right.bottom.equalTo(self)
+            make.top.right.equalTo(self)
+        }
+        
+        let pinkRect = UIView()
+        pinkRect.backgroundColor = .systemPink
+        self.addSubview(pinkRect)
+        pinkRect.snp.makeConstraints { make in
+            make.top.equalTo(title.snp.bottom)
+            make.left.bottom.equalTo(self)
+            make.height.width.equalTo(25)
         }
     }
     
