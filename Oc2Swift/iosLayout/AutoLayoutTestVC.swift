@@ -15,6 +15,18 @@ import UIKit
 import SnapKit
 
 open class AutoLayoutTestVC : BaseVC {
+    
+    var autoTopicView2 : UIView
+    
+    public required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        autoTopicView2 = AutoTopicView()
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .green
@@ -41,17 +53,23 @@ open class AutoLayoutTestVC : BaseVC {
             make.top.equalTo(title.snp.bottom)
         }
         
-        let autoTopicView2 = AutoTopicView()
+        /// 父view使用frame + 子view使用约束布局 可以结合使用，由于layoutSubviews是自顶向下的，父view的frame优先生效
+        /// 因此，需要使用systemLayoutSizeFitting(_ targetSize: CGSize)方法来基于子view的约束计算尺寸，再通过frame设置给父view
         self.view.addSubview(autoTopicView2)
-        autoTopicView2.snp.makeConstraints { make in
-            make.left.right.equalTo(self.view)
-            make.top.equalTo(subTitle.snp.bottom)
-        }
+//        autoTopicView2.snp.makeConstraints { make in
+//            make.left.right.equalTo(self.view)
+//            make.top.equalTo(subTitle.snp.bottom)
+//        }
+        var frame = CGRect(x: 0, y: 350, width: UIScreen.main.bounds.size.width, height: 0)
+        let size = autoTopicView2.systemLayoutSizeFitting(UIView.layoutFittingExpandedSize)
+        frame.size.height = size.height // 只有height需要子view撑开
+        autoTopicView2.frame = frame
     }
     
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         NSLog("\(#file) \(String(describing: object_getClass(self))) \(#function)")// step 6
+        print("autotopicview2 frame : \(autoTopicView2.frame)")
     }
     
     open override func viewLayoutMarginsDidChange() {
