@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (4.0.0):
+    - AFNetworking/NSURLSession (= 4.0.0)
+    - AFNetworking/Reachability (= 4.0.0)
+    - AFNetworking/Security (= 4.0.0)
+    - AFNetworking/Serialization (= 4.0.0)
+    - AFNetworking/UIKit (= 4.0.0)
+  - AFNetworking/NSURLSession (4.0.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.0)
+  - AFNetworking/Security (4.0.0)
+  - AFNetworking/Serialization (4.0.0)
+  - AFNetworking/UIKit (4.0.0):
+    - AFNetworking/NSURLSession
   - bridge (0.0.1):
     - Flutter
   - Flutter (1.0.0)
@@ -7,17 +22,24 @@ PODS:
     - Flutter
   - learnflutter (0.0.1):
     - Flutter
+  - SDWebImage (5.0.0):
+    - SDWebImage/Core (= 5.0.0)
+  - SDWebImage/Core (5.0.0)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - AFNetworking (= 4.0)
   - bridge (from `../../learnflutter/.ios/.symlinks/plugins/bridge/ios`)
   - Flutter (from `../../learnflutter/.ios/Flutter/engine`)
   - FlutterPluginRegistrant (from `../../learnflutter/.ios/Flutter/FlutterPluginRegistrant`)
   - learnflutter (from `../../learnflutter/.ios/Flutter`)
-  - SnapKit (~> 5.6.0)
+  - SDWebImage (= 5.0)
+  - SnapKit (= 5.6.0)
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
+    - SDWebImage
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -31,12 +53,14 @@ EXTERNAL SOURCES:
     :path: "../../learnflutter/.ios/Flutter"
 
 SPEC CHECKSUMS:
+  AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
   bridge: 19e67a95fbc57851d07b6d3ca114a09188599452
   Flutter: bdfa2e8fe0e2880a2c6a58a0b1a8675c262a07af
   FlutterPluginRegistrant: 86e9ed3702fb562c94a2bbb541c4fded61f946ba
   learnflutter: 725b5a0f03f936907572b9d081a3741bc35895b6
+  SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 7244e5029a634573d97b740ec6a7ff691c6b9477
+PODFILE CHECKSUM: 45ea905bfb1b84a4cf14f52dd71107a0c9319141
 
 COCOAPODS: 1.11.3
