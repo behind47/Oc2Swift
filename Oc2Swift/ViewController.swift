@@ -54,6 +54,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "iOS约束布局tableHeaderView高度自适应", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(AutoTableHeaderVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "run loop的fake实现", subTitle: "测试", callback: {
+            self.navigationController?.pushViewController(RunLoopVC(), animated: true)
+        }))
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
