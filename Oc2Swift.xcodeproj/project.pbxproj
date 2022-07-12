@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
+		2831717C287C17B500018486 /* NSInvocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2831717B287C17B500018486 /* NSInvocationVC.m */; };
 		28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A798283B9C6700A6C2EF /* CutomFlutterVC.swift */; };
 		28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A79B283BAC5A00A6C2EF /* native_add.cpp */; };
 		28B038752835081C007B3817 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038742835081C007B3817 /* AppDelegate.swift */; };
@@ -50,6 +51,8 @@
 		2827C2D32835F46500330685 /* C2OcTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2OcTestVC.h; sourceTree = "<group>"; };
 		2827C2D42835F47000330685 /* Oc2Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
+		2831717A287C17AC00018486 /* NSInvocationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSInvocationVC.h; sourceTree = "<group>"; };
+		2831717B287C17B500018486 /* NSInvocationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSInvocationVC.m; sourceTree = "<group>"; };
 		28A0A78B283B844D00A6C2EF /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = App.xcframework; path = Flutter/Debug/App.xcframework; sourceTree = "<group>"; };
 		28A0A78F283B844F00A6C2EF /* learnflutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = learnflutter.xcframework; path = Flutter/Debug/learnflutter.xcframework; sourceTree = "<group>"; };
 		28A0A792283B84E900A6C2EF /* Flutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Flutter.xcframework; path = ../Pods/Flutter/Flutter.xcframework; sourceTree = "<group>"; };
@@ -105,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28317177287C0F9B00018486 /* invocation */ = {
+			isa = PBXGroup;
+			children = (
+				2831717A287C17AC00018486 /* NSInvocationVC.h */,
+				2831717B287C17B500018486 /* NSInvocationVC.m */,
+			);
+			path = invocation;
+			sourceTree = "<group>";
+		};
 		28A0A795283B891E00A6C2EF /* flutterPlugins */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +159,7 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				28317177287C0F9B00018486 /* invocation */,
 				28FB4AFC2876D4B8008B7BF7 /* runloop */,
 				28FB4AF728719440008B7BF7 /* iosLayout */,
 				28A0A79A283BAC4100A6C2EF /* ffi */,
@@ -414,6 +427,7 @@
 				28B038A528350888007B3817 /* CustomNavVC.swift in Sources */,
 				28B038752835081C007B3817 /* AppDelegate.swift in Sources */,
 				28FB4AF428717B66008B7BF7 /* BaseVC.swift in Sources */,
+				2831717C287C17B500018486 /* NSInvocationVC.m in Sources */,
 				28B038772835081C007B3817 /* SceneDelegate.swift in Sources */,
 				28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */,
 				28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */,

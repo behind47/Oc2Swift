@@ -61,6 +61,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "run loop的fake实现", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(RunLoopVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "invocation测试", subTitle: "反射", callback: {
+            self.navigationController?.pushViewController(NSInvocationVC(), animated: true)
+        }))
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
