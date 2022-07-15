@@ -15,7 +15,7 @@ import UIKit
 import SnapKit
 
 open class AutoLayoutTestVC : BaseVC {
-    
+    var autoTopicView : UIView
     var autoTopicView2 : UIView
     
     public required init?(coder: NSCoder) {
@@ -23,6 +23,7 @@ open class AutoLayoutTestVC : BaseVC {
     }
     
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        autoTopicView = AutoTopicView()
         autoTopicView2 = AutoTopicView()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -30,7 +31,6 @@ open class AutoLayoutTestVC : BaseVC {
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .green
-        let autoTopicView = AutoTopicView()
         self.view.addSubview(autoTopicView)
         autoTopicView.snp.makeConstraints { make in
             make.left.right.equalTo(self.view)
@@ -38,7 +38,8 @@ open class AutoLayoutTestVC : BaseVC {
         }
         
         let title = UILabel()
-        title.text = "title"
+        title.numberOfLines = 0;
+        title.text = "⬆️父view和子view都使用约束布局，子view可以将父view的尺寸撑开"
         self.view.addSubview(title)
         title.snp.makeConstraints { make in
             make.left.right.equalTo(self.view)
@@ -46,7 +47,8 @@ open class AutoLayoutTestVC : BaseVC {
         }
         
         let subTitle = UILabel()
-        subTitle.text = "subTitle"
+        subTitle.numberOfLines = 0;
+        subTitle.text = "⬇️父view使用了frame时，就以frame的尺寸为准，此时可能导致父view遮挡子view"
         self.view.addSubview(subTitle)
         subTitle.snp.makeConstraints { make in
             make.left.right.equalTo(self.view)
