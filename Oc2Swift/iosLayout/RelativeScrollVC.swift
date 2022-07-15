@@ -13,10 +13,48 @@ import Foundation
 import UIKit
 import SnapKit
 
-open class RelativeScrollVC : UIViewController {
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+open class RelativeScrollVC : BaseVC, UIScrollViewDelegate {
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        let mainScroll = UIScrollView()
+        mainScroll.delegate = self
+        mainScroll.backgroundColor = .white
+        self.view.addSubview(mainScroll)
+        mainScroll.snp.makeConstraints { make in
+            make.edges.equalTo(self.view)
+        }
+        let contentView = UIView()
+        contentView.backgroundColor = .green
+        mainScroll.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.edges.equalTo(mainScroll)
+            make.width.equalTo(mainScroll)
+            make.height.greaterThanOrEqualTo(0)
+        }
+        
+        let vc1 = UIView()
+        vc1.backgroundColor = .blue
+        contentView.addSubview(vc1)
+        vc1.snp.makeConstraints { make in
+            make.width.height.equalTo(mainScroll)
+            make.top.equalTo(contentView)
+        }
+        let vc2 = UIView()
+        vc2.backgroundColor = .gray
+        contentView.addSubview(vc2)
+        vc2.snp.makeConstraints { make in
+            make.width.height.equalTo(mainScroll)
+            make.top.equalTo(vc1.snp.bottom)
+            make.left.equalTo(vc1)
+        }
+        let vc3 = UIView()
+        vc3.backgroundColor = .yellow
+        contentView.addSubview(vc3)
+        vc3.snp.makeConstraints { make in
+            make.width.height.equalTo(mainScroll)
+            make.top.equalTo(vc2.snp.bottom)
+            make.left.equalTo(vc2)
+            make.bottom.equalTo(contentView)
+        }
     }
-    
-    
 }
