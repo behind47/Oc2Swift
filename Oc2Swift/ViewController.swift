@@ -64,6 +64,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "invocation测试", subTitle: "反射", callback: {
             self.navigationController?.pushViewController(NSInvocationVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "frame-bound测试", subTitle: "修改bound.origin", callback: {
+            self.navigationController?.pushViewController(FrameBoundVC(), animated: true)
+        }))
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
