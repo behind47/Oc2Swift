@@ -12,6 +12,7 @@
 		28090DC728850EF600B91331 /* Oc2SwiftTestsOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC628850EF600B91331 /* Oc2SwiftTestsOC.m */; };
 		28090DC928850F3300B91331 /* testRuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC828850F3300B91331 /* testRuntimeModel.m */; };
 		28090DCC288522AA00B91331 /* RuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DCB288522AA00B91331 /* RuntimeModel.m */; };
+		28090DCF288523C400B91331 /* RuntimeModel+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DCE288523C400B91331 /* RuntimeModel+Property.m */; };
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
 		2831717C287C17B500018486 /* NSInvocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2831717B287C17B500018486 /* NSInvocationVC.m */; };
 		28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A798283B9C6700A6C2EF /* CutomFlutterVC.swift */; };
@@ -65,6 +66,8 @@
 		28090DC828850F3300B91331 /* testRuntimeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testRuntimeModel.m; sourceTree = "<group>"; };
 		28090DCA288522A000B91331 /* RuntimeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeModel.h; sourceTree = "<group>"; };
 		28090DCB288522AA00B91331 /* RuntimeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeModel.m; sourceTree = "<group>"; };
+		28090DCD288523B800B91331 /* RuntimeModel+Property.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RuntimeModel+Property.h"; sourceTree = "<group>"; };
+		28090DCE288523C400B91331 /* RuntimeModel+Property.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RuntimeModel+Property.m"; sourceTree = "<group>"; };
 		2827C2D32835F46500330685 /* C2OcTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2OcTestVC.h; sourceTree = "<group>"; };
 		2827C2D42835F47000330685 /* Oc2Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 			children = (
 				28090DBE288505D500B91331 /* RuntimeVC.h */,
 				28090DC3288506B000B91331 /* RuntimeVC.m */,
+				28090DCD288523B800B91331 /* RuntimeModel+Property.h */,
+				28090DCE288523C400B91331 /* RuntimeModel+Property.m */,
 				28090DCA288522A000B91331 /* RuntimeModel.h */,
 				28090DCB288522AA00B91331 /* RuntimeModel.m */,
 			);
@@ -543,6 +548,7 @@
 				28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */,
 				28FB4AF62871940A008B7BF7 /* LayoutTestVC.swift in Sources */,
 				2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */,
+				28090DCF288523C400B91331 /* RuntimeModel+Property.m in Sources */,
 				28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */,
 				28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */,
 				28F2C5EE2881443900A23E84 /* RelativeScrollVC.swift in Sources */,

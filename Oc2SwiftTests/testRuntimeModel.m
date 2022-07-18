@@ -7,6 +7,7 @@
 
 #import <XCTest/XCTest.h>
 #import "RuntimeModel.h"
+#import "RuntimeModel+Property.h"
 
 @interface testRuntimeModel : XCTestCase
 
@@ -37,8 +38,17 @@
 }
 
 - (void)testSwitchClassMethod {
+    // 测试在加载类时动态交换两个类方法
     XCTAssert([[RuntimeModel classMethoda] isEqualToString:[RuntimeModel rawClassMethodb]], @"交换失败");
     XCTAssert([[RuntimeModel classMethodb] isEqualToString:[RuntimeModel rawClassMethoda]], @"交换失败");
+}
+
+- (void)testCategoryProperty {
+    // 测试给分类动态添加属性和获取属性值
+    NSString *name = @"testName";
+    RuntimeModel *model = [RuntimeModel new];
+    [model setName:name];
+    XCTAssert([[model name] isEqualToString:name], @"");
 }
 
 @end
