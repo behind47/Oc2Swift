@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		28090DC2288505FA00B91331 /* BaseVC_OC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC1288505FA00B91331 /* BaseVC_OC.m */; };
 		28090DC4288506B000B91331 /* RuntimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC3288506B000B91331 /* RuntimeVC.m */; };
+		28090DC728850EF600B91331 /* Oc2SwiftTestsOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC628850EF600B91331 /* Oc2SwiftTestsOC.m */; };
+		28090DC928850F3300B91331 /* testRuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC828850F3300B91331 /* testRuntimeModel.m */; };
+		28090DCC288522AA00B91331 /* RuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DCB288522AA00B91331 /* RuntimeModel.m */; };
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
 		2831717C287C17B500018486 /* NSInvocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2831717B287C17B500018486 /* NSInvocationVC.m */; };
 		28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A798283B9C6700A6C2EF /* CutomFlutterVC.swift */; };
@@ -30,6 +33,7 @@
 		28FB4AF92871D915008B7BF7 /* AutoLayoutTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AF82871D915008B7BF7 /* AutoLayoutTestVC.swift */; };
 		28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AFA2873DE34008B7BF7 /* AutoTableHeaderVC.swift */; };
 		28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AFD2876D4CE008B7BF7 /* RunLoopVC.swift */; };
+		76F4FF43984EBBCEFCF18D90 /* libPods-Oc2SwiftTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD340A68F70D709CA3A5695 /* libPods-Oc2SwiftTests.a */; };
 		8277357EED5C82F9E19ECA86 /* libPods-Oc2Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF0CFF1FF96DF28F2F435F4 /* libPods-Oc2Swift.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +60,11 @@
 		28090DC0288505F000B91331 /* BaseVC_OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC_OC.h; sourceTree = "<group>"; };
 		28090DC1288505FA00B91331 /* BaseVC_OC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC_OC.m; sourceTree = "<group>"; };
 		28090DC3288506B000B91331 /* RuntimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeVC.m; sourceTree = "<group>"; };
+		28090DC528850EF600B91331 /* Oc2SwiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2SwiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		28090DC628850EF600B91331 /* Oc2SwiftTestsOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Oc2SwiftTestsOC.m; sourceTree = "<group>"; };
+		28090DC828850F3300B91331 /* testRuntimeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testRuntimeModel.m; sourceTree = "<group>"; };
+		28090DCA288522A000B91331 /* RuntimeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeModel.h; sourceTree = "<group>"; };
+		28090DCB288522AA00B91331 /* RuntimeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeModel.m; sourceTree = "<group>"; };
 		2827C2D32835F46500330685 /* C2OcTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2OcTestVC.h; sourceTree = "<group>"; };
 		2827C2D42835F47000330685 /* Oc2Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
@@ -88,6 +97,9 @@
 		28FB4AF82871D915008B7BF7 /* AutoLayoutTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutTestVC.swift; sourceTree = "<group>"; };
 		28FB4AFA2873DE34008B7BF7 /* AutoTableHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoTableHeaderVC.swift; sourceTree = "<group>"; };
 		28FB4AFD2876D4CE008B7BF7 /* RunLoopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLoopVC.swift; sourceTree = "<group>"; };
+		4AD340A68F70D709CA3A5695 /* libPods-Oc2SwiftTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Oc2SwiftTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BDCE5FFDD461FC7D8CFF752 /* Pods-Oc2SwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2SwiftTests.release.xcconfig"; path = "../Oc2Swift/Pods/Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		93ACC342F2DAC209AA60122F /* Pods-Oc2SwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2SwiftTests.debug.xcconfig"; path = "../Oc2Swift/Pods/Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA4E9D41921C719DDFEB62CF /* Pods-Oc2Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2Swift.release.xcconfig"; path = "../Oc2Swift/Pods/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift.release.xcconfig"; sourceTree = "<group>"; };
 		BEF0CFF1FF96DF28F2F435F4 /* libPods-Oc2Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Oc2Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F4FF43984EBBCEFCF18D90 /* libPods-Oc2SwiftTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +146,8 @@
 			children = (
 				28090DBE288505D500B91331 /* RuntimeVC.h */,
 				28090DC3288506B000B91331 /* RuntimeVC.m */,
+				28090DCA288522A000B91331 /* RuntimeModel.h */,
+				28090DCB288522AA00B91331 /* RuntimeModel.m */,
 			);
 			path = runtime;
 			sourceTree = "<group>";
@@ -213,7 +228,10 @@
 		28B0388A2835081E007B3817 /* Oc2SwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				28090DC828850F3300B91331 /* testRuntimeModel.m */,
 				28B0388B2835081E007B3817 /* Oc2SwiftTests.swift */,
+				28090DC628850EF600B91331 /* Oc2SwiftTestsOC.m */,
+				28090DC528850EF600B91331 /* Oc2SwiftTests-Bridging-Header.h */,
 			);
 			path = Oc2SwiftTests;
 			sourceTree = "<group>";
@@ -254,6 +272,7 @@
 				28A0A78B283B844D00A6C2EF /* App.xcframework */,
 				28A0A792283B84E900A6C2EF /* Flutter.xcframework */,
 				BEF0CFF1FF96DF28F2F435F4 /* libPods-Oc2Swift.a */,
+				4AD340A68F70D709CA3A5695 /* libPods-Oc2SwiftTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -263,6 +282,8 @@
 			children = (
 				0508B686EF25B21245ABBA2D /* Pods-Oc2Swift.debug.xcconfig */,
 				BA4E9D41921C719DDFEB62CF /* Pods-Oc2Swift.release.xcconfig */,
+				93ACC342F2DAC209AA60122F /* Pods-Oc2SwiftTests.debug.xcconfig */,
+				7BDCE5FFDD461FC7D8CFF752 /* Pods-Oc2SwiftTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -295,9 +316,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28B0389E2835081E007B3817 /* Build configuration list for PBXNativeTarget "Oc2SwiftTests" */;
 			buildPhases = (
+				94F6D962E4F432527D5303CF /* [CP] Check Pods Manifest.lock */,
+				86846CB950543F4DA30EEB9C /* [CP-User] Run Flutter Build learnflutter Script */,
 				28B038832835081E007B3817 /* Sources */,
 				28B038842835081E007B3817 /* Frameworks */,
 				28B038852835081E007B3817 /* Resources */,
+				EBA57ACA7640BCE582BDA8CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -343,6 +367,7 @@
 					};
 					28B038862835081E007B3817 = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 						TestTargetID = 28B038702835081C007B3817;
 					};
 					28B038902835081E007B3817 = {
@@ -431,6 +456,16 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		86846CB950543F4DA30EEB9C /* [CP-User] Run Flutter Build learnflutter Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "[CP-User] Run Flutter Build learnflutter Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../../learnflutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
 		917D51EB7F21C98750DA6379 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -448,6 +483,45 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		94F6D962E4F432527D5303CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Oc2SwiftTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBA57ACA7640BCE582BDA8CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -459,6 +533,7 @@
 				28B038A528350888007B3817 /* CustomNavVC.swift in Sources */,
 				28B038752835081C007B3817 /* AppDelegate.swift in Sources */,
 				28FB4AF428717B66008B7BF7 /* BaseVC.swift in Sources */,
+				28090DCC288522AA00B91331 /* RuntimeModel.m in Sources */,
 				2831717C287C17B500018486 /* NSInvocationVC.m in Sources */,
 				28090DC4288506B000B91331 /* RuntimeVC.m in Sources */,
 				28F2C5EB288130EC00A23E84 /* FrameBoundVC.swift in Sources */,
@@ -479,7 +554,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28090DC728850EF600B91331 /* Oc2SwiftTestsOC.m in Sources */,
 				28B0388C2835081E007B3817 /* Oc2SwiftTests.swift in Sources */,
+				28090DC928850F3300B91331 /* testRuntimeModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,18 +800,27 @@
 		};
 		28B0389F2835081E007B3817 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93ACC342F2DAC209AA60122F /* Pods-Oc2SwiftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ML99XNBDRL;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.behind47.Oc2SwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Oc2SwiftTests/Oc2SwiftTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Oc2Swift.app/Oc2Swift";
@@ -743,18 +829,26 @@
 		};
 		28B038A02835081E007B3817 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BDCE5FFDD461FC7D8CFF752 /* Pods-Oc2SwiftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ML99XNBDRL;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.behind47.Oc2SwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Oc2SwiftTests/Oc2SwiftTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Oc2Swift.app/Oc2Swift";
