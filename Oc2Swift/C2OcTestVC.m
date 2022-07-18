@@ -40,11 +40,4 @@
                                                                                          nibName:nil bundle:nil];
     [self.navigationController pushViewController:flutterViewController animated:TRUE];
 }
-
-/// InjectionIII需要的方法，在这个hook里的方法会在热更新触发时被调用
-- (void)injected {
-#if DEBUG
-    [self viewDidLoad];
-#endif
-}
 @end

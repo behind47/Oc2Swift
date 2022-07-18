@@ -70,6 +70,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "scrollView测试", subTitle: "结合masonry实现滚动", callback: {
             self.navigationController?.pushViewController(RelativeScrollVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "runtime测试", subTitle: "", callback: {
+            self.navigationController?.pushViewController(RuntimeVC(), animated: true)
+        }))
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

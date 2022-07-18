@@ -6,7 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "base/BaseVC_OC.h"
 
-@interface C2OcTestVC : UIViewController
+@interface C2OcTestVC : BaseVC_OC
 
 @end
