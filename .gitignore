@@ -2,3 +2,13 @@
 ./Flutter/*
 Flutter/
 Flutter/*
+// 用户数据
+Oc2Swift.xcodeproj/xcuserdata/
+learnios.xcworkspace/xcshareddata/
+learnios.xcworkspace/xcuserdata/
+Pods/Pods.xcodeproj/xcuserdata/
+// pod install产物
+Pods/
+Pods/*
+
+

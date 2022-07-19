@@ -1,6 +1,6 @@
 workspace 'learnios'
 
-flutter_application_path = '../../learnflutter'
+flutter_application_path = '../learnflutter'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 target :Oc2Swift do

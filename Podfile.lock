@@ -30,10 +30,10 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 4.0)
-  - bridge (from `../../learnflutter/.ios/.symlinks/plugins/bridge/ios`)
-  - Flutter (from `../../learnflutter/.ios/Flutter/engine`)
-  - FlutterPluginRegistrant (from `../../learnflutter/.ios/Flutter/FlutterPluginRegistrant`)
-  - learnflutter (from `../../learnflutter/.ios/Flutter`)
+  - bridge (from `../learnflutter/.ios/.symlinks/plugins/bridge/ios`)
+  - Flutter (from `../learnflutter/.ios/Flutter/engine`)
+  - FlutterPluginRegistrant (from `../learnflutter/.ios/Flutter/FlutterPluginRegistrant`)
+  - learnflutter (from `../learnflutter/.ios/Flutter`)
   - MGJRouter (from `https://github.com/lyujunwei/MGJRouter.git`)
   - SDWebImage (= 5.0)
   - SnapKit (= 5.6.0)
@@ -46,13 +46,13 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   bridge:
-    :path: "../../learnflutter/.ios/.symlinks/plugins/bridge/ios"
+    :path: "../learnflutter/.ios/.symlinks/plugins/bridge/ios"
   Flutter:
-    :path: "../../learnflutter/.ios/Flutter/engine"
+    :path: "../learnflutter/.ios/Flutter/engine"
   FlutterPluginRegistrant:
-    :path: "../../learnflutter/.ios/Flutter/FlutterPluginRegistrant"
+    :path: "../learnflutter/.ios/Flutter/FlutterPluginRegistrant"
   learnflutter:
-    :path: "../../learnflutter/.ios/Flutter"
+    :path: "../learnflutter/.ios/Flutter"
   MGJRouter:
     :git: https://github.com/lyujunwei/MGJRouter.git
 
@@ -71,6 +71,6 @@ SPEC CHECKSUMS:
   SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 00a5a2271322cfbab388a9f7365109e954b39e52
+PODFILE CHECKSUM: dffa9915bd1e6a63200ee127d68faa80fdf51806
 
 COCOAPODS: 1.11.3

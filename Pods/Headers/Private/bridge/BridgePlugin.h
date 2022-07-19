@@ -1,1 +1,1 @@
-../../../../../../learnflutter/.ios/.symlinks/plugins/bridge/ios/Classes/BridgePlugin.h
+../../../../../learnflutter/.ios/.symlinks/plugins/bridge/ios/Classes/BridgePlugin.h

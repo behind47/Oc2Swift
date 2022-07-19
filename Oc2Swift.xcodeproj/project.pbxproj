@@ -308,11 +308,11 @@
 			buildConfigurationList = 28B0389B2835081E007B3817 /* Build configuration list for PBXNativeTarget "Oc2Swift" */;
 			buildPhases = (
 				43B4A8C42366F27A0CA14BA5 /* [CP] Check Pods Manifest.lock */,
-				31F676FA2E51222A4D21EB27 /* [CP-User] Run Flutter Build learnflutter Script */,
+				7AEF1492B4F6ECB3183E3383 /* [CP-User] Run Flutter Build learnflutter Script */,
 				28B0386D2835081C007B3817 /* Sources */,
 				28B0386E2835081C007B3817 /* Frameworks */,
 				28B0386F2835081C007B3817 /* Resources */,
-				917D51EB7F21C98750DA6379 /* [CP] Embed Pods Frameworks */,
+				12D96A77BD599F153DF6E78F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -328,11 +328,11 @@
 			buildConfigurationList = 28B0389E2835081E007B3817 /* Build configuration list for PBXNativeTarget "Oc2SwiftTests" */;
 			buildPhases = (
 				94F6D962E4F432527D5303CF /* [CP] Check Pods Manifest.lock */,
-				86846CB950543F4DA30EEB9C /* [CP-User] Run Flutter Build learnflutter Script */,
+				4445521E8667700F7246DFD8 /* [CP-User] Run Flutter Build learnflutter Script */,
 				28B038832835081E007B3817 /* Sources */,
 				28B038842835081E007B3817 /* Frameworks */,
 				28B038852835081E007B3817 /* Resources */,
-				EBA57ACA7640BCE582BDA8CD /* [CP] Embed Pods Frameworks */,
+				D5BDD02F6221FF1EEF4DBAE4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -435,15 +435,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		31F676FA2E51222A4D21EB27 /* [CP-User] Run Flutter Build learnflutter Script */ = {
+		12D96A77BD599F153DF6E78F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			name = "[CP-User] Run Flutter Build learnflutter Script";
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../../learnflutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		43B4A8C42366F27A0CA14BA5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -467,7 +474,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		86846CB950543F4DA30EEB9C /* [CP-User] Run Flutter Build learnflutter Script */ = {
+		4445521E8667700F7246DFD8 /* [CP-User] Run Flutter Build learnflutter Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,24 +482,17 @@
 			name = "[CP-User] Run Flutter Build learnflutter Script";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../../learnflutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../learnflutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
-		917D51EB7F21C98750DA6379 /* [CP] Embed Pods Frameworks */ = {
+		7AEF1492B4F6ECB3183E3383 /* [CP-User] Run Flutter Build learnflutter Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
+			name = "[CP-User] Run Flutter Build learnflutter Script";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../learnflutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
 		};
 		94F6D962E4F432527D5303CF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -516,7 +516,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EBA57ACA7640BCE582BDA8CD /* [CP] Embed Pods Frameworks */ = {
+		D5BDD02F6221FF1EEF4DBAE4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -757,6 +757,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -796,6 +797,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
