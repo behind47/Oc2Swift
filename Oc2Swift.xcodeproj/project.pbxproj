@@ -37,6 +37,8 @@
 		76F4FF43984EBBCEFCF18D90 /* libPods-Oc2SwiftTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD340A68F70D709CA3A5695 /* libPods-Oc2SwiftTests.a */; };
 		8277357EED5C82F9E19ECA86 /* libPods-Oc2Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF0CFF1FF96DF28F2F435F4 /* libPods-Oc2Swift.a */; };
 		DA159F4A288689EF0041188C /* RtmCar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA159F49288689EF0041188C /* RtmCar.m */; };
+		DA159F4C2886AA070041188C /* RtmCarType.m in Sources */ = {isa = PBXBuildFile; fileRef = DA159F4B2886AA070041188C /* RtmCarType.m */; };
+		DA159F4E2886AAEC0041188C /* RtmCarColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA159F4D2886AAEC0041188C /* RtmCarColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		BA4E9D41921C719DDFEB62CF /* Pods-Oc2Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2Swift.release.xcconfig"; path = "../Oc2Swift/Pods/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift.release.xcconfig"; sourceTree = "<group>"; };
 		BEF0CFF1FF96DF28F2F435F4 /* libPods-Oc2Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Oc2Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA159F49288689EF0041188C /* RtmCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RtmCar.m; sourceTree = "<group>"; };
+		DA159F4B2886AA070041188C /* RtmCarType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RtmCarType.m; sourceTree = "<group>"; };
+		DA159F4D2886AAEC0041188C /* RtmCarColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RtmCarColor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 				28090DD32885624500B91331 /* RtmCar.h */,
 				DA159F49288689EF0041188C /* RtmCar.m */,
 				28090DD42885630200B91331 /* RtmCarType.h */,
+				DA159F4B2886AA070041188C /* RtmCarType.m */,
+				DA159F4D2886AAEC0041188C /* RtmCarColor.m */,
 				28090DD52885631B00B91331 /* RtmCarColor.h */,
 				28090DCD288523B800B91331 /* RuntimeModel+Property.h */,
 				28090DCE288523C400B91331 /* RuntimeModel+Property.m */,
@@ -557,6 +563,8 @@
 				28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */,
 				28FB4AF62871940A008B7BF7 /* LayoutTestVC.swift in Sources */,
 				2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */,
+				DA159F4E2886AAEC0041188C /* RtmCarColor.m in Sources */,
+				DA159F4C2886AA070041188C /* RtmCarType.m in Sources */,
 				DA159F4A288689EF0041188C /* RtmCar.m in Sources */,
 				28090DCF288523C400B91331 /* RuntimeModel+Property.m in Sources */,
 				28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */,

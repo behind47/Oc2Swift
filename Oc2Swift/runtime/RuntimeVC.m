@@ -18,12 +18,12 @@
     NSDictionary *dict = @{
         @"carType":@{@"type":@"BMW"},
         @"speed":@120,
-        @"CarColorArr":@[@{@"color":@"red"},@{@"color":@"blue"}]
+        @"carColorArr":@[@{@"color":@"red"},@{@"color":@"blue"}]
     };
     RtmCar *car = [RtmCar objectWithDict:dict];
-    NSLog(@"type == %@, speed = %ld", car.type, car.speed);
-    RtmCarColor *color = car.carColorArr[0];
-    NSLog(@"color == %@", color.color);
+    NSLog(@"type = %@, speed = %ld", car.carType, car.speed);
+    RtmCarColor *color = [car.carColorArr firstObject];
+    NSLog(@"color = %@", color);
 }
 
 @end
