@@ -13,9 +13,18 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol RuntimeModelDelegate<NSObject>
+@optional
++ (NSDictionary *)arrayContainModelClass;
+@end
+
 @interface RuntimeModel : NSObject
 + (NSString *)classMethoda;
 + (NSString *)classMethodb;
 + (NSString *)rawClassMethoda;
 + (NSString *)rawClassMethodb;
+
++ (instancetype)objectWithDict:(NSDictionary *)dict;
 @end
+
+

@@ -47,8 +47,8 @@
     // 测试给分类动态添加属性和获取属性值
     NSString *name = @"testName";
     RuntimeModel *model = [RuntimeModel new];
-    [model setName:name];
-    XCTAssert([[model name] isEqualToString:name], @"");
+    model.name = name;
+    XCTAssert([model.name isEqualToString:name], @"");
 }
 
 @end

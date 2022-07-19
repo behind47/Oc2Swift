@@ -68,6 +68,9 @@
 		28090DCB288522AA00B91331 /* RuntimeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeModel.m; sourceTree = "<group>"; };
 		28090DCD288523B800B91331 /* RuntimeModel+Property.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RuntimeModel+Property.h"; sourceTree = "<group>"; };
 		28090DCE288523C400B91331 /* RuntimeModel+Property.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RuntimeModel+Property.m"; sourceTree = "<group>"; };
+		28090DD32885624500B91331 /* RtmCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtmCar.h; sourceTree = "<group>"; };
+		28090DD42885630200B91331 /* RtmCarType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtmCarType.h; sourceTree = "<group>"; };
+		28090DD52885631B00B91331 /* RtmCarColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtmCarColor.h; sourceTree = "<group>"; };
 		2827C2D32835F46500330685 /* C2OcTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2OcTestVC.h; sourceTree = "<group>"; };
 		2827C2D42835F47000330685 /* Oc2Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
@@ -149,6 +152,9 @@
 			children = (
 				28090DBE288505D500B91331 /* RuntimeVC.h */,
 				28090DC3288506B000B91331 /* RuntimeVC.m */,
+				28090DD32885624500B91331 /* RtmCar.h */,
+				28090DD42885630200B91331 /* RtmCarType.h */,
+				28090DD52885631B00B91331 /* RtmCarColor.h */,
 				28090DCD288523B800B91331 /* RuntimeModel+Property.h */,
 				28090DCE288523C400B91331 /* RuntimeModel+Property.m */,
 				28090DCA288522A000B91331 /* RuntimeModel.h */,

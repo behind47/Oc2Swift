@@ -8,11 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "RuntimeVC.h"
+#import "RtmCar.h"
 
 @implementation RuntimeVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 字段类型：字典、基本类型、数组
+    NSDictionary *dict = @{
+        @"carType":@{@"type":@"BMW"},
+        @"speed":@120,
+        @"CarColorArr":@[@{@"color":@"red"},@{@"color":@"blue"}]
+    };
+    RtmCar *car = [RtmCar objectWithDict:dict];
+//    NSLog(@"type == %@, speed = %ld", car.type, car.speed);
+//    RtmCarColor *color = car.carColorArr[0];
+//    NSLog(@"color == %@", color.color);
 }
 
 @end
