@@ -36,6 +36,7 @@
 		28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AFD2876D4CE008B7BF7 /* RunLoopVC.swift */; };
 		76F4FF43984EBBCEFCF18D90 /* libPods-Oc2SwiftTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD340A68F70D709CA3A5695 /* libPods-Oc2SwiftTests.a */; };
 		8277357EED5C82F9E19ECA86 /* libPods-Oc2Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF0CFF1FF96DF28F2F435F4 /* libPods-Oc2Swift.a */; };
+		DA159F4A288689EF0041188C /* RtmCar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA159F49288689EF0041188C /* RtmCar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		93ACC342F2DAC209AA60122F /* Pods-Oc2SwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2SwiftTests.debug.xcconfig"; path = "../Oc2Swift/Pods/Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA4E9D41921C719DDFEB62CF /* Pods-Oc2Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2Swift.release.xcconfig"; path = "../Oc2Swift/Pods/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift.release.xcconfig"; sourceTree = "<group>"; };
 		BEF0CFF1FF96DF28F2F435F4 /* libPods-Oc2Swift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Oc2Swift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA159F49288689EF0041188C /* RtmCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RtmCar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				28090DBE288505D500B91331 /* RuntimeVC.h */,
 				28090DC3288506B000B91331 /* RuntimeVC.m */,
 				28090DD32885624500B91331 /* RtmCar.h */,
+				DA159F49288689EF0041188C /* RtmCar.m */,
 				28090DD42885630200B91331 /* RtmCarType.h */,
 				28090DD52885631B00B91331 /* RtmCarColor.h */,
 				28090DCD288523B800B91331 /* RuntimeModel+Property.h */,
@@ -554,6 +557,7 @@
 				28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */,
 				28FB4AF62871940A008B7BF7 /* LayoutTestVC.swift in Sources */,
 				2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */,
+				DA159F4A288689EF0041188C /* RtmCar.m in Sources */,
 				28090DCF288523C400B91331 /* RuntimeModel+Property.m in Sources */,
 				28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */,
 				28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */,
