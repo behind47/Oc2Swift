@@ -8,6 +8,7 @@
 #import <XCTest/XCTest.h>
 #import "RuntimeModel.h"
 #import "RuntimeModel+Property.h"
+#import "RtmCar.h"
 
 @interface testRuntimeModel : XCTestCase
 
@@ -49,6 +50,21 @@
     RuntimeModel *model = [RuntimeModel new];
     model.name = name;
     XCTAssert([model.name isEqualToString:name], @"");
+}
+
+- (void)testDict2Model {
+    // 测试字典转实体
+    NSDictionary *dict = @{
+        @"carType":@{@"type":@"BMW"},
+        @"speed":@120,
+        @"carColorArr":@[@{@"color":@"red"},@{@"color":@"blue"}]
+    };
+    RtmCar *car = [RtmCar objectWithDict:dict];
+//    NSLog(@"type = %@, speed = %ld", car.carType, car.speed);
+    XCTAssert([car.carType.type isEqualToString:@"BMW"], @"");
+    RtmCarColor *color = [car.carColorArr firstObject];
+//    NSLog(@"color = %@", color);
+    XCTAssert([[car.carColorArr firstObject].color isEqual:@"red"], @"");
 }
 
 @end
