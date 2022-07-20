@@ -34,17 +34,24 @@ open class TabView : UICollectionViewCell {
             make.center.equalTo(self)
             make.width.equalTo(title)
         }
-        title.highlightedTextColor = .yellow
         title.textColor = .white
-        title.backgroundColor = .black
+        title.backgroundColor = .none
     }
     
     open func update(with model: TabModel) {
         title.text = model.text
     }
+    
+    open func select(_ isSelected: Bool) {
+        if (isSelected) {
+            title.textColor = .yellow
+        } else {
+            title.textColor = .white
+        }
+    }
 }
 
-open class TabArrView : UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+open class TabArrView : UIView, UICollectionViewDataSource {
     var collectionView : UICollectionView
     var tabArr : [TabModel]
     
@@ -63,7 +70,6 @@ open class TabArrView : UIView, UICollectionViewDelegate, UICollectionViewDataSo
     
     func commonInit() {
         backgroundColor = .white
-        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(TabView.self, forCellWithReuseIdentifier: "TabView")
         self.addSubview(collectionView)
@@ -95,20 +101,6 @@ open class TabArrView : UIView, UICollectionViewDelegate, UICollectionViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TabView", for: indexPath) as! TabView
         cell.update(with: tabArr[indexPath.row])
         return cell
-    }
-    
-    // MARK: UICollectionViewDelegateFlowLayout
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: 150, height: 50)
-    }
-    
-    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15;
-    }
-    
-    // MARK: UICollectionViewDelegate
-    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: 点击时切换tabVCs
     }
 }
 

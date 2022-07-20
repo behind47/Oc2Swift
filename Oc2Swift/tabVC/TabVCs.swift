@@ -11,7 +11,7 @@
 
 import Foundation
 
-open class TabVCs : BaseVC {
+open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLayout {
     var headView : HeadView!
     var tabArrView : TabArrView!
     var tabVCs : [UIViewController]!
@@ -27,6 +27,8 @@ open class TabVCs : BaseVC {
         tabVCs = [UIViewController]()
         tabScrollView = TabScrollView()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        tabArrView.collectionView.delegate = self
+        tabScrollView.delegate = self
     }
     
     open override func viewDidLoad() {
@@ -47,6 +49,65 @@ open class TabVCs : BaseVC {
             make.top.equalTo(tabArrView.snp.bottom)
             make.left.right.bottom.equalTo(self.view)
         }
+    }
+    
+    // 切换到第index个page
+    func scrollToPage(_ index: Int, _ scrollView: UIScrollView) {
+        // 以scrollView的宽度为计量单位，将contentOffset四舍五入
+        // 拖动事件发生时，布局已经完成，因此认为scrollView.bounds.width是scrollView的宽度
+        scrollView.setContentOffset(CGPoint(x: CGFloat(index) * tabScrollView.bounds.width, y: 0.0),
+                                    animated: true)
+        // 切换page时切换选中的tab
+        let indexPath = IndexPath(row: index, section: 0)
+        tabArrView.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
+    }
+    
+    // MARK: UIScrollViewDelegate
+
+    /// 流程有两个：
+    /// 1. 拖动停止后，如果有惯性，则异步停止惯性滚动。惯性滚动停止后，设置滚动换页动画
+    /// 2. 如果没有惯性，则直接设置滚动换页动画
+    ///
+    /// TODO：回弹的速度太快了，怎么处理？
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        // tabVCs可以滚动，小于50%左弹，超过50%右弹
+        // 首先取消惯性滚动
+        if (decelerate) {
+            DispatchQueue.main.async { [self] in
+                scrollView.setContentOffset(CGPoint(x: round(scrollView.contentOffset.x / tabScrollView.bounds.width) * tabScrollView.bounds.width, y: 0), animated: false)
+            }
+        } else {
+            let index = round(scrollView.contentOffset.x / tabScrollView.bounds.width)
+            scrollToPage(Int(index), scrollView)
+        }
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = round(scrollView.contentOffset.x / tabScrollView.bounds.width)
+        scrollToPage(Int(index), scrollView)
+    }
+    
+    // MARK: UICollectionViewDelegateFlowLayout
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: 150, height: 50)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15;
+    }
+    
+    // MARK: UICollectionViewDelegate
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! TabView
+        cell.select(true)
+        // TODO: 点击时切换tabVCs
+        scrollToPage(indexPath.row, tabScrollView)
+    }
+    
+    // 切换选中item时，原来选中的item就会调用这个方法
+    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! TabView
+        cell.select(false)
     }
 }
 
