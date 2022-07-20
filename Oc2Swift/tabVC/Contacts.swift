@@ -9,6 +9,7 @@ import Foundation
 open class Contacts : BaseVC {
     open override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .green
         let content = UILabel()
         content.text = "Contacts"
         self.view.addSubview(content)

@@ -9,6 +9,7 @@ import Foundation
 open class Personal : BaseVC {
     open override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .orange
         let content = UILabel()
         content.text = "Personal"
         self.view.addSubview(content)

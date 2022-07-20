@@ -10,6 +10,7 @@ import Foundation
 open class HomePage : BaseVC {
     open override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
         let content = UILabel()
         content.text = "HomePage"
         self.view.addSubview(content)
