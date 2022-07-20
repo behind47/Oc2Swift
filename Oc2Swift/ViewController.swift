@@ -70,6 +70,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "scrollView测试", subTitle: "结合masonry实现滚动", callback: {
             self.navigationController?.pushViewController(RelativeScrollVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "用scrollView做一个tabVCs", subTitle: "", callback: {
+            self.navigationController?.pushViewController(TabVCs(), animated: true)
+        }))
         viewModels.append(ViewModel.init(title: "runtime测试", subTitle: "", callback: {
             self.navigationController?.pushViewController(RuntimeVC(), animated: true)
         }))

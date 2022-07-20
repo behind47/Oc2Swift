@@ -39,6 +39,11 @@
 		DA159F4A288689EF0041188C /* RtmCar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA159F49288689EF0041188C /* RtmCar.m */; };
 		DA159F4C2886AA070041188C /* RtmCarType.m in Sources */ = {isa = PBXBuildFile; fileRef = DA159F4B2886AA070041188C /* RtmCarType.m */; };
 		DA159F4E2886AAEC0041188C /* RtmCarColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DA159F4D2886AAEC0041188C /* RtmCarColor.m */; };
+		DA159F502886B61C0041188C /* TabVCs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA159F4F2886B61C0041188C /* TabVCs.swift */; };
+		DA159F532886CF3A0041188C /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA159F522886CF3A0041188C /* HomePage.swift */; };
+		DA159F552886CF430041188C /* Personal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA159F542886CF430041188C /* Personal.swift */; };
+		DA159F572886CF550041188C /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA159F562886CF550041188C /* Contacts.swift */; };
+		DA159F592886D3DB0041188C /* TabArrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA159F582886D3DB0041188C /* TabArrView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +119,11 @@
 		DA159F49288689EF0041188C /* RtmCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RtmCar.m; sourceTree = "<group>"; };
 		DA159F4B2886AA070041188C /* RtmCarType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RtmCarType.m; sourceTree = "<group>"; };
 		DA159F4D2886AAEC0041188C /* RtmCarColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RtmCarColor.m; sourceTree = "<group>"; };
+		DA159F4F2886B61C0041188C /* TabVCs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVCs.swift; sourceTree = "<group>"; };
+		DA159F522886CF3A0041188C /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		DA159F542886CF430041188C /* Personal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personal.swift; sourceTree = "<group>"; };
+		DA159F562886CF550041188C /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		DA159F582886D3DB0041188C /* TabArrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabArrView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +233,7 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				DA159F512886CF0F0041188C /* tabVC */,
 				28090DBF288505E500B91331 /* base */,
 				280EB5D528842E6E00D22AFB /* runtime */,
 				28317177287C0F9B00018486 /* invocation */,
@@ -307,6 +318,18 @@
 			);
 			name = Pods;
 			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		DA159F512886CF0F0041188C /* tabVC */ = {
+			isa = PBXGroup;
+			children = (
+				DA159F4F2886B61C0041188C /* TabVCs.swift */,
+				DA159F582886D3DB0041188C /* TabArrView.swift */,
+				DA159F522886CF3A0041188C /* HomePage.swift */,
+				DA159F542886CF430041188C /* Personal.swift */,
+				DA159F562886CF550041188C /* Contacts.swift */,
+			);
+			path = tabVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,11 +573,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				28B038792835081C007B3817 /* ViewController.swift in Sources */,
+				DA159F592886D3DB0041188C /* TabArrView.swift in Sources */,
 				28B038A528350888007B3817 /* CustomNavVC.swift in Sources */,
 				28B038752835081C007B3817 /* AppDelegate.swift in Sources */,
 				28FB4AF428717B66008B7BF7 /* BaseVC.swift in Sources */,
 				28090DCC288522AA00B91331 /* RuntimeModel.m in Sources */,
 				2831717C287C17B500018486 /* NSInvocationVC.m in Sources */,
+				DA159F502886B61C0041188C /* TabVCs.swift in Sources */,
+				DA159F532886CF3A0041188C /* HomePage.swift in Sources */,
+				DA159F572886CF550041188C /* Contacts.swift in Sources */,
+				DA159F552886CF430041188C /* Personal.swift in Sources */,
 				28090DC4288506B000B91331 /* RuntimeVC.m in Sources */,
 				28F2C5EB288130EC00A23E84 /* FrameBoundVC.swift in Sources */,
 				28B038772835081C007B3817 /* SceneDelegate.swift in Sources */,
