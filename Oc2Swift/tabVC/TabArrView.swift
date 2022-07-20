@@ -28,6 +28,7 @@ open class TabView : UICollectionViewCell {
     }
     
     func commonInit() {
+        backgroundColor = .black
         self.addSubview(title)
         title.setContentHuggingPriority(UILayoutPriority.required, for: NSLayoutConstraint.Axis.horizontal)
         title.snp.makeConstraints { make in
@@ -51,8 +52,7 @@ open class TabView : UICollectionViewCell {
     }
 }
 
-open class TabArrView : UIView, UICollectionViewDataSource {
-    var collectionView : UICollectionView
+open class TabArrView : UICollectionView, UICollectionViewDataSource {
     var tabArr : [TabModel]
     
     public required init?(coder: NSCoder) {
@@ -60,24 +60,17 @@ open class TabArrView : UIView, UICollectionViewDataSource {
     }
     
     public init() {
+        tabArr = [TabModel]()
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = UICollectionView.ScrollDirection.horizontal
-        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        tabArr = [TabModel]()
-        super.init(frame: CGRect.zero)
+        super.init(frame: CGRect.zero, collectionViewLayout: layout)
         commonInit()
     }
     
     func commonInit() {
         backgroundColor = .white
-        collectionView.dataSource = self
-        collectionView.register(TabView.self, forCellWithReuseIdentifier: "TabView")
-        self.addSubview(collectionView)
-        collectionView.snp.makeConstraints { make in
-            make.height.equalTo(self) // 把这个注销，self的高度就会变0，然后因为不能接受drag事件导致collectionView无法滑动
-            make.width.equalTo(UIScreen.main.bounds.size.width)
-            make.height.equalTo(50)
-        }
+        dataSource = self
+        register(TabView.self, forCellWithReuseIdentifier: "TabView")
         updateData()
     }
     
@@ -85,7 +78,7 @@ open class TabArrView : UIView, UICollectionViewDataSource {
         tabArr.append(TabModel(text: "HomePage", highlightColor: nil, normalColor: nil))
         tabArr.append(TabModel(text: "Contacts", highlightColor: nil, normalColor: nil))
         tabArr.append(TabModel(text: "Personal", highlightColor: nil, normalColor: nil))
-        collectionView.reloadData()
+        reloadData()
     }
     
     // MARK: UICollectionViewDataSource

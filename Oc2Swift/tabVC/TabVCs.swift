@@ -17,6 +17,8 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
     var tabVCs : [UIViewController]!
     var tabScrollView : TabScrollView!
     
+    let TAB_HEIGHT = 50
+    
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -27,7 +29,7 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
         tabVCs = [UIViewController]()
         tabScrollView = TabScrollView()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        tabArrView.collectionView.delegate = self
+        tabArrView.delegate = self
         tabScrollView.delegate = self
     }
     
@@ -41,8 +43,9 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
         }
         self.view.addSubview(tabArrView)
         tabArrView.snp.makeConstraints { make in
-            make.left.right.equalTo(self.view)
             make.top.equalTo(headView.snp.bottom)
+            make.left.right.equalTo(self.view)
+            make.height.equalTo(TAB_HEIGHT)
         }
         self.view.addSubview(tabScrollView)
         tabScrollView.snp.makeConstraints { make in
@@ -59,7 +62,8 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
                                     animated: true)
         // 切换page时切换选中的tab
         let indexPath = IndexPath(row: index, section: 0)
-        tabArrView.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
+        tabArrView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
+        // TODO:触发第index个tab被选中的事件
     }
     
     // MARK: UIScrollViewDelegate
@@ -71,8 +75,8 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
     /// TODO：回弹的速度太快了，怎么处理？
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         // tabVCs可以滚动，小于50%左弹，超过50%右弹
-        // 首先取消惯性滚动
         if (decelerate) {
+            // 首先取消惯性滚动
             DispatchQueue.main.async { [self] in
                 scrollView.setContentOffset(CGPoint(x: round(scrollView.contentOffset.x / tabScrollView.bounds.width) * tabScrollView.bounds.width, y: 0), animated: false)
             }
@@ -83,13 +87,15 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        // 以scrollView的宽度为计量单位，将contentOffset四舍五入
+        // 拖动事件发生时，布局已经完成，因此认为scrollView.bounds.width是scrollView的宽度
         let index = round(scrollView.contentOffset.x / tabScrollView.bounds.width)
         scrollToPage(Int(index), scrollView)
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: 150, height: 50)
+        return CGSize.init(width: 150, height: TAB_HEIGHT)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -100,7 +106,6 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! TabView
         cell.select(true)
-        // TODO: 点击时切换tabVCs
         scrollToPage(indexPath.row, tabScrollView)
     }
     
