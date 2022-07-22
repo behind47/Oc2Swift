@@ -10,7 +10,13 @@
 #import "RtmCarType.h"
 
 @interface RtmCar : RuntimeModel
-@property (nonatomic, strong) RtmCarType *carType;
+/// 属性声明的6种修饰符
+/// 原子性修饰符      引用计数修饰符      空修饰符        读写修饰符       setter/getter修饰符
+/// nonatomic       assign                   nullable            readwrite           setter=setXXX:, getter=XXX
+/// atomic              weak                      nonnull             readonly
+///             strong
+///             copy
+@property (nonatomic, strong, nonnull, readwrite, setter=setCarType:, getter=carType) RtmCarType *carType;
 @property (nonatomic, assign) NSInteger speed;
-@property (nonatomic, strong) NSArray<RtmCarColor *> *carColorArr;
+@property (nonatomic, strong) NSArray<RtmCarColor *> * _Nonnull carColorArr;
 @end
