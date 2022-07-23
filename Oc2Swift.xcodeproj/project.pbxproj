@@ -44,6 +44,7 @@
 		DA159F572886CF550041188C /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA159F562886CF550041188C /* Contacts.swift */; };
 		DA159F592886D3DB0041188C /* TabArrView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA159F582886D3DB0041188C /* TabArrView.swift */; };
 		DA159F5B2887D7080041188C /* TabScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA159F5A2887D7080041188C /* TabScrollView.swift */; };
+		DA159F5E288AA75B0041188C /* MyPageControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA159F5D288AA75B0041188C /* MyPageControllerVC.swift */; };
 		E9FBABA6359E8D2EA01D5D32 /* libPods-Oc2SwiftTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BD9016209CDFE9DFB014B6 /* libPods-Oc2SwiftTests.a */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,7 @@
 		DA159F562886CF550041188C /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
 		DA159F582886D3DB0041188C /* TabArrView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabArrView.swift; sourceTree = "<group>"; };
 		DA159F5A2887D7080041188C /* TabScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScrollView.swift; sourceTree = "<group>"; };
+		DA159F5D288AA75B0041188C /* MyPageControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageControllerVC.swift; sourceTree = "<group>"; };
 		F5A4B8A05BCA2F4C56C0C391 /* Pods-Oc2Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2Swift.debug.xcconfig"; path = "Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +237,7 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				DA159F5C288AA7470041188C /* container */,
 				DA159F512886CF0F0041188C /* tabVC */,
 				28090DBF288505E500B91331 /* base */,
 				280EB5D528842E6E00D22AFB /* runtime */,
@@ -332,6 +335,14 @@
 				DA159F562886CF550041188C /* Contacts.swift */,
 			);
 			path = tabVC;
+			sourceTree = "<group>";
+		};
+		DA159F5C288AA7470041188C /* container */ = {
+			isa = PBXGroup;
+			children = (
+				DA159F5D288AA75B0041188C /* MyPageControllerVC.swift */,
+			);
+			path = container;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -587,6 +598,7 @@
 				DA159F552886CF430041188C /* Personal.swift in Sources */,
 				DA159F5B2887D7080041188C /* TabScrollView.swift in Sources */,
 				28090DC4288506B000B91331 /* RuntimeVC.m in Sources */,
+				DA159F5E288AA75B0041188C /* MyPageControllerVC.swift in Sources */,
 				28F2C5EB288130EC00A23E84 /* FrameBoundVC.swift in Sources */,
 				28B038772835081C007B3817 /* SceneDelegate.swift in Sources */,
 				28090DC2288505FA00B91331 /* BaseVC_OC.m in Sources */,

@@ -76,6 +76,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "runtime测试", subTitle: "", callback: {
             self.navigationController?.pushViewController(RuntimeVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "pageVC测试", subTitle: "", callback: {
+            self.navigationController?.pushViewController(MyPageControllerVC(), animated: true)
+        }))
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
