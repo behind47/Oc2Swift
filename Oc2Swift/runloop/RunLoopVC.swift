@@ -43,8 +43,35 @@ open class RunLoopVC : UIViewController {
         commonThread = CommonThread.init { [self] in
             print("🏃‍♀️🏃‍♀️ \(Thread.current)")
             
+            let observer = CFRunLoopObserverCreateWithHandler(CFAllocatorGetDefault().takeRetainedValue(), CFRunLoopActivity.allActivities.rawValue, true, 0) { observer, activity in
+                switch activity {
+                case CFRunLoopActivity.entry:
+                    print("即将进入runloop")
+                    break
+                case CFRunLoopActivity.beforeTimers:
+                    print("即将处理timers")
+                    break
+                case CFRunLoopActivity.beforeSources:
+                    print("即将处理sources")
+                    break
+                case CFRunLoopActivity.beforeWaiting:
+                    print("即将进入休眠")
+                    break
+                case CFRunLoopActivity.afterWaiting:
+                    print("从休眠中唤醒loop")
+                    break
+                case CFRunLoopActivity.exit:
+                    print("即将推出runloop")
+                    break
+                default:
+                    break
+                }
+            }
+            /// 监听runloop的状态变化
+            CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, CFRunLoopMode.defaultMode)
+            
             commonRunLoop = RunLoop.current
-            commonRunLoop.add(Port(), forMode: RunLoop.Mode.default) // 添加一个port到runloop监听的source1
+            commonRunLoop.add(Port(), forMode: RunLoop.Mode.default) // 添加一个port，防止runloop没有信号源而关闭
 //            commonRunLoop.run() // 如果没有监听输入事件，只是在这里run，loop也会退出
             while(shouldKeeping) { // commonRunLoop.run()相当于这个，while循环执行
                 commonRunLoop.run(mode: RunLoop.Mode.default, before: Date.distantFuture)
