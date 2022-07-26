@@ -58,36 +58,13 @@
     UIButton *testMsgModelBtn = [UIButton new];
     [self.view addSubview:testMsgModelBtn];
     testMsgModelBtn.translatesAutoresizingMaskIntoConstraints = false;//禁止将AutoresizingMask默认设置转为约束
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:testMsgModelBtn
-                                                           attribute:NSLayoutAttributeTop
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:self.view
-                                                           attribute:NSLayoutAttributeTop
-                                                          multiplier:1
-                                                            constant:100];
-    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:testMsgModelBtn
-                                                           attribute:NSLayoutAttributeLeft
-                                                           relatedBy:NSLayoutRelationEqual
-                                                              toItem:self.view
-                                                           attribute:NSLayoutAttributeLeft
-                                                          multiplier:1
-                                                            constant:50];
-    [testMsgModelBtn.superview addConstraints:@[top, left]];
-    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:testMsgModelBtn
-                                                             attribute:NSLayoutAttributeWidth
-                                                             relatedBy:NSLayoutRelationEqual
-                                                                toItem:nil
-                                                             attribute:NSLayoutAttributeWidth
-                                                            multiplier:1
-                                                              constant:100];
-    NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:testMsgModelBtn
-                                                              attribute:NSLayoutAttributeHeight
-                                                              relatedBy:NSLayoutRelationEqual
-                                                                 toItem:nil
-                                                              attribute:NSLayoutAttributeHeight
-                                                             multiplier:1
-                                                               constant:40];
-    [testMsgModelBtn addConstraints:@[width, height]];
+    // ios9.0开始的锚点布局
+    [NSLayoutConstraint activateConstraints:@[
+        [testMsgModelBtn.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:100],
+        [testMsgModelBtn.leftAnchor constraintEqualToAnchor:self.view.leftAnchor constant:50],
+        [testMsgModelBtn.widthAnchor constraintEqualToConstant:200],
+        [testMsgModelBtn.heightAnchor constraintEqualToConstant:40]
+    ]];
     testMsgModelBtn.backgroundColor = [UIColor systemPinkColor];
     [testMsgModelBtn setTitle:@"测试OC消息机制的流程" forState:UIControlStateNormal];
     [testMsgModelBtn addTarget:self action:@selector(speed) forControlEvents:UIControlEventTouchUpInside];
