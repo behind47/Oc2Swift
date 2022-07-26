@@ -13,6 +13,7 @@
 		28090DC928850F3300B91331 /* testRuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC828850F3300B91331 /* testRuntimeModel.m */; };
 		28090DCC288522AA00B91331 /* RuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DCB288522AA00B91331 /* RuntimeModel.m */; };
 		28090DCF288523C400B91331 /* RuntimeModel+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DCE288523C400B91331 /* RuntimeModel+Property.m */; };
+		281B884D288F8D4F007DD0BE /* MathFunctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B884C288F8D4F007DD0BE /* MathFunctionVC.swift */; };
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
 		2831717C287C17B500018486 /* NSInvocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2831717B287C17B500018486 /* NSInvocationVC.m */; };
 		28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A798283B9C6700A6C2EF /* CutomFlutterVC.swift */; };
@@ -80,6 +81,7 @@
 		28090DD32885624500B91331 /* RtmCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtmCar.h; sourceTree = "<group>"; };
 		28090DD42885630200B91331 /* RtmCarType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtmCarType.h; sourceTree = "<group>"; };
 		28090DD52885631B00B91331 /* RtmCarColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtmCarColor.h; sourceTree = "<group>"; };
+		281B884C288F8D4F007DD0BE /* MathFunctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathFunctionVC.swift; sourceTree = "<group>"; };
 		2827C2D32835F46500330685 /* C2OcTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2OcTestVC.h; sourceTree = "<group>"; };
 		2827C2D42835F47000330685 /* Oc2Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
@@ -186,6 +188,14 @@
 			path = runtime;
 			sourceTree = "<group>";
 		};
+		281B884B288F8D21007DD0BE /* generic */ = {
+			isa = PBXGroup;
+			children = (
+				281B884C288F8D4F007DD0BE /* MathFunctionVC.swift */,
+			);
+			path = generic;
+			sourceTree = "<group>";
+		};
 		28317177287C0F9B00018486 /* invocation */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +247,7 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				281B884B288F8D21007DD0BE /* generic */,
 				DA159F5C288AA7470041188C /* container */,
 				DA159F512886CF0F0041188C /* tabVC */,
 				28090DBF288505E500B91331 /* base */,
@@ -604,6 +615,7 @@
 				28090DC2288505FA00B91331 /* BaseVC_OC.m in Sources */,
 				28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */,
 				28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */,
+				281B884D288F8D4F007DD0BE /* MathFunctionVC.swift in Sources */,
 				28FB4AF62871940A008B7BF7 /* LayoutTestVC.swift in Sources */,
 				2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */,
 				DA159F4E2886AAEC0041188C /* RtmCarColor.m in Sources */,

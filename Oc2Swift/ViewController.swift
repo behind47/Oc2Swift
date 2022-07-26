@@ -79,6 +79,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "pageVC测试", subTitle: "", callback: {
             self.navigationController?.pushViewController(MyPageControllerVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "泛型测试", subTitle: "", callback: {
+            self.navigationController?.pushViewController(MathFunctionVC(), animated: true)
+        }))
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
