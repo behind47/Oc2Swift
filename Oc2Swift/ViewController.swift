@@ -82,6 +82,11 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "泛型测试", subTitle: "", callback: {
             self.navigationController?.pushViewController(MathFunctionVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "导航页NavigationVC", subTitle: "", callback: {
+            let navigationVC = NavigationVC(rootViewController: HomePage())
+//            navigationVC.viewControllers = [HomePage(), Personal(), Contacts()] // 可以设置stack里的VCs，像这样，present之后最上层显示的就是Contacts
+            self.present(navigationVC, animated: true)
+        }))
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
