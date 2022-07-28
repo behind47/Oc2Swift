@@ -15,8 +15,11 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
     var headView : HeadView!
     var tabArrView : TabArrView!
     var tabVCs : [UIViewController]!
+    var mainScrollView : UIScrollView!
+    var mainContentView : UIView!
     var tabScrollView : TabScrollView!
-    var scrollOffsetX : Double! // 记录偏移量，用来计算滑动方向
+    var lastScrollOffsetX : CGFloat! // 记录偏移量，用来计算滑动方向
+    var lastScrollOffsetY : CGFloat! // 记录偏移量，用来计算滑动方向
     
     let TAB_HEIGHT = 50
     
@@ -28,31 +31,46 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
         headView = HeadView()
         tabArrView = TabArrView()
         tabVCs = [UIViewController]()
+        mainScrollView = UIScrollView()
+        mainContentView = UIView()
         tabScrollView = TabScrollView()
-        scrollOffsetX = 0.0
+        lastScrollOffsetX = 0.0
+        lastScrollOffsetY = 0.0
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         tabArrView.delegate = self
+        mainScrollView.delegate = self
         tabScrollView.delegate = self
     }
     
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        self.view.addSubview(headView)
+        self.view.addSubview(mainScrollView)
+        mainScrollView.snp.makeConstraints { make in
+            make.edges.equalTo(self.view)
+        }
+        mainScrollView.addSubview(mainContentView)
+        mainContentView.snp.makeConstraints { make in
+            make.edges.equalTo(mainScrollView)
+            make.width.equalTo(mainScrollView)
+            make.height.greaterThanOrEqualTo(0)
+        }
+        mainContentView.addSubview(headView)
         headView.snp.makeConstraints { make in
-            make.left.top.right.equalTo(self.view)
+            make.left.top.right.equalTo(mainContentView)
             make.height.equalTo(100)
         }
-        self.view.addSubview(tabArrView)
+        mainContentView.addSubview(tabArrView)
         tabArrView.snp.makeConstraints { make in
             make.top.equalTo(headView.snp.bottom)
-            make.left.right.equalTo(self.view)
+            make.left.right.equalTo(mainContentView)
             make.height.equalTo(TAB_HEIGHT)
         }
-        self.view.addSubview(tabScrollView)
+        mainContentView.addSubview(tabScrollView)
         tabScrollView.snp.makeConstraints { make in
             make.top.equalTo(tabArrView.snp.bottom)
-            make.left.right.bottom.equalTo(self.view)
+            make.left.right.bottom.equalTo(mainContentView)
+            make.height.equalTo(self.view)
         }
     }
     
@@ -60,7 +78,7 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
     func scrollToPage(_ index: CGFloat, _ scrollView: UIScrollView) {
         // 以scrollView的宽度为计量单位，将contentOffset四舍五入
         // 拖动事件发生时，布局已经完成，因此认为scrollView.bounds.width是scrollView的宽度
-        scrollView.setContentOffset(CGPoint(x: index * tabScrollView.bounds.width, y: 0.0),
+        scrollView.setContentOffset(CGPoint(x: index * tabScrollView.bounds.width, y: scrollView.contentOffset.y),
                                     animated: true)
         // 切换page时切换选中的tab
         let indexPath = IndexPath(row: Int(index), section: 0)
@@ -77,25 +95,41 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
     /// TODO：回弹的速度太快了，怎么处理？
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         // tabVCs可以滚动，小于30%回弹，超过30%翻页
-        let dir = scrollView.contentOffset.x - scrollOffsetX
-        var index : CGFloat
-        if (dir > 0) {
-            index = ceil(scrollView.contentOffset.x / tabScrollView.bounds.width - 0.3)
-        } else {
-            index = ceil(scrollView.contentOffset.x / tabScrollView.bounds.width - 0.7)
-        }
-        if (index < 0) { // 因为有-0的情况
-            index = 0
-        }
-        if (decelerate) {
-            // 首先取消惯性滚动
-            DispatchQueue.main.async { [self] in
-                scrollView.setContentOffset(CGPoint(x: index * tabScrollView.bounds.width, y: 0), animated: false)
+        // UIScrollView似乎已经处理了滑动冲突的问题，所以不需要考虑同时拖动纵向与横向的情况，按顺序处理就行。
+        let dir = scrollView.contentOffset.x - lastScrollOffsetX
+        guard dir < CGFLOAT_EPSILON && dir > -CGFLOAT_EPSILON else {// 大于0是向左划手指，小于0是向右划手指
+            var index : CGFloat
+            if (dir > 0) {
+                index = ceil(scrollView.contentOffset.x / tabScrollView.bounds.width - 0.3)
+            } else {
+                index = ceil(scrollView.contentOffset.x / tabScrollView.bounds.width - 0.7)
             }
-        } else {
-            scrollToPage(index, scrollView)
+            if (index < 0) { // 因为有-0的情况
+                index = 0
+            }
+            if (decelerate) {
+                // 首先取消惯性滚动
+                DispatchQueue.main.async { [self] in
+                    scrollView.setContentOffset(CGPoint(x: index * tabScrollView.bounds.width, y: scrollView.contentOffset.y), animated: false)
+                }
+            } else {
+                scrollToPage(index, scrollView)
+            }
+            return
         }
-        scrollOffsetX = scrollView.contentOffset.x
+        lastScrollOffsetX = scrollView.contentOffset.x
+    }
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y - lastScrollOffsetY > 0) {
+            // TODO: 滚动到tabArr置顶时停止
+            let navBarHeight = navigationController?.navigationBar.frame.height ?? 0.0
+            let topPadding = headView.frame.height - (navBarHeight + Device.statusBarHeight)
+            if (scrollView.contentOffset.y > topPadding) {
+                scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x, y: topPadding), animated: false)
+            }
+        }
+        lastScrollOffsetY = scrollView.contentOffset.y
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
