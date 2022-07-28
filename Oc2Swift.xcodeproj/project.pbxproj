@@ -36,6 +36,7 @@
 		28FB4AF92871D915008B7BF7 /* AutoLayoutTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AF82871D915008B7BF7 /* AutoLayoutTestVC.swift */; };
 		28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AFA2873DE34008B7BF7 /* AutoTableHeaderVC.swift */; };
 		28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AFD2876D4CE008B7BF7 /* RunLoopVC.swift */; };
+		28FF63C92893121A00DEF69A /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FF63C82893121A00DEF69A /* Device.swift */; };
 		B42F9969A5BA3CB766853FEF /* libPods-Oc2Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D99E41C315D11FE443436B5F /* libPods-Oc2Swift.a */; };
 		DA159F4A288689EF0041188C /* RtmCar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA159F49288689EF0041188C /* RtmCar.m */; };
 		DA159F4C2886AA070041188C /* RtmCarType.m in Sources */ = {isa = PBXBuildFile; fileRef = DA159F4B2886AA070041188C /* RtmCarType.m */; };
@@ -116,6 +117,7 @@
 		28FB4AF82871D915008B7BF7 /* AutoLayoutTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutTestVC.swift; sourceTree = "<group>"; };
 		28FB4AFA2873DE34008B7BF7 /* AutoTableHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoTableHeaderVC.swift; sourceTree = "<group>"; };
 		28FB4AFD2876D4CE008B7BF7 /* RunLoopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLoopVC.swift; sourceTree = "<group>"; };
+		28FF63C82893121A00DEF69A /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		384AF5065E8F7541B248BDB0 /* Pods-Oc2SwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2SwiftTests.release.xcconfig"; path = "Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		52BD9016209CDFE9DFB014B6 /* libPods-Oc2SwiftTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Oc2SwiftTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9957360565F97A6A1508AC4C /* Pods-Oc2Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2Swift.release.xcconfig"; path = "Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				28FF63C72893120C00DEF69A /* utils */,
 				281B884B288F8D21007DD0BE /* generic */,
 				DA159F5C288AA7470041188C /* container */,
 				DA159F512886CF0F0041188C /* tabVC */,
@@ -312,6 +315,14 @@
 				28FB4AFD2876D4CE008B7BF7 /* RunLoopVC.swift */,
 			);
 			path = runloop;
+			sourceTree = "<group>";
+		};
+		28FF63C72893120C00DEF69A /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				28FF63C82893121A00DEF69A /* Device.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		81B1EFE93669824E3CB1DA71 /* Pods */ = {
@@ -610,6 +621,7 @@
 				DA159F532886CF3A0041188C /* HomePage.swift in Sources */,
 				DA159F572886CF550041188C /* Contacts.swift in Sources */,
 				DA159F552886CF430041188C /* Personal.swift in Sources */,
+				28FF63C92893121A00DEF69A /* Device.swift in Sources */,
 				DA159F5B2887D7080041188C /* TabScrollView.swift in Sources */,
 				28090DC4288506B000B91331 /* RuntimeVC.m in Sources */,
 				28DB903B28904F5A00F2F141 /* NavigationVC.swift in Sources */,

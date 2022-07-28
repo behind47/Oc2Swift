@@ -17,6 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        Device.statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0
+        Device.safeTopHeight = window?.safeAreaInsets.top ?? 0.0
+        Device.safeBottomHeight = window?.safeAreaInsets.bottom ?? 0.0
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
