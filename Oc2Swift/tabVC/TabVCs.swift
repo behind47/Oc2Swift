@@ -16,6 +16,7 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
     var tabArrView : TabArrView!
     var tabVCs : [UIViewController]!
     var tabScrollView : TabScrollView!
+    var scrollOffsetX : Double! // 记录偏移量，用来计算滑动方向
     
     let TAB_HEIGHT = 50
     
@@ -28,6 +29,7 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
         tabArrView = TabArrView()
         tabVCs = [UIViewController]()
         tabScrollView = TabScrollView()
+        scrollOffsetX = 0.0
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         tabArrView.delegate = self
         tabScrollView.delegate = self
@@ -55,13 +57,13 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
     }
     
     // 切换到第index个page
-    func scrollToPage(_ index: Int, _ scrollView: UIScrollView) {
+    func scrollToPage(_ index: CGFloat, _ scrollView: UIScrollView) {
         // 以scrollView的宽度为计量单位，将contentOffset四舍五入
         // 拖动事件发生时，布局已经完成，因此认为scrollView.bounds.width是scrollView的宽度
-        scrollView.setContentOffset(CGPoint(x: CGFloat(index) * tabScrollView.bounds.width, y: 0.0),
+        scrollView.setContentOffset(CGPoint(x: index * tabScrollView.bounds.width, y: 0.0),
                                     animated: true)
         // 切换page时切换选中的tab
-        let indexPath = IndexPath(row: index, section: 0)
+        let indexPath = IndexPath(row: Int(index), section: 0)
         tabArrView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
         // TODO:触发第index个tab被选中的事件
     }
@@ -74,23 +76,33 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
     ///
     /// TODO：回弹的速度太快了，怎么处理？
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        // tabVCs可以滚动，小于50%左弹，超过50%右弹
+        // tabVCs可以滚动，小于30%回弹，超过30%翻页
+        let dir = scrollView.contentOffset.x - scrollOffsetX
+        var index : CGFloat
+        if (dir > 0) {
+            index = ceil(scrollView.contentOffset.x / tabScrollView.bounds.width - 0.3)
+        } else {
+            index = ceil(scrollView.contentOffset.x / tabScrollView.bounds.width - 0.7)
+        }
+        if (index < 0) { // 因为有-0的情况
+            index = 0
+        }
         if (decelerate) {
             // 首先取消惯性滚动
             DispatchQueue.main.async { [self] in
-                scrollView.setContentOffset(CGPoint(x: round(scrollView.contentOffset.x / tabScrollView.bounds.width) * tabScrollView.bounds.width, y: 0), animated: false)
+                scrollView.setContentOffset(CGPoint(x: index * tabScrollView.bounds.width, y: 0), animated: false)
             }
         } else {
-            let index = round(scrollView.contentOffset.x / tabScrollView.bounds.width)
-            scrollToPage(Int(index), scrollView)
+            scrollToPage(index, scrollView)
         }
+        scrollOffsetX = scrollView.contentOffset.x
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         // 以scrollView的宽度为计量单位，将contentOffset四舍五入
         // 拖动事件发生时，布局已经完成，因此认为scrollView.bounds.width是scrollView的宽度
         let index = round(scrollView.contentOffset.x / tabScrollView.bounds.width)
-        scrollToPage(Int(index), scrollView)
+        scrollToPage(index, scrollView)
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -106,7 +118,7 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! TabView
         cell.select(true)
-        scrollToPage(indexPath.row, tabScrollView)
+        scrollToPage(CGFloat(indexPath.row), tabScrollView)
     }
     
     // 切换选中item时，原来选中的item就会调用这个方法
