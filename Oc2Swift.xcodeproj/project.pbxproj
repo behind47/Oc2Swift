@@ -16,6 +16,7 @@
 		281B884D288F8D4F007DD0BE /* MathFunctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B884C288F8D4F007DD0BE /* MathFunctionVC.swift */; };
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
 		2831717C287C17B500018486 /* NSInvocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2831717B287C17B500018486 /* NSInvocationVC.m */; };
+		2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873784B2895087D00977826 /* KeyBoardVC.swift */; };
 		28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A798283B9C6700A6C2EF /* CutomFlutterVC.swift */; };
 		28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A79B283BAC5A00A6C2EF /* native_add.cpp */; };
 		28B038752835081C007B3817 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038742835081C007B3817 /* AppDelegate.swift */; };
@@ -89,6 +90,7 @@
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
 		2831717A287C17AC00018486 /* NSInvocationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSInvocationVC.h; sourceTree = "<group>"; };
 		2831717B287C17B500018486 /* NSInvocationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSInvocationVC.m; sourceTree = "<group>"; };
+		2873784B2895087D00977826 /* KeyBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardVC.swift; sourceTree = "<group>"; };
 		28A0A78B283B844D00A6C2EF /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = App.xcframework; path = Flutter/Debug/App.xcframework; sourceTree = "<group>"; };
 		28A0A78F283B844F00A6C2EF /* learnflutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = learnflutter.xcframework; path = Flutter/Debug/learnflutter.xcframework; sourceTree = "<group>"; };
 		28A0A792283B84E900A6C2EF /* Flutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Flutter.xcframework; path = ../Pods/Flutter/Flutter.xcframework; sourceTree = "<group>"; };
@@ -209,6 +211,14 @@
 			path = invocation;
 			sourceTree = "<group>";
 		};
+		2873784A2895035500977826 /* keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2873784B2895087D00977826 /* KeyBoardVC.swift */,
+			);
+			path = keyboard;
+			sourceTree = "<group>";
+		};
 		28A0A795283B891E00A6C2EF /* flutterPlugins */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +261,7 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				2873784A2895035500977826 /* keyboard */,
 				28FF63C72893120C00DEF69A /* utils */,
 				281B884B288F8D21007DD0BE /* generic */,
 				DA159F5C288AA7470041188C /* container */,
@@ -612,6 +623,7 @@
 			files = (
 				28B038792835081C007B3817 /* ViewController.swift in Sources */,
 				DA159F592886D3DB0041188C /* TabArrView.swift in Sources */,
+				2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */,
 				28B038A528350888007B3817 /* CustomNavVC.swift in Sources */,
 				28B038752835081C007B3817 /* AppDelegate.swift in Sources */,
 				28FB4AF428717B66008B7BF7 /* BaseVC.swift in Sources */,

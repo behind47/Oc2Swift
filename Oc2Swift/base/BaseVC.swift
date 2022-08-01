@@ -16,4 +16,9 @@ open class BaseVC : UIViewController {
         self.viewDidLoad()
         #endif
     }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+    }
 }

@@ -87,6 +87,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
 //            navigationVC.viewControllers = [HomePage(), Personal(), Contacts()] // 可以设置stack里的VCs，像这样，present之后最上层显示的就是Contacts
             self.present(navigationVC, animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "键盘", subTitle: "", callback: {
+            self.navigationController?.pushViewController(KeyBoardVC(), animated: true)
+        }))
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
