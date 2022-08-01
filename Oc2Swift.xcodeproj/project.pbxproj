@@ -14,6 +14,7 @@
 		28090DCC288522AA00B91331 /* RuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DCB288522AA00B91331 /* RuntimeModel.m */; };
 		28090DCF288523C400B91331 /* RuntimeModel+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DCE288523C400B91331 /* RuntimeModel+Property.m */; };
 		281B884D288F8D4F007DD0BE /* MathFunctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B884C288F8D4F007DD0BE /* MathFunctionVC.swift */; };
+		281B885028901C7D007DD0BE /* AnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B884F28901C7D007DD0BE /* AnimationVC.swift */; };
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
 		2831717C287C17B500018486 /* NSInvocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2831717B287C17B500018486 /* NSInvocationVC.m */; };
 		2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873784B2895087D00977826 /* KeyBoardVC.swift */; };
@@ -85,6 +86,7 @@
 		28090DD42885630200B91331 /* RtmCarType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtmCarType.h; sourceTree = "<group>"; };
 		28090DD52885631B00B91331 /* RtmCarColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RtmCarColor.h; sourceTree = "<group>"; };
 		281B884C288F8D4F007DD0BE /* MathFunctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathFunctionVC.swift; sourceTree = "<group>"; };
+		281B884F28901C7D007DD0BE /* AnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVC.swift; sourceTree = "<group>"; };
 		2827C2D32835F46500330685 /* C2OcTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2OcTestVC.h; sourceTree = "<group>"; };
 		2827C2D42835F47000330685 /* Oc2Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
@@ -202,6 +204,14 @@
 			path = generic;
 			sourceTree = "<group>";
 		};
+		281B884E28901C45007DD0BE /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				281B884F28901C7D007DD0BE /* AnimationVC.swift */,
+			);
+			path = animation;
+			sourceTree = "<group>";
+		};
 		28317177287C0F9B00018486 /* invocation */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +273,7 @@
 			children = (
 				2873784A2895035500977826 /* keyboard */,
 				28FF63C72893120C00DEF69A /* utils */,
+				281B884E28901C45007DD0BE /* animation */,
 				281B884B288F8D21007DD0BE /* generic */,
 				DA159F5C288AA7470041188C /* container */,
 				DA159F512886CF0F0041188C /* tabVC */,
@@ -640,6 +651,7 @@
 				DA159F5E288AA75B0041188C /* MyPageControllerVC.swift in Sources */,
 				28F2C5EB288130EC00A23E84 /* FrameBoundVC.swift in Sources */,
 				28B038772835081C007B3817 /* SceneDelegate.swift in Sources */,
+				281B885028901C7D007DD0BE /* AnimationVC.swift in Sources */,
 				28090DC2288505FA00B91331 /* BaseVC_OC.m in Sources */,
 				28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */,
 				28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */,

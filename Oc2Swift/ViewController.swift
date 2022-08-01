@@ -90,6 +90,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "键盘", subTitle: "", callback: {
             self.navigationController?.pushViewController(KeyBoardVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "动画", subTitle: "", callback: {
+            self.navigationController?.pushViewController(AnimationVC(), animated: true)
+        }))
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
