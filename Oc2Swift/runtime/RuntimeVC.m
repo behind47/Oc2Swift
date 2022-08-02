@@ -45,6 +45,49 @@
     NSError * __strong *pError = &error;
     
     [self testMsgModel];
+    [self testGCD];
+}
+
+- (void)testGCD {
+    dispatch_queue_t queue = dispatch_queue_create("queue_label", nil);
+    dispatch_queue_t queue2 = dispatch_queue_create("queue label2", nil);
+    dispatch_set_target_queue(queue2, queue);
+    dispatch_async(queue2, ^{
+        NSLog(@"%s async", __FUNCTION__);
+    });
+    dispatch_async(queue2, ^{
+        NSLog(@"%s async2", __FUNCTION__);
+    });
+    dispatch_async(queue2, ^{
+        NSLog(@"%s async3", __FUNCTION__);
+    });
+    dispatch_barrier_async(queue2, ^{
+        NSLog(@"%s dispatch_barrier_async", __FUNCTION__);
+    });
+    dispatch_async(queue2, ^{
+        NSLog(@"%s async4", __FUNCTION__);
+    });
+    dispatch_async(queue2, ^{
+        NSLog(@"%s async6", __FUNCTION__);
+    });
+    dispatch_async(queue2, ^{
+        NSLog(@"%s async5", __FUNCTION__);
+    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5), queue2, ^{
+        NSLog(@"%s after 0.5s 6", __FUNCTION__);
+    });
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_group_enter(group);
+    dispatch_async(queue2, ^{
+        NSLog(@"%s async7", __FUNCTION__);
+    });
+    dispatch_async(queue2, ^{
+        NSLog(@"%s async8", __FUNCTION__);
+    });
+    dispatch_group_notify(group, queue2, ^{
+        NSLog(@"%s notify", __FUNCTION__);
+    });
+    dispatch_group_leave(group);
 }
 
 /// 测试OC消息机制
