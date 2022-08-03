@@ -23,9 +23,9 @@ PODS:
   - learnflutter (0.0.1):
     - Flutter
   - MGJRouter (0.8.0)
-  - SDWebImage (5.0.0):
-    - SDWebImage/Core (= 5.0.0)
-  - SDWebImage/Core (5.0.0)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
@@ -35,13 +35,12 @@ DEPENDENCIES:
   - FlutterPluginRegistrant (from `../learnflutter/.ios/Flutter/FlutterPluginRegistrant`)
   - learnflutter (from `../learnflutter/.ios/Flutter`)
   - MGJRouter (from `https://github.com/lyujunwei/MGJRouter.git`)
-  - SDWebImage (= 5.0)
+  - SDWebImage (from `~/SDWebImage`)
   - SnapKit (= 5.6.0)
 
 SPEC REPOS:
   trunk:
     - AFNetworking
-    - SDWebImage
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -55,6 +54,9 @@ EXTERNAL SOURCES:
     :path: "../learnflutter/.ios/Flutter"
   MGJRouter:
     :git: https://github.com/lyujunwei/MGJRouter.git
+  SDWebImage:
+    :branch: learn
+    :path: "~/SDWebImage"
 
 CHECKOUT OPTIONS:
   MGJRouter:
@@ -68,9 +70,9 @@ SPEC CHECKSUMS:
   FlutterPluginRegistrant: 86e9ed3702fb562c94a2bbb541c4fded61f946ba
   learnflutter: 725b5a0f03f936907572b9d081a3741bc35895b6
   MGJRouter: d8bc21beb8cc8567491854d8a4b7533d95889e22
-  SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: dffa9915bd1e6a63200ee127d68faa80fdf51806
+PODFILE CHECKSUM: 6b4f141316045d993f683b34b7acfd58879cbaf6
 
 COCOAPODS: 1.11.3

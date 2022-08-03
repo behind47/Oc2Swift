@@ -30,6 +30,8 @@
 		28B038962835081E007B3817 /* Oc2SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038952835081E007B3817 /* Oc2SwiftUITests.swift */; };
 		28B038982835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */; };
 		28B038A528350888007B3817 /* CustomNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038A428350888007B3817 /* CustomNavVC.swift */; };
+		28D77C5F2899420C0076B8A3 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D77C5E2899420C0076B8A3 /* ImageVC.swift */; };
+		28D77C622899453D0076B8A3 /* cat.webp in Resources */ = {isa = PBXBuildFile; fileRef = 28D77C612899453D0076B8A3 /* cat.webp */; };
 		28DB903B28904F5A00F2F141 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB903A28904F5A00F2F141 /* NavigationVC.swift */; };
 		28F2C5EB288130EC00A23E84 /* FrameBoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2C5EA288130EC00A23E84 /* FrameBoundVC.swift */; };
 		28F2C5EE2881443900A23E84 /* RelativeScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2C5ED2881443900A23E84 /* RelativeScrollVC.swift */; };
@@ -113,6 +115,8 @@
 		28B038952835081E007B3817 /* Oc2SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oc2SwiftUITests.swift; sourceTree = "<group>"; };
 		28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oc2SwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		28B038A428350888007B3817 /* CustomNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavVC.swift; sourceTree = "<group>"; };
+		28D77C5E2899420C0076B8A3 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
+		28D77C612899453D0076B8A3 /* cat.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = cat.webp; sourceTree = "<group>"; };
 		28DB903A28904F5A00F2F141 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
 		28F2C5EA288130EC00A23E84 /* FrameBoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameBoundVC.swift; sourceTree = "<group>"; };
 		28F2C5ED2881443900A23E84 /* RelativeScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeScrollVC.swift; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				28D77C60289944FF0076B8A3 /* resources */,
+				28D77C5D289941F80076B8A3 /* image */,
 				2873784A2895035500977826 /* keyboard */,
 				28FF63C72893120C00DEF69A /* utils */,
 				281B884E28901C45007DD0BE /* animation */,
@@ -317,6 +323,22 @@
 				28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */,
 			);
 			path = Oc2SwiftUITests;
+			sourceTree = "<group>";
+		};
+		28D77C5D289941F80076B8A3 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				28D77C5E2899420C0076B8A3 /* ImageVC.swift */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		28D77C60289944FF0076B8A3 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				28D77C612899453D0076B8A3 /* cat.webp */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		28FB4AF728719440008B7BF7 /* iosLayout */ = {
@@ -504,6 +526,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D77C622899453D0076B8A3 /* cat.webp in Resources */,
 				28B038812835081E007B3817 /* LaunchScreen.storyboard in Resources */,
 				28B0387E2835081E007B3817 /* Assets.xcassets in Resources */,
 				28B0387C2835081C007B3817 /* Main.storyboard in Resources */,
@@ -634,6 +657,7 @@
 			files = (
 				28B038792835081C007B3817 /* ViewController.swift in Sources */,
 				DA159F592886D3DB0041188C /* TabArrView.swift in Sources */,
+				28D77C5F2899420C0076B8A3 /* ImageVC.swift in Sources */,
 				2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */,
 				28B038A528350888007B3817 /* CustomNavVC.swift in Sources */,
 				28B038752835081C007B3817 /* AppDelegate.swift in Sources */,
