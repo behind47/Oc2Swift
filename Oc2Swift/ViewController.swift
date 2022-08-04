@@ -96,6 +96,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "图片加载", subTitle: "", callback: {
             self.navigationController?.pushViewController(ImageVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "网络", subTitle: "", callback: {
+            self.navigationController?.pushViewController(NSURLSessionVC(), animated: true)
+        }))
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
