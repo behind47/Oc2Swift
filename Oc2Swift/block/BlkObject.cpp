@@ -65228,13 +65228,21 @@ int main() {
     ((void (*)(__block_impl *))((__block_impl *)block)->FuncPtr)((__block_impl *)block);
     return 0;
 }
+struct __Block_byref_dmy_0 {
+  void *__isa;
+__Block_byref_dmy_0 *__forwarding;
+ int __flags;
+ int __size;
+ int dmy;
+};
 
 struct __capture_block_impl_0 {
   struct __block_impl impl;
   struct __capture_block_desc_0* Desc;
   const char *fmt;
   int val;
-  __capture_block_impl_0(void *fp, struct __capture_block_desc_0 *desc, const char *_fmt, int _val, int flags=0) : fmt(_fmt), val(_val) {
+  __Block_byref_dmy_0 *dmy; // by ref
+  __capture_block_impl_0(void *fp, struct __capture_block_desc_0 *desc, const char *_fmt, int _val, __Block_byref_dmy_0 *_dmy, int flags=0) : fmt(_fmt), val(_val), dmy(_dmy->__forwarding) {
     impl.isa = &_NSConcreteStackBlock;
     impl.Flags = flags;
     impl.FuncPtr = fp;
@@ -65242,21 +65250,28 @@ struct __capture_block_impl_0 {
   }
 };
 static void __capture_block_func_0(struct __capture_block_impl_0 *__cself) {
+  __Block_byref_dmy_0 *dmy = __cself->dmy; // bound by ref
   const char *fmt = __cself->fmt; // bound by copy
   int val = __cself->val; // bound by copy
 
         printf(fmt, val);
+        (dmy->__forwarding->dmy) = 2;
     }
+static void __capture_block_copy_0(struct __capture_block_impl_0*dst, struct __capture_block_impl_0*src) {_Block_object_assign((void*)&dst->dmy, (void*)src->dmy, 8/*BLOCK_FIELD_IS_BYREF*/);}
+
+static void __capture_block_dispose_0(struct __capture_block_impl_0*src) {_Block_object_dispose((void*)src->dmy, 8/*BLOCK_FIELD_IS_BYREF*/);}
 
 static struct __capture_block_desc_0 {
   size_t reserved;
   size_t Block_size;
-} __capture_block_desc_0_DATA = { 0, sizeof(struct __capture_block_impl_0)};
+  void (*copy)(struct __capture_block_impl_0*, struct __capture_block_impl_0*);
+  void (*dispose)(struct __capture_block_impl_0*);
+} __capture_block_desc_0_DATA = { 0, sizeof(struct __capture_block_impl_0), __capture_block_copy_0, __capture_block_dispose_0};
 int capture() {
-    int dmy = 256;
+    __attribute__((__blocks__(byref))) __Block_byref_dmy_0 dmy = {(void*)0,(__Block_byref_dmy_0 *)&dmy, 0, sizeof(__Block_byref_dmy_0), 256};
     int val = 10;
     const char *fmt = "val = %d\n";
-    void (*block)(void) = ((void (*)())&__capture_block_impl_0((void *)__capture_block_func_0, &__capture_block_desc_0_DATA, fmt, val));
+    void (*block)(void) = ((void (*)())&__capture_block_impl_0((void *)__capture_block_func_0, &__capture_block_desc_0_DATA, fmt, val, (__Block_byref_dmy_0 *)&dmy, 570425344));
     val = 2;
     fmt = "These values were changed. val = %d\n";
     ((void (*)(__block_impl *))((__block_impl *)block)->FuncPtr)((__block_impl *)block);
