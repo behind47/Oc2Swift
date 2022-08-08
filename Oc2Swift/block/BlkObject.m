@@ -146,3 +146,38 @@ int capture() {
 // @end
 */
 @end
+
+int globalA = 2;
+static int staticA = 3;
+
+void (^glbBlock)(void) = ^{
+    printf("Global block %d %d\n", globalA, staticA);
+};
+/**
+/// 因为 globalA 是全局变量，staticA是静态变量，可以直接引用，所以没有被block截获。
+/// global block作为全局对象也不会截获局部变量。
+/// 综上，global block不会截获自动变量。
+int globalA = 2;
+static int staticA = 3;
+ 
+struct __glbBlock_block_impl_0 {
+  struct __block_impl impl;
+  struct __glbBlock_block_desc_0* Desc;
+  __glbBlock_block_impl_0(void *fp, struct __glbBlock_block_desc_0 *desc, int flags=0) {
+    impl.isa = &_NSConcreteGlobalBlock;
+    impl.Flags = flags;
+    impl.FuncPtr = fp;
+    Desc = desc;
+  }
+};
+static void __glbBlock_block_func_0(struct __glbBlock_block_impl_0 *__cself) {
+ printf("Global block %d %d\n", globalA, staticA);
+}
+
+static struct __glbBlock_block_desc_0 {
+  size_t reserved;
+  size_t Block_size;
+} __glbBlock_block_desc_0_DATA = { 0, sizeof(struct __glbBlock_block_impl_0)};
+static __glbBlock_block_impl_0 __global_glbBlock_block_impl_0((void *)__glbBlock_block_func_0, &__glbBlock_block_desc_0_DATA);
+void (*glbBlock)(void) = ((void (*)())&__global_glbBlock_block_impl_0);
+ */

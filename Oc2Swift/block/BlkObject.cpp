@@ -65267,7 +65267,7 @@ static struct __capture_block_desc_0 {
   void (*copy)(struct __capture_block_impl_0*, struct __capture_block_impl_0*);
   void (*dispose)(struct __capture_block_impl_0*);
 } __capture_block_desc_0_DATA = { 0, sizeof(struct __capture_block_impl_0), __capture_block_copy_0, __capture_block_dispose_0};
-int capture() {
+int capture(void) {
     __attribute__((__blocks__(byref))) __Block_byref_dmy_0 dmy = {(void*)0,(__Block_byref_dmy_0 *)&dmy, 0, sizeof(__Block_byref_dmy_0), 256};
     int val = 10;
     const char *fmt = "val = %d\n";
@@ -65278,6 +65278,30 @@ int capture() {
     return 0;
 }
 // @end
+int globalA = 2;
+static int staticA = 3;
+
+struct __glbBlock_block_impl_0 {
+  struct __block_impl impl;
+  struct __glbBlock_block_desc_0* Desc;
+  __glbBlock_block_impl_0(void *fp, struct __glbBlock_block_desc_0 *desc, int flags=0) {
+    impl.isa = &_NSConcreteGlobalBlock;
+    impl.Flags = flags;
+    impl.FuncPtr = fp;
+    Desc = desc;
+  }
+};
+static void __glbBlock_block_func_0(struct __glbBlock_block_impl_0 *__cself) {
+
+    printf("Global block %d %d\n", globalA, staticA);
+}
+
+static struct __glbBlock_block_desc_0 {
+  size_t reserved;
+  size_t Block_size;
+} __glbBlock_block_desc_0_DATA = { 0, sizeof(struct __glbBlock_block_impl_0)};
+static __glbBlock_block_impl_0 __global_glbBlock_block_impl_0((void *)__glbBlock_block_func_0, &__glbBlock_block_desc_0_DATA);
+void (*glbBlock)(void) = ((void (*)())&__global_glbBlock_block_impl_0);
 
 struct _prop_t {
 	const char *name;
