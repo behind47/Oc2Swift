@@ -26,6 +26,7 @@
     RtmCarColor *color = [car.carColorArr firstObject];
     NSLog(@"color = %@", color);
     
+    // 相当于 RtmCar *a = objc_msgSend(objc_getClass("RtmCar"), sel_registerName("new"));
     RtmCar __weak *a = [RtmCar new];
     a.speed = 123;
     NSLog(@"behind%ld", (long)a.speed); // 打出来是0，因为weak对象定义后就被释放了
