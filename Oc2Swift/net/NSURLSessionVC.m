@@ -10,18 +10,37 @@
 
 #import <Foundation/Foundation.h>
 #import "NSURLSessionVC.h"
+#import "AFNetworking.h"
 
-@interface NSURLSessionVC() <NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate>
+@interface NSURLSessionVC() <NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) NSURL *downloadURL;
 @property (nonatomic, strong) NSURLSession *session; // 复用session就是复用TCP连接，这是HTTP2.0新特性
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray<NSString *> *labelArr;
+@property (nonatomic, strong) NSArray<NSString *> *selectorArr;
 @end
 
 @implementation NSURLSessionVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self commonInit];
 //    [self testDownload];
     [self testDotDownloadTask];
+}
+
+- (void)commonInit {
+    self.labelArr = @[
+        @"测试下载",
+        @"测试断点续传",
+        @"测试AFN下载任务",
+    ];
+    self.selectorArr = @[
+        NSStringFromSelector(@selector(testDownload)),
+        NSStringFromSelector(@selector(testDotDownloadTask)),
+        NSStringFromSelector(@selector(testAFNDownloadTask)),
+    ];
+    [self tableView];
 }
 
 - (void)testDownload {
@@ -75,7 +94,25 @@
 //    }];
 }
 
-// MARK: getter
+- (void)testAFNDownloadTask {
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *url = [NSURL URLWithString:@"https://bkimg.cdn.bcebos.com/pic/f9dcd100baa1cd11397333cabf12c8fcc2ce2d16?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request
+                                                                     progress:nil
+                                                                  destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        NSLog(@"File downloaded to : %@", filePath);
+    }];
+    [downloadTask resume];
+}
+
+#pragma mark - getter
 - (NSURLSession *)session {
     if (!_session) {
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -87,7 +124,20 @@
     return _session;
 }
 
-// MARK: NSURLSessionDataDelegate
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+        _tableView.backgroundColor = [UIColor whiteColor];
+        [self.view addSubview:_tableView];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"DefaultCell"];
+    }
+    return _tableView;
+}
+
+
+#pragma mark - NSURLSessionDataDelegate
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler {
     NSLog(@"%s %s", __FILE__ ,__FUNCTION__);
 }
@@ -97,12 +147,12 @@
     NSLog(@"%s %s", __FILE__ ,__FUNCTION__);
 }
 
-// MARK: NSURLSessionTaskDelegate
+#pragma mark - NSURLSessionTaskDelegate
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error {
     NSLog(@"%s %s", __FILE__ ,__FUNCTION__);
 }
 
-// MARK: NSURLSessionDownloadDelegate
+#pragma mark - NSURLSessionDownloadDelegate
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite {
     CGFloat progress = totalBytesWritten / totalBytesExpectedToWrite;
     NSLog(@"%s %s %f", __FILE__, __FUNCTION__, progress);
@@ -111,6 +161,31 @@
 
 - (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location {
     
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SEL selector = NSSelectorFromString([self.selectorArr objectAtIndex:indexPath.row]);
+    if ([self respondsToSelector:selector]) {
+        IMP implementation = [self methodForSelector:selector];
+        void (*func)(id, SEL) = (void *)implementation;
+        func(self, selector);
+    }
+}
+
+#pragma mark - UITableViewDataSource
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DefaultCell" forIndexPath:indexPath];
+    cell.textLabel.text = [self.labelArr objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.labelArr count];
 }
 
 @end
