@@ -65228,6 +65228,40 @@ int main() {
     ((void (*)(__block_impl *))((__block_impl *)block)->FuncPtr)((__block_impl *)block);
     return 0;
 }
+
+struct __capture_block_impl_0 {
+  struct __block_impl impl;
+  struct __capture_block_desc_0* Desc;
+  const char *fmt;
+  int val;
+  __capture_block_impl_0(void *fp, struct __capture_block_desc_0 *desc, const char *_fmt, int _val, int flags=0) : fmt(_fmt), val(_val) {
+    impl.isa = &_NSConcreteStackBlock;
+    impl.Flags = flags;
+    impl.FuncPtr = fp;
+    Desc = desc;
+  }
+};
+static void __capture_block_func_0(struct __capture_block_impl_0 *__cself) {
+  const char *fmt = __cself->fmt; // bound by copy
+  int val = __cself->val; // bound by copy
+
+        printf(fmt, val);
+    }
+
+static struct __capture_block_desc_0 {
+  size_t reserved;
+  size_t Block_size;
+} __capture_block_desc_0_DATA = { 0, sizeof(struct __capture_block_impl_0)};
+int capture() {
+    int dmy = 256;
+    int val = 10;
+    const char *fmt = "val = %d\n";
+    void (*block)(void) = ((void (*)())&__capture_block_impl_0((void *)__capture_block_func_0, &__capture_block_desc_0_DATA, fmt, val));
+    val = 2;
+    fmt = "These values were changed. val = %d\n";
+    ((void (*)(__block_impl *))((__block_impl *)block)->FuncPtr)((__block_impl *)block);
+    return 0;
+}
 // @end
 
 struct _prop_t {
