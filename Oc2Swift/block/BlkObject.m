@@ -12,7 +12,7 @@
     int val0;
     int val1;
 }
-int main() {
+int base() {
     void(^block)(void) = ^(void) {
         printf("Block\n");
     };

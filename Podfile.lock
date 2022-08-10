@@ -20,9 +20,12 @@ PODS:
   - FlutterPluginRegistrant (0.0.1):
     - bridge
     - Flutter
+    - path_provider_ios
   - learnflutter (0.0.1):
     - Flutter
   - MGJRouter (0.8.0)
+  - path_provider_ios (0.0.1):
+    - Flutter
   - SDWebImage (5.8.0):
     - SDWebImage/Core (= 5.8.0)
   - SDWebImage/Core (5.8.0)
@@ -35,6 +38,7 @@ DEPENDENCIES:
   - FlutterPluginRegistrant (from `../learnflutter/.ios/Flutter/FlutterPluginRegistrant`)
   - learnflutter (from `../learnflutter/.ios/Flutter`)
   - MGJRouter (from `https://github.com/lyujunwei/MGJRouter.git`)
+  - path_provider_ios (from `../learnflutter/.ios/.symlinks/plugins/path_provider_ios/ios`)
   - SDWebImage (from `~/SDWebImage`)
   - SnapKit (= 5.6.0)
 
@@ -54,6 +58,8 @@ EXTERNAL SOURCES:
     :path: "../learnflutter/.ios/Flutter"
   MGJRouter:
     :git: https://github.com/lyujunwei/MGJRouter.git
+  path_provider_ios:
+    :path: "../learnflutter/.ios/.symlinks/plugins/path_provider_ios/ios"
   SDWebImage:
     :branch: learn
     :path: "~/SDWebImage"
@@ -67,9 +73,10 @@ SPEC CHECKSUMS:
   AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
   bridge: 19e67a95fbc57851d07b6d3ca114a09188599452
   Flutter: bdfa2e8fe0e2880a2c6a58a0b1a8675c262a07af
-  FlutterPluginRegistrant: 86e9ed3702fb562c94a2bbb541c4fded61f946ba
+  FlutterPluginRegistrant: ca3cc5588dba746d8bc6203e85b394c3f5e0a0ee
   learnflutter: 725b5a0f03f936907572b9d081a3741bc35895b6
   MGJRouter: d8bc21beb8cc8567491854d8a4b7533d95889e22
+  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 

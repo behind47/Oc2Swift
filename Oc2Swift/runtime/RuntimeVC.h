@@ -14,5 +14,5 @@
 #import "BaseVC_OC.h"
 
 @interface RuntimeVC : BaseVC_OC
-
+- (void)timerAction;
 @end

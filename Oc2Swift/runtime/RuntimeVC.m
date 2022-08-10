@@ -10,6 +10,11 @@
 #import "RuntimeVC.h"
 #import "RtmCar.h"
 #import <objc/runtime.h>
+#import "MiddleProxy.h"
+
+@interface RuntimeVC ()
+@property (nonatomic, weak) NSTimer *timer;
+@end
 
 @implementation RuntimeVC
 
@@ -47,6 +52,30 @@
     
     [self testMsgModel];
     [self testGCD];
+    [self testTimer];
+}
+
+- (void)testTimer {
+    /// 这里传入的target属性是一个地址，所以即便使用weakSelf，也不影响内部对self有一个强引用。
+    /// 一个比较好的方法是引入一个第三方对象（这里是MiddleProxy），将它的实例传入，
+    /// 在它的属性里增加一个weak引用self对象，从而实现对self的weak引用。
+    /// 此时selector会传给第三方对象，这里可以使用三种消息转发机制将第三方对象接收到的多种selector转发给self
+    /// __weak typeof(self) weakSelf = self;
+    /// self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:weakSelf selector:@selector(timerAction) userInfo:nil repeats:true];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                  target:[MiddleProxy proxyWithTarget:self]
+                                                selector:@selector(timerAction)
+                                                userInfo:nil
+                                                 repeats:true];
+}
+
+- (void)timerAction {
+    NSLog(@"%s %s", __FILE__, __func__);
+}
+
+- (void)dealloc {
+    [self.timer invalidate]; // NSTimer对象被添加到当前线程的RunLoop，被RunLoop引用，所以不能被GC释放，要invalidate停止。
+    self.timer = nil;
 }
 
 - (void)testGCD {
