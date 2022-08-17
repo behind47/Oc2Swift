@@ -105,6 +105,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "内存泄漏", subTitle: "", callback: {
             self.navigationController?.pushViewController(LeaksVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "KVO", subTitle: "", callback: {
+            self.navigationController?.pushViewController(KVOVC(), animated: true)
+        }))
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
