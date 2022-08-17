@@ -22,6 +22,16 @@
 
 @implementation NSURLSessionVC
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.session invalidateAndCancel];
+    self.session = nil;
+}
+
+- (void)dealloc {
+    NSLog(@"%s dealloc", __FILE__);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self commonInit];
@@ -56,12 +66,13 @@
     task = [session dataTaskWithRequest:request];
 #else
     task = [session dataTaskWithRequest:request
-                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                      completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         // handler的优先级高于delegate的回调方法
         NSLog(@"%s %s", __FILE__ ,__FUNCTION__);
     }];
 #endif
     [task resume];
+    [session finishTasksAndInvalidate];
 }
 
 /// 断点续传
@@ -81,7 +92,7 @@
         task = [self.session downloadTaskWithRequest:request];
 #else
         task = [session downloadTaskWithRequest:request
-                                            completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                              completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             // handler的优先级高于delegate的回调方法
             NSLog(@"%s %s", __FILE__ ,__FUNCTION__);
         }];
@@ -110,6 +121,7 @@
         NSLog(@"File downloaded to : %@", filePath);
     }];
     [downloadTask resume];
+    [manager invalidateSessionCancelingTasks:false resetSession:true];
 }
 
 #pragma mark - getter
@@ -118,8 +130,8 @@
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         [config setTimeoutIntervalForRequest:60];
         _session = [NSURLSession sessionWithConfiguration:config
-                                                              delegate:self
-                                                         delegateQueue:[NSOperationQueue mainQueue]];
+                                                 delegate:self
+                                            delegateQueue:[NSOperationQueue mainQueue]];
     }
     return _session;
 }

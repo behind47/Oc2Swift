@@ -37,6 +37,7 @@
 		28D77C5F2899420C0076B8A3 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D77C5E2899420C0076B8A3 /* ImageVC.swift */; };
 		28D77C622899453D0076B8A3 /* cat.webp in Resources */ = {isa = PBXBuildFile; fileRef = 28D77C612899453D0076B8A3 /* cat.webp */; };
 		28DB903B28904F5A00F2F141 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB903A28904F5A00F2F141 /* NavigationVC.swift */; };
+		28DEA62328AC9C9800B2299B /* LeaksVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DEA62228AC9C9800B2299B /* LeaksVC.m */; };
 		28F2C5EB288130EC00A23E84 /* FrameBoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2C5EA288130EC00A23E84 /* FrameBoundVC.swift */; };
 		28F2C5EE2881443900A23E84 /* RelativeScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2C5ED2881443900A23E84 /* RelativeScrollVC.swift */; };
 		28F58991289BF9D900773AFC /* OperationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F58990289BF9D900773AFC /* OperationVC.m */; };
@@ -131,6 +132,8 @@
 		28D77C5E2899420C0076B8A3 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		28D77C612899453D0076B8A3 /* cat.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = cat.webp; sourceTree = "<group>"; };
 		28DB903A28904F5A00F2F141 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
+		28DEA62128AC9C7300B2299B /* LeaksVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeaksVC.h; sourceTree = "<group>"; };
+		28DEA62228AC9C9800B2299B /* LeaksVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeaksVC.m; sourceTree = "<group>"; };
 		28F2C5EA288130EC00A23E84 /* FrameBoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameBoundVC.swift; sourceTree = "<group>"; };
 		28F2C5ED2881443900A23E84 /* RelativeScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeScrollVC.swift; sourceTree = "<group>"; };
 		28F5898F289BF9D200773AFC /* OperationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperationVC.h; sourceTree = "<group>"; };
@@ -301,6 +304,7 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				28DEA62028AC9C5E00B2299B /* instrument */,
 				28CBCA1128A0F0250050AE67 /* block */,
 				28F5898E289BF9BB00773AFC /* operation */,
 				280A48DE289AEBDA005DE4AE /* net */,
@@ -379,6 +383,15 @@
 				28D77C612899453D0076B8A3 /* cat.webp */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		28DEA62028AC9C5E00B2299B /* instrument */ = {
+			isa = PBXGroup;
+			children = (
+				28DEA62128AC9C7300B2299B /* LeaksVC.h */,
+				28DEA62228AC9C9800B2299B /* LeaksVC.m */,
+			);
+			path = instrument;
 			sourceTree = "<group>";
 		};
 		28F5898E289BF9BB00773AFC /* operation */ = {
@@ -733,6 +746,7 @@
 				28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */,
 				28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */,
 				281B884D288F8D4F007DD0BE /* MathFunctionVC.swift in Sources */,
+				28DEA62328AC9C9800B2299B /* LeaksVC.m in Sources */,
 				28FB4AF62871940A008B7BF7 /* LayoutTestVC.swift in Sources */,
 				2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */,
 				28AE614F28A3DF9A00AB6739 /* MiddleProxy.m in Sources */,
