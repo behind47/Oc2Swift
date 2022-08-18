@@ -8,35 +8,28 @@
 
 import UIKit
 
-struct ViewModel {
-    var title : String
-    var subTitle : String
-    var callback : (() -> Void)?
-}
-
-public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource {
-    let tableView : UITableView
+public class ViewController: BaseVC {
     var viewModels : [ViewModel]
+    var fastCellList : FastCellList
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.view.addSubview(tableView)
-        tableView.frame = self.view.frame
-        tableView.reloadData()
+        self.view.addSubview(fastCellList)
+        fastCellList.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
     }
     
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        tableView = UITableView()
         viewModels = [ViewModel]()
+        fastCellList = FastCellList()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         commonInit()
     }
     
     required init?(coder: NSCoder) {
-        tableView = UITableView()
         viewModels = [ViewModel]()
+        fastCellList = FastCellList()
         super.init(coder: coder)
         commonInit()
     }
@@ -57,6 +50,9 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         }))
         viewModels.append(ViewModel.init(title: "iOS约束布局tableHeaderView高度自适应", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(AutoTableHeaderVC(), animated: true)
+        }))
+        viewModels.append(ViewModel.init(title: "UI优化", subTitle: "测试", callback: {
+            self.navigationController?.pushViewController(UIOptimizationVC(), animated: true)
         }))
         viewModels.append(ViewModel.init(title: "run loop的fake实现", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(RunLoopVC(), animated: true)
@@ -108,25 +104,7 @@ public class ViewController: BaseVC, UITableViewDelegate, UITableViewDataSource 
         viewModels.append(ViewModel.init(title: "KVO", subTitle: "", callback: {
             self.navigationController?.pushViewController(KVOVC(), animated: true)
         }))
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell() as UITableViewCell
-        cell.textLabel?.text = viewModels[indexPath.row].title
-        cell.detailTextLabel?.text = viewModels[indexPath.row].subTitle
-        return cell
-    }
-    
-    public func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModels.count
-    }
-    
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModels[indexPath.row].callback.unsafelyUnwrapped()
+        fastCellList.updateWithViewModels(vms: viewModels)
     }
 }
 
