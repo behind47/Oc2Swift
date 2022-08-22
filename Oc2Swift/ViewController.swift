@@ -35,12 +35,8 @@ public class ViewController: BaseVC {
     }
     
     func commonInit() {
-        MGJRouter.registerURLPattern("learnios://native_add") { arguments in
-            print("\(#function) MGJRouterParameterURL: \(String(describing: arguments?[MGJRouterParameterURL])) MGJRouterParameterUserInfo: \(String(describing: arguments?[MGJRouterParameterUserInfo]))")
-            self.navigationController?.pushViewController(C2OcTestVC(), animated: true)
-        }
         viewModels.append(ViewModel.init(title: "native add", subTitle: "测试", callback: {
-            MGJRouter.openURL("learnios://native_add?a=1&b=false&c=sdfsdfsdf", withUserInfo: ["name":"grad", "color": "white"], completion: nil)
+            self.navigationController?.pushViewController(C2OcTestVC(), animated: true)
         }))
         viewModels.append(ViewModel.init(title: "iOS布局流程", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(LayoutTestVC(), animated: true)
