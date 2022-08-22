@@ -30,7 +30,9 @@ class InfoCell : UITableViewCell {
     }
     
     func update(with model: InfoModel) -> Void {
-        avatar.sd_setImage(with: URL(string: model.url)) { [self] image, error, cacheType, url in
+        avatar.sd_setImage(with: URL(string: model.url),
+                           placeholderImage: nil,
+                           options: SDWebImageOptions.refreshCached) { [self] image, error, cacheType, url in
             // TODO:在子线程中调整图片大小，节省在这里让图片适应约束大小的开销。
             let destImage = image?.sd_resizedImage(with: CGSize(width: 100, height: 100), scaleMode: SDImageScaleMode.aspectFit)
             print("isMainThread : \(Thread.isMainThread)")
@@ -76,6 +78,12 @@ class TableViewOptimizationVC : BaseVC, UITableViewDelegate, UITableViewDataSour
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
+        // 滑动时用的是UITrackingRunLoopMode，在主线程的kCFRunLoopDefaultMode里添加刷新UI的逻辑，那么就会在滑动停止后，主线程切换到UITrackingRunLoopMode，才会刷新UI。
+        self.performSelector(onMainThread: #selector(reloadData), with: nil, waitUntilDone: false, modes: [RunLoop.Mode.default.rawValue])
+    }
+    
+    @objc func reloadData() {
+        tableView.reloadData()
     }
     
     //MARK: UITableViewDataSource
