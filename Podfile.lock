@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.0)
   - AFNetworking/UIKit (4.0.0):
     - AFNetworking/NSURLSession
+  - BeeHive (1.1.1)
   - bridge (0.0.1):
     - Flutter
   - Flutter (1.0.0)
@@ -32,6 +33,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 4.0)
+  - BeeHive (= 1.1.1)
   - bridge (from `../learnflutter/.ios/.symlinks/plugins/bridge/ios`)
   - Flutter (from `../learnflutter/.ios/Flutter/engine`)
   - FlutterPluginRegistrant (from `../learnflutter/.ios/Flutter/FlutterPluginRegistrant`)
@@ -43,6 +45,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - BeeHive
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -62,6 +65,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
+  BeeHive: 81b697e94e1ae0993eccf5388e195f3fbfe707a6
   bridge: 19e67a95fbc57851d07b6d3ca114a09188599452
   Flutter: bdfa2e8fe0e2880a2c6a58a0b1a8675c262a07af
   FlutterPluginRegistrant: ca3cc5588dba746d8bc6203e85b394c3f5e0a0ee
@@ -70,6 +74,6 @@ SPEC CHECKSUMS:
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: bf9416aaad41677898b97733cd20190ab4deb9a2
+PODFILE CHECKSUM: e5e63099e62069510c62770bbe21bed24a5bf9bb
 
 COCOAPODS: 1.11.3

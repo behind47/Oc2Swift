@@ -19,6 +19,8 @@
 		281B885028901C7D007DD0BE /* AnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B884F28901C7D007DD0BE /* AnimationVC.swift */; };
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
 		2831717C287C17B500018486 /* NSInvocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2831717B287C17B500018486 /* NSInvocationVC.m */; };
+		2862544728C71268007E3163 /* HomeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2862544628C71268007E3163 /* HomeModule.m */; };
+		2862544828C71268007E3163 /* HomeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2862544628C71268007E3163 /* HomeModule.m */; };
 		2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873784B2895087D00977826 /* KeyBoardVC.swift */; };
 		28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A798283B9C6700A6C2EF /* CutomFlutterVC.swift */; };
 		28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A79B283BAC5A00A6C2EF /* native_add.cpp */; };
@@ -108,6 +110,8 @@
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
 		2831717A287C17AC00018486 /* NSInvocationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSInvocationVC.h; sourceTree = "<group>"; };
 		2831717B287C17B500018486 /* NSInvocationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSInvocationVC.m; sourceTree = "<group>"; };
+		2862544528C7125D007E3163 /* HomeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeModule.h; sourceTree = "<group>"; };
+		2862544628C71268007E3163 /* HomeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeModule.m; sourceTree = "<group>"; };
 		2873784B2895087D00977826 /* KeyBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardVC.swift; sourceTree = "<group>"; };
 		28A0A78B283B844D00A6C2EF /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = App.xcframework; path = Flutter/Debug/App.xcframework; sourceTree = "<group>"; };
 		28A0A78F283B844F00A6C2EF /* learnflutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = learnflutter.xcframework; path = Flutter/Debug/learnflutter.xcframework; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				281B884C288F8D4F007DD0BE /* MathFunctionVC.swift */,
+				2862544528C7125D007E3163 /* HomeModule.h */,
+				2862544628C71268007E3163 /* HomeModule.m */,
 			);
 			path = generic;
 			sourceTree = "<group>";
@@ -522,6 +528,7 @@
 				28B0386E2835081C007B3817 /* Frameworks */,
 				28B0386F2835081C007B3817 /* Resources */,
 				4A8E638E6C8D7BAA278A43BD /* [CP] Embed Pods Frameworks */,
+				EF346C79EE8B0649AE9D0BBD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -542,6 +549,7 @@
 				28B038842835081E007B3817 /* Frameworks */,
 				28B038852835081E007B3817 /* Resources */,
 				95BBDBBA9EF8A74F290C92E2 /* [CP] Embed Pods Frameworks */,
+				FE670AC33A7DACB19DA76A27 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -743,6 +751,40 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EF346C79EE8B0649AE9D0BBD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oc2Swift/Pods-Oc2Swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE670AC33A7DACB19DA76A27 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -754,6 +796,7 @@
 				DA159F592886D3DB0041188C /* TabArrView.swift in Sources */,
 				28CC039028AE08B3005497ED /* FastCellList.swift in Sources */,
 				28CBCA1728A0F0BE0050AE67 /* BlkObject.m in Sources */,
+				2862544728C71268007E3163 /* HomeModule.m in Sources */,
 				28CC038E28ADEAB5005497ED /* TableViewOptimizationVC.swift in Sources */,
 				28CBCA1428A0F06A0050AE67 /* BlockVC.m in Sources */,
 				28D77C5F2899420C0076B8A3 /* ImageVC.swift in Sources */,
@@ -805,6 +848,7 @@
 			files = (
 				28090DC728850EF600B91331 /* Oc2SwiftTestsOC.m in Sources */,
 				28B0388C2835081E007B3817 /* Oc2SwiftTests.swift in Sources */,
+				2862544828C71268007E3163 /* HomeModule.m in Sources */,
 				28090DC928850F3300B91331 /* testRuntimeModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
