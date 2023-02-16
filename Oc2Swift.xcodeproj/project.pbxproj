@@ -22,6 +22,7 @@
 		2862544728C71268007E3163 /* HomeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2862544628C71268007E3163 /* HomeModule.m */; };
 		2862544828C71268007E3163 /* HomeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2862544628C71268007E3163 /* HomeModule.m */; };
 		2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873784B2895087D00977826 /* KeyBoardVC.swift */; };
+		289F03CB2924BD1400D183E3 /* FlexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F03CA2924BD1400D183E3 /* FlexVC.swift */; };
 		28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A798283B9C6700A6C2EF /* CutomFlutterVC.swift */; };
 		28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A79B283BAC5A00A6C2EF /* native_add.cpp */; };
 		28AE614F28A3DF9A00AB6739 /* MiddleProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE614E28A3DF9A00AB6739 /* MiddleProxy.m */; };
@@ -113,6 +114,7 @@
 		2862544528C7125D007E3163 /* HomeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeModule.h; sourceTree = "<group>"; };
 		2862544628C71268007E3163 /* HomeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeModule.m; sourceTree = "<group>"; };
 		2873784B2895087D00977826 /* KeyBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardVC.swift; sourceTree = "<group>"; };
+		289F03CA2924BD1400D183E3 /* FlexVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexVC.swift; sourceTree = "<group>"; };
 		28A0A78B283B844D00A6C2EF /* App.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = App.xcframework; path = Flutter/Debug/App.xcframework; sourceTree = "<group>"; };
 		28A0A78F283B844F00A6C2EF /* learnflutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = learnflutter.xcframework; path = Flutter/Debug/learnflutter.xcframework; sourceTree = "<group>"; };
 		28A0A792283B84E900A6C2EF /* Flutter.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Flutter.xcframework; path = ../Pods/Flutter/Flutter.xcframework; sourceTree = "<group>"; };
@@ -279,6 +281,14 @@
 			path = keyboard;
 			sourceTree = "<group>";
 		};
+		289F03C92924BD0800D183E3 /* flex */ = {
+			isa = PBXGroup;
+			children = (
+				289F03CA2924BD1400D183E3 /* FlexVC.swift */,
+			);
+			path = flex;
+			sourceTree = "<group>";
+		};
 		28A0A795283B891E00A6C2EF /* flutterPlugins */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +331,7 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				289F03C92924BD0800D183E3 /* flex */,
 				28CC038A28ADE8E7005497ED /* optimization */,
 				28DEA62428ACE06F00B2299B /* kvo */,
 				28DEA62028AC9C5E00B2299B /* instrument */,
@@ -839,6 +850,7 @@
 				28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */,
 				28F2C5EE2881443900A23E84 /* RelativeScrollVC.swift in Sources */,
 				28FB4AF92871D915008B7BF7 /* AutoLayoutTestVC.swift in Sources */,
+				289F03CB2924BD1400D183E3 /* FlexVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

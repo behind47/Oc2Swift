@@ -100,6 +100,9 @@ public class ViewController: BaseVC {
         viewModels.append(ViewModel.init(title: "KVO", subTitle: "", callback: {
             self.navigationController?.pushViewController(KVOVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "flex布局", subTitle: "", callback: {
+            self.navigationController?.pushViewController(FlexVC(), animated: true)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }
