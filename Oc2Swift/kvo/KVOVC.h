@@ -5,9 +5,9 @@
 //  Created by behind47 on 2022/8/17.
 //
 
-#import "BaseVC_OC.h"
+#import "BaseVC.h"
 
-@interface KVOVC : BaseVC_OC
+@interface KVOVC : BaseVC
 
 @end
 

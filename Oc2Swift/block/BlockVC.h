@@ -5,8 +5,8 @@
 //  Created by behind47 on 2022/8/8.
 //
 
-#import "BaseVC_OC.h"
+#import "BaseVC.h"
 
-@interface BlockVC : BaseVC_OC
+@interface BlockVC : BaseVC
 
 @end

@@ -5,8 +5,8 @@
 //  Created by behind47 on 2022/9/6.
 //
 
-#import "BaseVC_OC.h"
+#import "BaseVC.h"
 
-@interface HomeModule : BaseVC_OC
+@interface HomeModule : BaseVC
 
 @end

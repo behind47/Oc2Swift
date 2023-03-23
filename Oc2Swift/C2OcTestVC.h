@@ -6,8 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "base/BaseVC_OC.h"
+#import "base/BaseVC.h"
 
-@interface C2OcTestVC : BaseVC_OC
+@interface C2OcTestVC : BaseVC
 
 @end

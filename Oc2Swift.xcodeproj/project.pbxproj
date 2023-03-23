@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28090DC2288505FA00B91331 /* BaseVC_OC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC1288505FA00B91331 /* BaseVC_OC.m */; };
+		28090DC2288505FA00B91331 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC1288505FA00B91331 /* BaseVC.m */; };
 		28090DC4288506B000B91331 /* RuntimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC3288506B000B91331 /* RuntimeVC.m */; };
 		28090DC728850EF600B91331 /* Oc2SwiftTestsOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC628850EF600B91331 /* Oc2SwiftTestsOC.m */; };
 		28090DC928850F3300B91331 /* testRuntimeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28090DC828850F3300B91331 /* testRuntimeModel.m */; };
@@ -49,7 +49,6 @@
 		28F2C5EB288130EC00A23E84 /* FrameBoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2C5EA288130EC00A23E84 /* FrameBoundVC.swift */; };
 		28F2C5EE2881443900A23E84 /* RelativeScrollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2C5ED2881443900A23E84 /* RelativeScrollVC.swift */; };
 		28F58991289BF9D900773AFC /* OperationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F58990289BF9D900773AFC /* OperationVC.m */; };
-		28FB4AF428717B66008B7BF7 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AF328717B66008B7BF7 /* BaseVC.swift */; };
 		28FB4AF62871940A008B7BF7 /* LayoutTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AF52871940A008B7BF7 /* LayoutTestVC.swift */; };
 		28FB4AF92871D915008B7BF7 /* AutoLayoutTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AF82871D915008B7BF7 /* AutoLayoutTestVC.swift */; };
 		28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AFA2873DE34008B7BF7 /* AutoTableHeaderVC.swift */; };
@@ -88,8 +87,8 @@
 
 /* Begin PBXFileReference section */
 		28090DBE288505D500B91331 /* RuntimeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeVC.h; sourceTree = "<group>"; };
-		28090DC0288505F000B91331 /* BaseVC_OC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC_OC.h; sourceTree = "<group>"; };
-		28090DC1288505FA00B91331 /* BaseVC_OC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC_OC.m; sourceTree = "<group>"; };
+		28090DC0288505F000B91331 /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		28090DC1288505FA00B91331 /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		28090DC3288506B000B91331 /* RuntimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeVC.m; sourceTree = "<group>"; };
 		28090DC528850EF600B91331 /* Oc2SwiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2SwiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		28090DC628850EF600B91331 /* Oc2SwiftTestsOC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Oc2SwiftTestsOC.m; sourceTree = "<group>"; };
@@ -155,7 +154,6 @@
 		28F2C5ED2881443900A23E84 /* RelativeScrollVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelativeScrollVC.swift; sourceTree = "<group>"; };
 		28F5898F289BF9D200773AFC /* OperationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OperationVC.h; sourceTree = "<group>"; };
 		28F58990289BF9D900773AFC /* OperationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OperationVC.m; sourceTree = "<group>"; };
-		28FB4AF328717B66008B7BF7 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		28FB4AF52871940A008B7BF7 /* LayoutTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTestVC.swift; sourceTree = "<group>"; };
 		28FB4AF82871D915008B7BF7 /* AutoLayoutTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutTestVC.swift; sourceTree = "<group>"; };
 		28FB4AFA2873DE34008B7BF7 /* AutoTableHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoTableHeaderVC.swift; sourceTree = "<group>"; };
@@ -209,9 +207,8 @@
 		28090DBF288505E500B91331 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				28FB4AF328717B66008B7BF7 /* BaseVC.swift */,
-				28090DC0288505F000B91331 /* BaseVC_OC.h */,
-				28090DC1288505FA00B91331 /* BaseVC_OC.m */,
+				28090DC0288505F000B91331 /* BaseVC.h */,
+				28090DC1288505FA00B91331 /* BaseVC.m */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -814,7 +811,6 @@
 				2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */,
 				28B038A528350888007B3817 /* CustomNavVC.swift in Sources */,
 				28B038752835081C007B3817 /* AppDelegate.swift in Sources */,
-				28FB4AF428717B66008B7BF7 /* BaseVC.swift in Sources */,
 				280A48E3289AF3F2005DE4AE /* NSURLSessionVC.m in Sources */,
 				28090DCC288522AA00B91331 /* RuntimeModel.m in Sources */,
 				2831717C287C17B500018486 /* NSInvocationVC.m in Sources */,
@@ -831,7 +827,7 @@
 				28F58991289BF9D900773AFC /* OperationVC.m in Sources */,
 				28B038772835081C007B3817 /* SceneDelegate.swift in Sources */,
 				281B885028901C7D007DD0BE /* AnimationVC.swift in Sources */,
-				28090DC2288505FA00B91331 /* BaseVC_OC.m in Sources */,
+				28090DC2288505FA00B91331 /* BaseVC.m in Sources */,
 				28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */,
 				28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */,
 				281B884D288F8D4F007DD0BE /* MathFunctionVC.swift in Sources */,

@@ -5,8 +5,8 @@
 //  Created by behind47 on 2022/8/17.
 //
 
-#import "BaseVC_OC.h"
+#import "BaseVC.h"
 
-@interface LeaksVC : BaseVC_OC
+@interface LeaksVC : BaseVC
 
 @end

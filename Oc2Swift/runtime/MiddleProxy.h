@@ -5,7 +5,7 @@
 //  Created by behind47 on 2022/8/10.
 //
 
-#import "BaseVC_OC.h"
+#import "BaseVC.h"
 #import "RuntimeVC.h"
 
 @interface MiddleProxy : NSProxy // NSProxy是专门用来做消息转发的，比NSObject效率更高

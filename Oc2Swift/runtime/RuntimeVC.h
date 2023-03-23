@@ -11,8 +11,8 @@
 
 #endif /* RuntimeVC_h */
 
-#import "BaseVC_OC.h"
+#import "BaseVC.h"
 
-@interface RuntimeVC : BaseVC_OC
+@interface RuntimeVC : BaseVC
 - (void)timerAction;
 @end
