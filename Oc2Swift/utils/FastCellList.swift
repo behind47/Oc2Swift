@@ -11,10 +11,12 @@ import Foundation
 struct ViewModel {
     var title : String
     var subTitle : String
-    var callback : (() -> Void)?
+    var identifier : String = "defaultCell"
+    var callback : (() -> Void)? = nil
+    var switchBlock : ((_ isOn: Bool) -> Void)? = nil
 }
 
-class FastCellList : UIView, UITableViewDelegate, UITableViewDataSource {
+class FastCellList : UIView {
     var viewModels : [ViewModel]
     let tableView : UITableView
     
@@ -32,7 +34,8 @@ class FastCellList : UIView, UITableViewDelegate, UITableViewDataSource {
     func commonInit() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "defaultCell")
+        tableView.register(BaseCell.self, forCellReuseIdentifier: "defaultCell")
+        tableView.register(SwitchCell.self, forCellReuseIdentifier: "SwitchCell")
         self.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(self)
@@ -43,7 +46,17 @@ class FastCellList : UIView, UITableViewDelegate, UITableViewDataSource {
         viewModels = vms
         tableView.reloadData()
     }
-    
+}
+
+extension FastCellList : UITableViewDelegate {
+    // MARK: UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModels[indexPath.row].callback?()
+    }
+}
+
+extension FastCellList : UITableViewDataSource {
     //MARK: UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -54,14 +67,9 @@ class FastCellList : UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath) as UITableViewCell
-        cell.textLabel?.text = viewModels[indexPath.row].title
-        cell.detailTextLabel?.text = viewModels[indexPath.row].subTitle
-        return cell
-    }
-    
-    //MARK: UITableViewDelegate
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModels[indexPath.row].callback.unsafelyUnwrapped()
+        let model = viewModels[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: model.identifier, for: indexPath) as! BaseCell
+        cell.updateWith(model: model)
+        return cell as UITableViewCell
     }
 }

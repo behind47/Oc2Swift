@@ -36,6 +36,10 @@
 		28B038962835081E007B3817 /* Oc2SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038952835081E007B3817 /* Oc2SwiftUITests.swift */; };
 		28B038982835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */; };
 		28B038A528350888007B3817 /* CustomNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038A428350888007B3817 /* CustomNavVC.swift */; };
+		28B9C7DE29CC214A00347117 /* DebugKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7DD29CC214A00347117 /* DebugKitVC.swift */; };
+		28B9C7E029CC21E200347117 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7DF29CC21E200347117 /* SwitchCell.swift */; };
+		28B9C7E329CC3A1200347117 /* DebugIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7E229CC3A1200347117 /* DebugIcon.swift */; };
+		28B9C7E529CC409D00347117 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7E429CC409D00347117 /* BaseCell.swift */; };
 		28CBCA1428A0F06A0050AE67 /* BlockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CBCA1328A0F06A0050AE67 /* BlockVC.m */; };
 		28CBCA1728A0F0BE0050AE67 /* BlkObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CBCA1628A0F0BE0050AE67 /* BlkObject.m */; };
 		28CC038C28ADE8F8005497ED /* UIOptimizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC038B28ADE8F8005497ED /* UIOptimizationVC.swift */; };
@@ -136,6 +140,10 @@
 		28B038952835081E007B3817 /* Oc2SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oc2SwiftUITests.swift; sourceTree = "<group>"; };
 		28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oc2SwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		28B038A428350888007B3817 /* CustomNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavVC.swift; sourceTree = "<group>"; };
+		28B9C7DD29CC214A00347117 /* DebugKitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugKitVC.swift; sourceTree = "<group>"; };
+		28B9C7DF29CC21E200347117 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		28B9C7E229CC3A1200347117 /* DebugIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugIcon.swift; sourceTree = "<group>"; };
+		28B9C7E429CC409D00347117 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		28CBCA1228A0F03D0050AE67 /* BlockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockVC.h; sourceTree = "<group>"; };
 		28CBCA1328A0F06A0050AE67 /* BlockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockVC.m; sourceTree = "<group>"; };
 		28CBCA1528A0F0A10050AE67 /* BlkObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlkObject.h; sourceTree = "<group>"; };
@@ -328,6 +336,8 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				28B9C7E129CC255200347117 /* cell */,
+				28B9C7DC29CC213D00347117 /* debugkit */,
 				289F03C92924BD0800D183E3 /* flex */,
 				28CC038A28ADE8E7005497ED /* optimization */,
 				28DEA62428ACE06F00B2299B /* kvo */,
@@ -383,6 +393,24 @@
 				28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */,
 			);
 			path = Oc2SwiftUITests;
+			sourceTree = "<group>";
+		};
+		28B9C7DC29CC213D00347117 /* debugkit */ = {
+			isa = PBXGroup;
+			children = (
+				28B9C7DD29CC214A00347117 /* DebugKitVC.swift */,
+				28B9C7E229CC3A1200347117 /* DebugIcon.swift */,
+			);
+			path = debugkit;
+			sourceTree = "<group>";
+		};
+		28B9C7E129CC255200347117 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				28B9C7DF29CC21E200347117 /* SwitchCell.swift */,
+				28B9C7E429CC409D00347117 /* BaseCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		28CBCA1128A0F0250050AE67 /* block */ = {
@@ -810,6 +838,7 @@
 				28D77C5F2899420C0076B8A3 /* ImageVC.swift in Sources */,
 				2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */,
 				28B038A528350888007B3817 /* CustomNavVC.swift in Sources */,
+				28B9C7E029CC21E200347117 /* SwitchCell.swift in Sources */,
 				28B038752835081C007B3817 /* AppDelegate.swift in Sources */,
 				280A48E3289AF3F2005DE4AE /* NSURLSessionVC.m in Sources */,
 				28090DCC288522AA00B91331 /* RuntimeModel.m in Sources */,
@@ -827,6 +856,7 @@
 				28F58991289BF9D900773AFC /* OperationVC.m in Sources */,
 				28B038772835081C007B3817 /* SceneDelegate.swift in Sources */,
 				281B885028901C7D007DD0BE /* AnimationVC.swift in Sources */,
+				28B9C7E529CC409D00347117 /* BaseCell.swift in Sources */,
 				28090DC2288505FA00B91331 /* BaseVC.m in Sources */,
 				28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */,
 				28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */,
@@ -837,9 +867,11 @@
 				28AE614F28A3DF9A00AB6739 /* MiddleProxy.m in Sources */,
 				28DEA62728ACE08800B2299B /* KVOVC.m in Sources */,
 				2815963A28B3848E0015D720 /* RouterManager.swift in Sources */,
+				28B9C7DE29CC214A00347117 /* DebugKitVC.swift in Sources */,
 				DA159F4E2886AAEC0041188C /* RtmCarColor.m in Sources */,
 				DA159F4C2886AA070041188C /* RtmCarType.m in Sources */,
 				DA159F4A288689EF0041188C /* RtmCar.m in Sources */,
+				28B9C7E329CC3A1200347117 /* DebugIcon.swift in Sources */,
 				28CC038C28ADE8F8005497ED /* UIOptimizationVC.swift in Sources */,
 				28090DCF288523C400B91331 /* RuntimeModel+Property.m in Sources */,
 				28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */,

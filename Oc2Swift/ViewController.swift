@@ -103,6 +103,9 @@ public class ViewController: BaseVC {
         viewModels.append(ViewModel.init(title: "flex布局", subTitle: "", callback: {
             self.navigationController?.pushViewController(FlexVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "DebugKit", subTitle: "", identifier: "SwitchCell", switchBlock: { (isOn: Bool) in
+            DebugIcon.shared.isHidden = !isOn
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }
