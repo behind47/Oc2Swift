@@ -9,6 +9,7 @@ import Foundation
 
 class DebugIcon : UIView {
     static let shared = DebugIcon()
+    var debugMenu : DebugMenu!
     
     private init() {
         super.init(frame: CGRect.zero)
@@ -18,9 +19,20 @@ class DebugIcon : UIView {
         topView.bringSubviewToFront(self) // 把self放在window上，以便全局展示
         backgroundColor = .gray
         isHidden = true
+        
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showDebugMenu)))
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Event
+    @objc func showDebugMenu() {
+        if debugMenu == nil {
+            debugMenu = DebugMenu()
+        }
+        debugMenu.modalPresentationStyle = .fullScreen
+        topViewController()?.present(debugMenu, animated: true)
     }
 }

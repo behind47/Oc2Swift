@@ -36,7 +36,7 @@
 		28B038962835081E007B3817 /* Oc2SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038952835081E007B3817 /* Oc2SwiftUITests.swift */; };
 		28B038982835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */; };
 		28B038A528350888007B3817 /* CustomNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038A428350888007B3817 /* CustomNavVC.swift */; };
-		28B9C7DE29CC214A00347117 /* DebugKitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7DD29CC214A00347117 /* DebugKitVC.swift */; };
+		28B9C7DE29CC214A00347117 /* DebugMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7DD29CC214A00347117 /* DebugMenu.swift */; };
 		28B9C7E029CC21E200347117 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7DF29CC21E200347117 /* SwitchCell.swift */; };
 		28B9C7E329CC3A1200347117 /* DebugIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7E229CC3A1200347117 /* DebugIcon.swift */; };
 		28B9C7E529CC409D00347117 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7E429CC409D00347117 /* BaseCell.swift */; };
@@ -140,7 +140,7 @@
 		28B038952835081E007B3817 /* Oc2SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oc2SwiftUITests.swift; sourceTree = "<group>"; };
 		28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oc2SwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		28B038A428350888007B3817 /* CustomNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavVC.swift; sourceTree = "<group>"; };
-		28B9C7DD29CC214A00347117 /* DebugKitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugKitVC.swift; sourceTree = "<group>"; };
+		28B9C7DD29CC214A00347117 /* DebugMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenu.swift; sourceTree = "<group>"; };
 		28B9C7DF29CC21E200347117 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		28B9C7E229CC3A1200347117 /* DebugIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugIcon.swift; sourceTree = "<group>"; };
 		28B9C7E429CC409D00347117 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
@@ -398,7 +398,7 @@
 		28B9C7DC29CC213D00347117 /* debugkit */ = {
 			isa = PBXGroup;
 			children = (
-				28B9C7DD29CC214A00347117 /* DebugKitVC.swift */,
+				28B9C7DD29CC214A00347117 /* DebugMenu.swift */,
 				28B9C7E229CC3A1200347117 /* DebugIcon.swift */,
 			);
 			path = debugkit;
@@ -867,7 +867,7 @@
 				28AE614F28A3DF9A00AB6739 /* MiddleProxy.m in Sources */,
 				28DEA62728ACE08800B2299B /* KVOVC.m in Sources */,
 				2815963A28B3848E0015D720 /* RouterManager.swift in Sources */,
-				28B9C7DE29CC214A00347117 /* DebugKitVC.swift in Sources */,
+				28B9C7DE29CC214A00347117 /* DebugMenu.swift in Sources */,
 				DA159F4E2886AAEC0041188C /* RtmCarColor.m in Sources */,
 				DA159F4C2886AA070041188C /* RtmCarType.m in Sources */,
 				DA159F4A288689EF0041188C /* RtmCar.m in Sources */,
