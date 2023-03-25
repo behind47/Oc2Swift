@@ -19,6 +19,7 @@
 		281B885028901C7D007DD0BE /* AnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B884F28901C7D007DD0BE /* AnimationVC.swift */; };
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
 		2831717C287C17B500018486 /* NSInvocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2831717B287C17B500018486 /* NSInvocationVC.m */; };
+		2839EBAD29CE92EF00C518EA /* TouchEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839EBAC29CE92EF00C518EA /* TouchEventVC.swift */; };
 		2862544728C71268007E3163 /* HomeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2862544628C71268007E3163 /* HomeModule.m */; };
 		2862544828C71268007E3163 /* HomeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2862544628C71268007E3163 /* HomeModule.m */; };
 		2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873784B2895087D00977826 /* KeyBoardVC.swift */; };
@@ -114,6 +115,7 @@
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
 		2831717A287C17AC00018486 /* NSInvocationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSInvocationVC.h; sourceTree = "<group>"; };
 		2831717B287C17B500018486 /* NSInvocationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSInvocationVC.m; sourceTree = "<group>"; };
+		2839EBAC29CE92EF00C518EA /* TouchEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEventVC.swift; sourceTree = "<group>"; };
 		2862544528C7125D007E3163 /* HomeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeModule.h; sourceTree = "<group>"; };
 		2862544628C71268007E3163 /* HomeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeModule.m; sourceTree = "<group>"; };
 		2873784B2895087D00977826 /* KeyBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardVC.swift; sourceTree = "<group>"; };
@@ -278,6 +280,14 @@
 			path = invocation;
 			sourceTree = "<group>";
 		};
+		2839EBAB29CE92E500C518EA /* event */ = {
+			isa = PBXGroup;
+			children = (
+				2839EBAC29CE92EF00C518EA /* TouchEventVC.swift */,
+			);
+			path = event;
+			sourceTree = "<group>";
+		};
 		2873784A2895035500977826 /* keyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +346,7 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				2839EBAB29CE92E500C518EA /* event */,
 				28B9C7E129CC255200347117 /* cell */,
 				28B9C7DC29CC213D00347117 /* debugkit */,
 				289F03C92924BD0800D183E3 /* flex */,
@@ -877,6 +888,7 @@
 				28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */,
 				28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */,
 				28F2C5EE2881443900A23E84 /* RelativeScrollVC.swift in Sources */,
+				2839EBAD29CE92EF00C518EA /* TouchEventVC.swift in Sources */,
 				28FB4AF92871D915008B7BF7 /* AutoLayoutTestVC.swift in Sources */,
 				289F03CB2924BD1400D183E3 /* FlexVC.swift in Sources */,
 			);

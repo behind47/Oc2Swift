@@ -106,6 +106,9 @@ public class ViewController: BaseVC {
         viewModels.append(ViewModel.init(title: "DebugKit", subTitle: "", identifier: "SwitchCell", switchBlock: { (isOn: Bool) in
             DebugIcon.shared.isHidden = !isOn
         }))
+        viewModels.append(ViewModel.init(title: "触摸事件传递流程", subTitle: "", callback: {
+            self.navigationController?.pushViewController(TouchEventVC(), animated: true)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }
