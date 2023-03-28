@@ -22,6 +22,22 @@
 /// 2. 如果点击在view外，pointInside会返回false，表示点击不在view内。注意，如果父视图返回false，就不调用子视图的方法了。于是hitTest返回nil，表示view不响应点击。
 /// 3.如果子视图在父视图外，点击子视图，父视图会pointInside返回false，不传递到子视图，于是父视图hitTest返回nil，不接受触摸事件。
 /// 4.如果两个同级不同层视图，一个在另一个上面，那点击上面那个视图，会调用它的pointInside返回true，然后调用hitTest返回自身，接收点击事件；如果点击下面那个视图，上面那个视图会pointInside返回false，hitTest返回nil，不接受点击事件，下面那个视图会pointInside返回true，然后调用hitTest返回自身，接收点击事件。
+///
+/// 注意⚠️⚠️: 点击一次会调用两次hitTest与pointInside，是因为点击一次包含_按下_与_抬起_两个触摸操作。
+///
+/// 触摸事件响应的流程：
+/// 问题：
+/// 1. 传递顺序是怎样的？
+/// 2. 触摸事件在哪个方法里处理？
+///
+/// 结论：
+/// 1. 自顶向下传递。
+/// 2. touchesBegan传递时，路径上的UIResponder都调用touchesBegan。
+/// 3. touchesMoved传递时，路径上的UIResponder都调用touchesMoved。
+/// 4. touchesEnded传递时，路径上的UIResponder都调用touchesEnded。
+/// 5. 重写touchesBegan方法，则不会再将UIEvent传递给下面的UIResponder。
+/// 6. 重写touchesMoved方法，仍然会将UIEvent传递给下面的UIResponder，但是调用顺序会变
+/// 7. 重写touchesEnded方法，仍然会将UIEvent传递给下面的UIResponder，但是调用顺序会变
 
 import Foundation
 
@@ -124,6 +140,24 @@ private class SubView : UIView {
         print("⚠️⚠️\(Self.self) \(identifier ?? "") \(#function) \(res)")
         return res
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("🐑🐑 pre \(Self.self) \(identifier ?? "") \(#function)")
+        super.touchesBegan(touches, with: event)
+        print("🐑🐑 post \(Self.self) \(identifier ?? "") \(#function)")
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("🐑🐑 pre \(Self.self) \(identifier ?? "") \(#function)")
+        super.touchesMoved(touches, with: event)
+        print("🐑🐑 post \(Self.self) \(identifier ?? "") \(#function)")
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("🐑🐑 pre \(Self.self) \(identifier ?? "") \(#function)")
+        super.touchesEnded(touches, with: event)
+        print("🐑🐑 post \(Self.self) \(identifier ?? "") \(#function)")
+    }
 }
 
 private class SuperView : UIView {
@@ -142,6 +176,39 @@ private class SuperView : UIView {
         print("⚠️⚠️\(Self.self) \(identifier ?? "") \(#function) \(res)")
         return res
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("🐑🐑 pre \(Self.self) \(identifier ?? "") \(#function)")
+        // 重写touchesBegan方法，则不会再将UIEvent传递给下面的UIResponder。
+        super.touchesBegan(touches, with: event)
+        print("🐑🐑 post \(Self.self) \(identifier ?? "") \(#function)")
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("🐑🐑 pre \(Self.self) \(identifier ?? "") \(#function)")
+//        重写touchesMoved方法，仍然会将UIEvent传递给下面的UIResponder，但是调用顺序会变成
+//        🐑🐑 pre SubView subView touchesMoved(_:with:)
+//        🐑🐑 pre SuperView superView touchesMoved(_:with:)
+//        🐑🐑 post SuperView superView touchesMoved(_:with:)
+//        🐑🐑 post SubView subView touchesMoved(_:with:)
+//        🐑🐑 pre GrandSuperView grandSuperView touchesMoved(_:with:)
+//        🐑🐑 post GrandSuperView grandSuperView touchesMoved(_:with:)
+        super.touchesMoved(touches, with: event)
+        print("🐑🐑 post \(Self.self) \(identifier ?? "") \(#function)")
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("🐑🐑 pre \(Self.self) \(identifier ?? "") \(#function)")
+//        重写touchesEnded方法，仍然会将UIEvent传递给下面的UIResponder，但是调用顺序会变成
+//        🐑🐑 pre SubView subView touchesEnded(_:with:)
+//        🐑🐑 pre SuperView superView touchesEnded(_:with:)
+//        🐑🐑 post SuperView superView touchesEnded(_:with:)
+//        🐑🐑 post SubView subView touchesEnded(_:with:)
+//        🐑🐑 pre GrandSuperView grandSuperView touchesEnded(_:with:)
+//        🐑🐑 post GrandSuperView grandSuperView touchesEnded(_:with:)
+        super.touchesEnded(touches, with: event)
+        print("🐑🐑 post \(Self.self) \(identifier ?? "") \(#function)")
+    }
 }
 
 private class GrandSuperView : UIView {
@@ -159,6 +226,24 @@ private class GrandSuperView : UIView {
         let res = super.point(inside: point, with: event)
         print("⚠️⚠️\(Self.self) \(identifier ?? "") \(#function) \(res)")
         return res
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("🐑🐑 pre \(Self.self) \(identifier ?? "") \(#function)")
+        super.touchesBegan(touches, with: event)
+        print("🐑🐑 post \(Self.self) \(identifier ?? "") \(#function)")
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("🐑🐑 pre \(Self.self) \(identifier ?? "") \(#function)")
+        super.touchesMoved(touches, with: event)
+        print("🐑🐑 post \(Self.self) \(identifier ?? "") \(#function)")
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("🐑🐑 pre \(Self.self) \(identifier ?? "") \(#function)")
+        super.touchesEnded(touches, with: event)
+        print("🐑🐑 post \(Self.self) \(identifier ?? "") \(#function)")
     }
 }
 
