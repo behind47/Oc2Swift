@@ -38,14 +38,11 @@ public class ViewController: BaseVC {
         viewModels.append(ViewModel.init(title: "native add", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(C2OcTestVC(), animated: true)
         }))
-        viewModels.append(ViewModel.init(title: "iOS布局流程", subTitle: "测试", callback: {
-            self.navigationController?.pushViewController(LayoutTestVC(), animated: true)
+        viewModels.append(ViewModel.init(title: "UI布局", subTitle: "测试", callback: {
+            self.navigationController?.pushViewController(LayoutMenuVC(), animated: true)
         }))
-        viewModels.append(ViewModel.init(title: "iOS约束布局流程", subTitle: "测试", callback: {
-            self.navigationController?.pushViewController(AutoLayoutTestVC(), animated: true)
-        }))
-        viewModels.append(ViewModel.init(title: "iOS约束布局tableHeaderView高度自适应", subTitle: "测试", callback: {
-            self.navigationController?.pushViewController(AutoTableHeaderVC(), animated: true)
+        viewModels.append(ViewModel.init(title: "UI容器", subTitle: "测试", callback: {
+            self.navigationController?.pushViewController(ContainerMenuVC(), animated: true)
         }))
         viewModels.append(ViewModel.init(title: "UI优化", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(UIOptimizationVC(), animated: true)
@@ -56,28 +53,11 @@ public class ViewController: BaseVC {
         viewModels.append(ViewModel.init(title: "invocation测试", subTitle: "反射", callback: {
             self.navigationController?.pushViewController(NSInvocationVC(), animated: true)
         }))
-        viewModels.append(ViewModel.init(title: "frame-bound测试", subTitle: "修改bound.origin", callback: {
-            self.navigationController?.pushViewController(FrameBoundVC(), animated: true)
-        }))
-        viewModels.append(ViewModel.init(title: "scrollView测试", subTitle: "结合masonry实现滚动", callback: {
-            self.navigationController?.pushViewController(RelativeScrollVC(), animated: true)
-        }))
-        viewModels.append(ViewModel.init(title: "用scrollView做一个tabVCs", subTitle: "", callback: {
-            self.navigationController?.pushViewController(TabVCs(), animated: true)
-        }))
         viewModels.append(ViewModel.init(title: "runtime测试", subTitle: "", callback: {
             self.navigationController?.pushViewController(RuntimeVC(), animated: true)
         }))
-        viewModels.append(ViewModel.init(title: "pageVC测试", subTitle: "", callback: {
-            self.navigationController?.pushViewController(MyPageControllerVC(), animated: true)
-        }))
         viewModels.append(ViewModel.init(title: "泛型测试", subTitle: "", callback: {
             self.navigationController?.pushViewController(MathFunctionVC(), animated: true)
-        }))
-        viewModels.append(ViewModel.init(title: "导航页NavigationVC", subTitle: "", callback: {
-            let navigationVC = NavigationVC(rootViewController: HomePage())
-//            navigationVC.viewControllers = [HomePage(), Personal(), Contacts()] // 可以设置stack里的VCs，像这样，present之后最上层显示的就是Contacts
-            self.present(navigationVC, animated: true)
         }))
         viewModels.append(ViewModel.init(title: "键盘", subTitle: "", callback: {
             self.navigationController?.pushViewController(KeyBoardVC(), animated: true)
@@ -99,9 +79,6 @@ public class ViewController: BaseVC {
         }))
         viewModels.append(ViewModel.init(title: "KVO", subTitle: "", callback: {
             self.navigationController?.pushViewController(KVOVC(), animated: true)
-        }))
-        viewModels.append(ViewModel.init(title: "flex布局", subTitle: "", callback: {
-            self.navigationController?.pushViewController(FlexVC(), animated: true)
         }))
         viewModels.append(ViewModel.init(title: "DebugKit", subTitle: "", identifier: "SwitchCell", switchBlock: { (isOn: Bool) in
             DebugIcon.shared.isHidden = !isOn
