@@ -33,6 +33,7 @@ class DebugMenu : BaseVC {
     func commonInit() {
         viewModels.append(ViewModel.init(title: "组件检查工具", subTitle: "测试", callback: {
             self.dismiss(animated: true)
+            FocusIcon.shared.isHidden = false
         }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }

@@ -20,6 +20,8 @@
 		281B884D288F8D4F007DD0BE /* MathFunctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B884C288F8D4F007DD0BE /* MathFunctionVC.swift */; };
 		281B885028901C7D007DD0BE /* AnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B884F28901C7D007DD0BE /* AnimationVC.swift */; };
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
+		282C7E4A29DAF6E200BC91C0 /* FocusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282C7E4929DAF6E200BC91C0 /* FocusIcon.swift */; };
+		282C7E4C29DEADE900BC91C0 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 282C7E4B29DEADE900BC91C0 /* close.png */; };
 		2831717C287C17B500018486 /* NSInvocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2831717B287C17B500018486 /* NSInvocationVC.m */; };
 		2839EBAD29CE92EF00C518EA /* TouchEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839EBAC29CE92EF00C518EA /* TouchEventVC.swift */; };
 		2862544728C71268007E3163 /* HomeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2862544628C71268007E3163 /* HomeModule.m */; };
@@ -117,6 +119,8 @@
 		2827C2D32835F46500330685 /* C2OcTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2OcTestVC.h; sourceTree = "<group>"; };
 		2827C2D42835F47000330685 /* Oc2Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
+		282C7E4929DAF6E200BC91C0 /* FocusIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusIcon.swift; sourceTree = "<group>"; };
+		282C7E4B29DEADE900BC91C0 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		2831717A287C17AC00018486 /* NSInvocationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSInvocationVC.h; sourceTree = "<group>"; };
 		2831717B287C17B500018486 /* NSInvocationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSInvocationVC.m; sourceTree = "<group>"; };
 		2839EBAC29CE92EF00C518EA /* TouchEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEventVC.swift; sourceTree = "<group>"; };
@@ -405,6 +409,7 @@
 			children = (
 				28B9C7DD29CC214A00347117 /* DebugMenu.swift */,
 				28B9C7E229CC3A1200347117 /* DebugIcon.swift */,
+				282C7E4929DAF6E200BC91C0 /* FocusIcon.swift */,
 			);
 			path = debugkit;
 			sourceTree = "<group>";
@@ -450,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				28D77C612899453D0076B8A3 /* cat.webp */,
+				282C7E4B29DEADE900BC91C0 /* close.png */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -677,6 +683,7 @@
 				28D77C622899453D0076B8A3 /* cat.webp in Resources */,
 				28B038812835081E007B3817 /* LaunchScreen.storyboard in Resources */,
 				28B0387E2835081E007B3817 /* Assets.xcassets in Resources */,
+				282C7E4C29DEADE900BC91C0 /* close.png in Resources */,
 				28B0387C2835081C007B3817 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -862,6 +869,7 @@
 				28DB903B28904F5A00F2F141 /* NavigationVC.swift in Sources */,
 				2803BD2B29D3E64800BCE031 /* ContainerMenuVC.swift in Sources */,
 				DA159F5E288AA75B0041188C /* MyPageControllerVC.swift in Sources */,
+				282C7E4A29DAF6E200BC91C0 /* FocusIcon.swift in Sources */,
 				28F2C5EB288130EC00A23E84 /* FrameBoundVC.swift in Sources */,
 				28F58991289BF9D900773AFC /* OperationVC.m in Sources */,
 				28B038772835081C007B3817 /* SceneDelegate.swift in Sources */,
