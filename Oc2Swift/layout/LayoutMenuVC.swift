@@ -49,6 +49,9 @@ class LayoutMenuVC: BaseVC {
         viewModels.append(ViewModel.init(title: "flex布局", subTitle: "", callback: {
             self.navigationController?.pushViewController(FlexVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "坐标系", subTitle: "", callback: {
+            self.navigationController?.pushViewController(CordinateVC(), animated: true)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }
