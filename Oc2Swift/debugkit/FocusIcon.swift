@@ -52,13 +52,14 @@ class FocusIcon : UIView {
         focusPanel.snp.makeConstraints { make in
             make.left.equalTo(self).offset(20)
             make.right.bottom.equalTo(self).offset(-20)
-            make.height.equalTo(100)
         }
         
         focusPanel.addSubview(focusLabel)
+        focusPanel.setContentHuggingPriority(UILayoutPriority.required, for: NSLayoutConstraint.Axis.vertical)
         focusLabel.snp.makeConstraints { make in
             make.left.top.equalTo(focusPanel).offset(10)
             make.right.bottom.equalTo(focusPanel).offset(-10)
+            make.height.equalTo(focusLabel)
         }
         
         focusPanel.addSubview(closeBtn)
@@ -126,8 +127,21 @@ class FocusIcon : UIView {
     
     /// point是否在view里
     func point(point: CGPoint, inside view: UIView) -> Bool {
-        let x = view.frame.origin.x
-        let y = view.frame.origin.y
+        /// 先把view的坐标换算到point所在坐标系，即window坐标系
+        var x = view.frame.origin.x
+        var y = view.frame.origin.y
+        /// 递归到Window，计算view左上角相对于window左上角的偏移量
+        var tmpView = view.superview
+        while !(tmpView?.isKind(of: UIWindow.self) ?? true) {
+            x += tmpView!.frame.origin.x
+            y += tmpView!.frame.origin.y
+            if tmpView!.isKind(of: UIScrollView.self) {
+                let tmpScrollView = tmpView as! UIScrollView
+                x -= tmpScrollView.contentOffset.x
+                y -= tmpScrollView.contentOffset.y
+            }
+            tmpView = tmpView!.superview
+        }
         if x < point.x && x + view.frame.size.width > point.x
             && y < point.y && y + view.frame.size.height > point.y {
             return true
@@ -137,8 +151,10 @@ class FocusIcon : UIView {
     
     /// 更新显示的信息
     func updateDetail() {
-        targetView?.backgroundColor = .systemPink // TODO: 用边框代替背景色
-        focusLabel.text = "origin: \(targetView?.frame.origin.x ?? -1) \(targetView?.frame.origin.y ?? -1)"
+        guard let view = targetView else {return}
+        view.backgroundColor = .systemPink // TODO: 用边框代替背景色
+        focusLabel.text = "\(view.self)"
+        focusLabel.numberOfLines = 0
     }
     
 }
