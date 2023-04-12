@@ -14,6 +14,11 @@ import Foundation
 import SwiftUI
 import SnapKit
 
+enum FocusIconType {
+    case color // 取色器
+    case component // 组件检查器
+}
+
 /// 找到FocusIcon定位坐标上，最上层的UIView，最上层包含层与级两个概念
 class FocusIcon : UIView {
     static let shared = FocusIcon()
@@ -23,6 +28,7 @@ class FocusIcon : UIView {
     var focusLabel : UILabel
     var targetView : UIView?
     let closeBtn : UIButton
+    var type : FocusIconType = FocusIconType.color
     
     private init() {
         focusView = UIView()
@@ -59,7 +65,8 @@ class FocusIcon : UIView {
         focusLabel.snp.makeConstraints { make in
             make.left.top.equalTo(focusPanel).offset(10)
             make.right.bottom.equalTo(focusPanel).offset(-10)
-            make.height.equalTo(focusLabel)
+            make.height.greaterThanOrEqualTo(focusLabel)
+            make.height.greaterThanOrEqualTo(100)
         }
         
         focusPanel.addSubview(closeBtn)
@@ -104,21 +111,25 @@ class FocusIcon : UIView {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let topView = UIApplication.shared.windows.first else {return}
-        var tmpView : UIView = topView
-        /// 从根节点开始，遍历每一个层级，找到包含point的层级最高的view
-        var array = Array<UIView>()
-        array.append(tmpView)
-        while array.count > 0 {
-            tmpView = array.popLast()!
-            tmpView.subviews.forEach { view in
-                if point(point: focusView.center, inside: view) {
-                    array.append(view)
+        if type == FocusIconType.component {
+            guard let topView = UIApplication.shared.windows.first else {return}
+            var tmpView : UIView = topView
+            /// 从根节点开始，遍历每一个层级，找到包含point的层级最高的view
+            var array = Array<UIView>()
+            array.append(tmpView)
+            while array.count > 0 {
+                tmpView = array.popLast()!
+                tmpView.subviews.forEach { view in
+                    if point(point: focusView.center, inside: view) {
+                        array.append(view)
+                    }
                 }
             }
+            targetView = tmpView
+            updateDetail()
+        } else if type == FocusIconType.color {
+            // TODO: 这里写取色器的逻辑,用point点上的颜色更新到panel里。
         }
-        targetView = tmpView
-        updateDetail()
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -151,10 +162,14 @@ class FocusIcon : UIView {
     
     /// 更新显示的信息
     func updateDetail() {
-        guard let view = targetView else {return}
-        view.backgroundColor = .systemPink // TODO: 用边框代替背景色
-        focusLabel.text = "\(view.self)"
-        focusLabel.numberOfLines = 0
+        if type == FocusIconType.component {
+            guard let view = targetView else {return}
+            view.backgroundColor = .systemPink // TODO: 用边框代替背景色
+            focusLabel.text = "\(view.self)"
+            focusLabel.numberOfLines = 0
+        } else if type == FocusIconType.color {
+            // TODO:
+        }
     }
     
 }
