@@ -33,13 +33,12 @@ class DebugMenu : BaseVC {
     func commonInit() {
         viewModels.append(ViewModel.init(title: "组件检查工具", subTitle: "测试", callback: {
             self.dismiss(animated: true)
-            FocusIcon.shared.type = FocusIconType.component
-            FocusIcon.shared.isHidden = false
+            FocusIcon.shared.show(type: FocusIconType.component)
         }))
         viewModels.append(ViewModel.init(title: "取色器", subTitle: "测试", callback: {
-            self.dismiss(animated: true)
-            // TODO: 截屏并显示在屏幕上
-            FocusIcon.shared.isHidden = false
+            self.dismiss(animated: true) {
+                FocusIcon.shared.show(type: FocusIconType.color)
+            }
         }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }

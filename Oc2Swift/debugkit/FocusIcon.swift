@@ -9,6 +9,9 @@
 /// 需要解决的问题：
 /// 1. 从根视图开始做BFS，可以找到最接近focusView的级。但是同一级上有多层重叠的view，如何判断哪一个view在上面呢？
 /// 2. focusView所在的window上的坐标，和view所在的vc.view里的坐标似乎不是一个坐标轴的。用view的frame判断focusView是否在其中，存在误差。在scrollView里的view也会有误差。有系统API可以直接获取view在window坐标系里的坐标吗？还是只能从根视图开始计算view的坐标呢？
+///
+/// 可以改进的点：
+/// 1. 取色器模式可以换个准心，增加长按显示方法镜的效果。
 
 import Foundation
 import SwiftUI
@@ -29,6 +32,25 @@ class FocusIcon : UIView {
     var targetView : UIView?
     let closeBtn : UIButton
     var type : FocusIconType = FocusIconType.color
+    var image : UIImage?
+    
+    func show(type: FocusIconType) {
+        self.type = type
+        if type == FocusIconType.color {
+            guard let screen = UIApplication.shared.windows.first else {return}
+            UIGraphicsBeginImageContext(screen.frame.size)
+            guard let context = UIGraphicsGetCurrentContext() else {return}
+            screen.layer.render(in: context)
+            image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            let imageView = UIImageView(image: image)
+            screen.insertSubview(imageView, belowSubview: self)
+            imageView.snp.makeConstraints { make in
+                make.edges.equalTo(screen)
+            }
+        }
+        isHidden = false
+    }
     
     private init() {
         focusView = UIView()
@@ -60,6 +82,7 @@ class FocusIcon : UIView {
             make.right.bottom.equalTo(self).offset(-20)
         }
         
+        focusLabel.numberOfLines = 0
         focusPanel.addSubview(focusLabel)
         focusPanel.setContentHuggingPriority(UILayoutPriority.required, for: NSLayoutConstraint.Axis.vertical)
         focusLabel.snp.makeConstraints { make in
@@ -128,7 +151,7 @@ class FocusIcon : UIView {
             targetView = tmpView
             updateDetail()
         } else if type == FocusIconType.color {
-            // TODO: 这里写取色器的逻辑,用point点上的颜色更新到panel里。
+            updateDetail()
         }
     }
     
@@ -166,10 +189,44 @@ class FocusIcon : UIView {
             guard let view = targetView else {return}
             view.backgroundColor = .systemPink // TODO: 用边框代替背景色
             focusLabel.text = "\(view.self)"
-            focusLabel.numberOfLines = 0
         } else if type == FocusIconType.color {
-            // TODO:
+            focusLabel.text = "color: \(colorAt(point: focusView.center, in: image))"
         }
     }
     
+    /// 获取图像坐标point像素的色值
+    /// @param point 目标像素的坐标
+    /// @param inImage 目标图像
+    func colorAt(point: CGPoint, in inImage : UIImage?) -> String {
+        guard let image = inImage, CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height).contains(point) else { // 因为都是window坐标系的，所以可以这样直接判断
+            return "point not in image"
+        }
+        let pointX = Int(trunc(point.x))
+        let pointY = Int(trunc(point.y))
+        guard let cgImage = image.cgImage else {
+            return "cgImage is null"
+        }
+        let width = Int(cgImage.width)
+        let height = Int(cgImage.height)
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bytesPerRow = 4 * 1
+        let bitmapInfo : UInt32 = CGImageAlphaInfo.premultipliedLast.rawValue|CGBitmapInfo.byteOrder32Big.rawValue
+        let pixelData = UnsafeMutablePointer<UInt32>.allocate(capacity: width * height)
+        pixelData.initialize(repeating: 0, count: width * height) // 需要始化内存缓冲区https://stackoverflow.com/questions/56801083/swift-version-get-wrong-pixels-data-but-the-object-c-version-get-the-right-pixel
+        guard let context = CGContext(data: pixelData,
+                                      width: 1,
+                                      height: 1,
+                                      bitsPerComponent: 8,
+                                      bytesPerRow: bytesPerRow,
+                                      space: colorSpace,
+                                      bitmapInfo: bitmapInfo)
+        else {
+            return "point data is null"
+        }
+        context.translateBy(x: -CGFloat(pointX), y: CGFloat(pointY-height))
+        context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+        let hexColor = String.init(format: "#%02x%02x%02x", pixelData[0], pixelData[1], pixelData[2])
+        pixelData.deallocate() // 记得释放内存
+        return hexColor
+    }
 }
