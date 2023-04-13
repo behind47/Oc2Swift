@@ -20,19 +20,22 @@ import SnapKit
 enum FocusIconType {
     case color // 取色器
     case component // 组件检查器
+    case rod // 对齐标尺
 }
 
 /// 找到FocusIcon定位坐标上，最上层的UIView，最上层包含层与级两个概念
 class FocusIcon : UIView {
     static let shared = FocusIcon()
     var debugMenu : FocusIcon!
-    var focusView : UIView
-    var focusPanel : UIView
+    var focusView : UIView // 准心
+    var focusPanel : UIView // 显示信息的panel
     var focusLabel : UILabel
-    var targetView : UIView?
     let closeBtn : UIButton
+    var targetView : UIView? // 准心选中的最上层view
     var type : FocusIconType = FocusIconType.color
-    var image : UIImage?
+    var image : UIImage? // 截屏的图片
+    let horizontalRod : UIView // 水平标尺
+    let verticalRod : UIView // 竖直标尺
     
     func show(type: FocusIconType) {
         self.type = type
@@ -48,6 +51,10 @@ class FocusIcon : UIView {
             imageView.snp.makeConstraints { make in
                 make.edges.equalTo(screen)
             }
+        } else if type == FocusIconType.rod {
+            horizontalRod.isHidden = false
+            verticalRod.isHidden = false
+            updateDetail()
         }
         isHidden = false
     }
@@ -57,6 +64,8 @@ class FocusIcon : UIView {
         focusPanel = UIView()
         focusLabel = UILabel()
         closeBtn = UIButton()
+        horizontalRod = UIView()
+        verticalRod = UIView()
         super.init(frame: CGRect.zero)
         guard let topView = UIApplication.shared.windows.first else {return}
         topView.addSubview(self)
@@ -70,7 +79,7 @@ class FocusIcon : UIView {
         focusView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(drageMove)))
         focusView.backgroundColor = .red
         focusView.snp.makeConstraints { make in
-            make.center.equalTo(self)
+            make.center.equalTo(CGPoint(x: topView.frame.width/2, y: topView.frame.height/2))
             make.width.height.equalTo(50)
         }
         
@@ -101,6 +110,23 @@ class FocusIcon : UIView {
             make.width.height.equalTo(10)
         }
         
+        self.addSubview(horizontalRod)
+        horizontalRod.snp.makeConstraints { make in
+            make.centerY.equalTo(focusView)
+            make.height.equalTo(1)
+            make.left.right.equalTo(self)
+        }
+        horizontalRod.backgroundColor = .gray
+        horizontalRod.isHidden = true
+        self.addSubview(verticalRod)
+        verticalRod.snp.makeConstraints { make in
+            make.top.bottom.equalTo(self)
+            make.width.equalTo(1)
+            make.centerX.equalTo(focusView)
+        }
+        verticalRod.backgroundColor = .gray
+        verticalRod.isHidden = true
+        
         isHidden = true
     }
     
@@ -118,8 +144,11 @@ class FocusIcon : UIView {
         let translation = recognizer.translation(in: sender) // 点击位置与sender原来位置的偏移值
         
         if recognizer.state == UIPanGestureRecognizer.State.changed {
-            sender.center = CGPoint(x: sender.center.x + translation.x, y: sender.center.y + translation.y)
+            sender.snp.updateConstraints { make in
+                make.center.equalTo(CGPoint(x: sender.center.x + translation.x, y: sender.center.y + translation.y))
+            }
             recognizer.setTranslation(CGPoint.zero, in: sender)
+            updateDetail()
         }
     }
     
@@ -191,6 +220,8 @@ class FocusIcon : UIView {
             focusLabel.text = "\(view.self)"
         } else if type == FocusIconType.color {
             focusLabel.text = "color: \(colorAt(point: focusView.center, in: image))"
+        } else if type == FocusIconType.rod {
+            focusLabel.text = "point: \(focusView.center)"
         }
     }
     

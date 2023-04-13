@@ -40,6 +40,10 @@ class DebugMenu : BaseVC {
                 FocusIcon.shared.show(type: FocusIconType.color)
             }
         }))
+        viewModels.append(ViewModel.init(title: "对齐标尺", subTitle: "测试", callback: {
+            self.dismiss(animated: true)
+            FocusIcon.shared.show(type: FocusIconType.rod)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }
