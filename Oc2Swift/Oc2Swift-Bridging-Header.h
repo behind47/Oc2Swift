@@ -11,3 +11,4 @@
 #import "OperationVC.h"
 #import "LeaksVC.h"
 #import "KVOVC.h"
+#import "UIView+Check.h"

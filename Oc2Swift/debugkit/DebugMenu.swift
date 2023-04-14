@@ -6,6 +6,7 @@
 // debug菜单
 
 import Foundation
+import UIKit
 
 class DebugMenu : BaseVC {
     var viewModels : [ViewModel]
@@ -43,6 +44,10 @@ class DebugMenu : BaseVC {
         viewModels.append(ViewModel.init(title: "对齐标尺", subTitle: "测试", callback: {
             self.dismiss(animated: true)
             FocusIcon.shared.show(type: FocusIconType.rod)
+        }))
+        viewModels.append(ViewModel.init(title: "边框检查器", subTitle: "测试", callback: {
+            self.dismiss(animated: true)
+            UIViewCheckMenu.shared.show()
         }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }

@@ -42,6 +42,8 @@
 		28B038962835081E007B3817 /* Oc2SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038952835081E007B3817 /* Oc2SwiftUITests.swift */; };
 		28B038982835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */; };
 		28B038A528350888007B3817 /* CustomNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038A428350888007B3817 /* CustomNavVC.swift */; };
+		28B6358529E8DDCA00C5F1F7 /* UIViewCheckMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B6358429E8DDCA00C5F1F7 /* UIViewCheckMenu.swift */; };
+		28B6358829E8EE4700C5F1F7 /* UIView+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B6358729E8EE4700C5F1F7 /* UIView+Check.m */; };
 		28B9C7DE29CC214A00347117 /* DebugMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7DD29CC214A00347117 /* DebugMenu.swift */; };
 		28B9C7E029CC21E200347117 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7DF29CC21E200347117 /* SwitchCell.swift */; };
 		28B9C7E329CC3A1200347117 /* DebugIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B9C7E229CC3A1200347117 /* DebugIcon.swift */; };
@@ -152,6 +154,9 @@
 		28B038952835081E007B3817 /* Oc2SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oc2SwiftUITests.swift; sourceTree = "<group>"; };
 		28B038972835081E007B3817 /* Oc2SwiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oc2SwiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		28B038A428350888007B3817 /* CustomNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavVC.swift; sourceTree = "<group>"; };
+		28B6358429E8DDCA00C5F1F7 /* UIViewCheckMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewCheckMenu.swift; sourceTree = "<group>"; };
+		28B6358629E8EDEB00C5F1F7 /* UIView+Check.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Check.h"; sourceTree = "<group>"; };
+		28B6358729E8EE4700C5F1F7 /* UIView+Check.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Check.m"; sourceTree = "<group>"; };
 		28B9C7DD29CC214A00347117 /* DebugMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenu.swift; sourceTree = "<group>"; };
 		28B9C7DF29CC21E200347117 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		28B9C7E229CC3A1200347117 /* DebugIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugIcon.swift; sourceTree = "<group>"; };
@@ -412,6 +417,9 @@
 				28B9C7DD29CC214A00347117 /* DebugMenu.swift */,
 				28B9C7E229CC3A1200347117 /* DebugIcon.swift */,
 				282C7E4929DAF6E200BC91C0 /* FocusIcon.swift */,
+				28B6358429E8DDCA00C5F1F7 /* UIViewCheckMenu.swift */,
+				28B6358629E8EDEB00C5F1F7 /* UIView+Check.h */,
+				28B6358729E8EE4700C5F1F7 /* UIView+Check.m */,
 			);
 			path = debugkit;
 			sourceTree = "<group>";
@@ -856,6 +864,7 @@
 				28CBCA1428A0F06A0050AE67 /* BlockVC.m in Sources */,
 				28D77C5F2899420C0076B8A3 /* ImageVC.swift in Sources */,
 				2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */,
+				28B6358529E8DDCA00C5F1F7 /* UIViewCheckMenu.swift in Sources */,
 				28B038A528350888007B3817 /* CustomNavVC.swift in Sources */,
 				28B9C7E029CC21E200347117 /* SwitchCell.swift in Sources */,
 				28B038752835081C007B3817 /* AppDelegate.swift in Sources */,
@@ -899,6 +908,7 @@
 				28090DCF288523C400B91331 /* RuntimeModel+Property.m in Sources */,
 				28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */,
 				28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */,
+				28B6358829E8EE4700C5F1F7 /* UIView+Check.m in Sources */,
 				28F2C5EE2881443900A23E84 /* RelativeScrollVC.swift in Sources */,
 				2839EBAD29CE92EF00C518EA /* TouchEventVC.swift in Sources */,
 				28FB4AF92871D915008B7BF7 /* AutoLayoutTestVC.swift in Sources */,
