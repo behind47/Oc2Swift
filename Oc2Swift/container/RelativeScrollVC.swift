@@ -8,6 +8,7 @@
 /// ScrollView使用contentSize来规划内容空间，contentSize比size大，所以能实现滚动效果
 /// 使用snapKit可以让子view的尺寸撑起父view
 /// 在scrollView上添加一个contentView，然后将其尺寸撑起，用它的尺寸作为contentSize
+/// TODO: 了解UIScrollView是如何实现滚动功能的？
 
 import Foundation
 import UIKit
