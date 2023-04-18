@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 
 class ScrollTableViewVC : BaseVC {
-    let mainScroll : UIScrollView
+    let mainScroll : CustomScrollView
     var viewModels : [ViewModel]
     var fastCellList : FastCellList
     
@@ -23,7 +23,7 @@ class ScrollTableViewVC : BaseVC {
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         viewModels = [ViewModel]()
         fastCellList = FastCellList()
-        mainScroll = UIScrollView()
+        mainScroll = CustomScrollView()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         commonInit()
     }
@@ -90,4 +90,11 @@ extension ScrollTableViewVC : UIScrollViewDelegate {
     
 }
 
+class CustomScrollView : UIScrollView, UIGestureRecognizerDelegate {
+    /// 默认返回false，事件不能传递到subView
+    /// 返回true时，事件可以传递到subView
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
 
