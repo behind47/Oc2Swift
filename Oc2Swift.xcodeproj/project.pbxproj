@@ -26,6 +26,7 @@
 		282C7E4E29DFB05400BC91C0 /* CordinateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282C7E4D29DFB05400BC91C0 /* CordinateVC.swift */; };
 		2831717C287C17B500018486 /* NSInvocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2831717B287C17B500018486 /* NSInvocationVC.m */; };
 		2839EBAD29CE92EF00C518EA /* TouchEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839EBAC29CE92EF00C518EA /* TouchEventVC.swift */; };
+		285E7C6429F8FA510048AAF0 /* ReviewInWindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285E7C6329F8FA510048AAF0 /* ReviewInWindowVC.swift */; };
 		2862544728C71268007E3163 /* HomeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2862544628C71268007E3163 /* HomeModule.m */; };
 		2862544828C71268007E3163 /* HomeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2862544628C71268007E3163 /* HomeModule.m */; };
 		2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873784B2895087D00977826 /* KeyBoardVC.swift */; };
@@ -131,6 +132,7 @@
 		2831717A287C17AC00018486 /* NSInvocationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSInvocationVC.h; sourceTree = "<group>"; };
 		2831717B287C17B500018486 /* NSInvocationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSInvocationVC.m; sourceTree = "<group>"; };
 		2839EBAC29CE92EF00C518EA /* TouchEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEventVC.swift; sourceTree = "<group>"; };
+		285E7C6329F8FA510048AAF0 /* ReviewInWindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewInWindowVC.swift; sourceTree = "<group>"; };
 		2862544528C7125D007E3163 /* HomeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeModule.h; sourceTree = "<group>"; };
 		2862544628C71268007E3163 /* HomeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeModule.m; sourceTree = "<group>"; };
 		2873784B2895087D00977826 /* KeyBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardVC.swift; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 				28FB4AFA2873DE34008B7BF7 /* AutoTableHeaderVC.swift */,
 				28F2C5EA288130EC00A23E84 /* FrameBoundVC.swift */,
 				2803BD2729D3E4F900BCE031 /* LayoutMenuVC.swift */,
+				285E7C6329F8FA510048AAF0 /* ReviewInWindowVC.swift */,
 				282C7E4D29DFB05400BC91C0 /* CordinateVC.swift */,
 				289F03CA2924BD1400D183E3 /* FlexVC.swift */,
 			);
@@ -863,6 +866,7 @@
 			files = (
 				28B038792835081C007B3817 /* ViewController.swift in Sources */,
 				DA159F592886D3DB0041188C /* TabArrView.swift in Sources */,
+				285E7C6429F8FA510048AAF0 /* ReviewInWindowVC.swift in Sources */,
 				28CC039028AE08B3005497ED /* FastCellList.swift in Sources */,
 				28CBCA1728A0F0BE0050AE67 /* BlkObject.m in Sources */,
 				2862544728C71268007E3163 /* HomeModule.m in Sources */,

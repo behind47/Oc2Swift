@@ -52,6 +52,9 @@ class LayoutMenuVC: BaseVC {
         viewModels.append(ViewModel.init(title: "坐标系", subTitle: "", callback: {
             self.navigationController?.pushViewController(CordinateVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "UIWindow中UIView添加相对布局的坑", subTitle: "", callback: {
+            self.navigationController?.pushViewController(ReviewInWindowVC(), animated: true)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }

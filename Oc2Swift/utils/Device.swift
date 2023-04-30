@@ -33,3 +33,6 @@ private func _topViewController(viewController: UIViewController?) -> UIViewCont
         return vc
     }
 }
+
+let SCREENWIDTH = UIScreen.main.bounds.size.width
+let SCREENHEIGHT = UIScreen.main.bounds.size.height
