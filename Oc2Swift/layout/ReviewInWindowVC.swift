@@ -17,17 +17,7 @@ class ReviewInWindowVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        ReviewInWindow.sharedInstance.show()
-        testWindow = UIWindow()
-        testWindow.windowLevel = UIWindow.Level.statusBar + 55
-        testWindow.isHidden = false
-        testWindow.frame = CGRect(x: 0, y: 0, width: SCREENWIDTH, height: SCREENHEIGHT)
-        testWindow.backgroundColor = .green
-        UIApplication.shared.connectedScenes.forEach { scene in
-            if scene.activationState == UIScene.ActivationState.foregroundActive {
-                testWindow.windowScene = scene as? UIWindowScene
-            }
-        }
+        ReviewInWindow.sharedInstance.show()
     }
 }
 
@@ -42,11 +32,18 @@ private class ReviewInWindow : UIWindow {
         super.init(frame: frame)
         windowLevel = UIWindow.Level.statusBar + 55
         backgroundColor = .yellow
-//        self.addSubview(infoPanel!)
-//        infoPanel!.snp.makeConstraints { make in
-//            make.center.equalTo(CGPoint(x: self.frame.width/2, y: self.frame.height/2))
-//            make.width.height.equalTo(60)
-//        }
+        UIApplication.shared.connectedScenes.forEach { scene in
+            if scene.activationState == UIScene.ActivationState.foregroundActive {
+                windowScene = scene as? UIWindowScene
+            }
+        }
+        self.addSubview(infoPanel!)
+        infoPanel!.snp.makeConstraints { make in
+            make.center.equalTo(CGPoint(x: self.frame.width/2, y: self.frame.height/2))
+            make.width.height.equalTo(60)
+        }
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(drageMove(_:)))
+        infoPanel?.addGestureRecognizer(pan)
     }
     
     required init?(coder: NSCoder) {
@@ -59,5 +56,18 @@ private class ReviewInWindow : UIWindow {
     
     func hide() {
         isHidden = true
+    }
+    
+    // MARK: event
+    @objc func drageMove(_ recognizer : UIPanGestureRecognizer) {
+        guard let sender = recognizer.view else { return }
+        let translation = recognizer.translation(in: sender) // 点击位置与sender原来位置的偏移值
+        
+        if recognizer.state == UIPanGestureRecognizer.State.changed {
+            sender.snp.updateConstraints { make in
+                make.center.equalTo(CGPoint(x: sender.center.x + translation.x, y: sender.center.y + translation.y))
+            }
+            recognizer.setTranslation(CGPoint.zero, in: sender)
+        }
     }
 }
