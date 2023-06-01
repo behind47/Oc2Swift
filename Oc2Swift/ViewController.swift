@@ -47,6 +47,9 @@ public class ViewController: BaseVC {
         viewModels.append(ViewModel.init(title: "UI优化", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(UIOptimizationVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "弹窗", subTitle: "", callback: {
+            self.navigationController?.pushViewController(PopMenuView(), animated: true)
+        }))
         viewModels.append(ViewModel.init(title: "run loop的fake实现", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(RunLoopVC(), animated: true)
         }))
