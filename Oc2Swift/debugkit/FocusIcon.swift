@@ -7,7 +7,7 @@
 /// 包含一个⭕️——focusView，一个显示组件信息的panel——focusPanel
 ///
 /// 需要解决的问题：
-/// 1. 从根视图开始做BFS，可以找到最接近focusView的级。但是同一级上有多层重叠的view，如何判断哪一个view在上面呢？
+/// 1. 从根视图开始做BFS，可以找到最接近focusView的级。但是同一级上有多层重叠的view，如何判断哪一个view在上面呢？——经过测试，发现subViews是一个有序数组，同一级的view在subViews里，排在后面的是上层view。
 /// 2. focusView所在的window上的坐标，和view所在的vc.view里的坐标似乎不是一个坐标轴的。用view的frame判断focusView是否在其中，存在误差。在scrollView里的view也会有误差。有系统API可以直接获取view在window坐标系里的坐标吗？还是只能从根视图开始计算view的坐标呢？
 ///
 /// 可以改进的点：
