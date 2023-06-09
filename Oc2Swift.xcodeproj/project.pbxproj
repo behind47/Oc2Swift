@@ -21,6 +21,10 @@
 		281B884D288F8D4F007DD0BE /* MathFunctionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B884C288F8D4F007DD0BE /* MathFunctionVC.swift */; };
 		281B885028901C7D007DD0BE /* AnimationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B884F28901C7D007DD0BE /* AnimationVC.swift */; };
 		282498602A0D1D8F00845C6F /* HalfScreenPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2824985F2A0D1D8F00845C6F /* HalfScreenPopView.swift */; };
+		282791992A337F76002C911B /* CustomDrawMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282791982A337F76002C911B /* CustomDrawMenuVC.swift */; };
+		2827919B2A337FC4002C911B /* BaseMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2827919A2A337FC4002C911B /* BaseMenuVC.swift */; };
+		2827919D2A3380F0002C911B /* CustomDrawLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2827919C2A3380F0002C911B /* CustomDrawLayerVC.swift */; };
+		2827919F2A338105002C911B /* CustomDrawUIViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2827919E2A338105002C911B /* CustomDrawUIViewVC.swift */; };
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
 		282C7E4A29DAF6E200BC91C0 /* FocusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282C7E4929DAF6E200BC91C0 /* FocusIcon.swift */; };
 		282C7E4C29DEADE900BC91C0 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 282C7E4B29DEADE900BC91C0 /* close.png */; };
@@ -126,6 +130,10 @@
 		281B884C288F8D4F007DD0BE /* MathFunctionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathFunctionVC.swift; sourceTree = "<group>"; };
 		281B884F28901C7D007DD0BE /* AnimationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVC.swift; sourceTree = "<group>"; };
 		2824985F2A0D1D8F00845C6F /* HalfScreenPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfScreenPopView.swift; sourceTree = "<group>"; };
+		282791982A337F76002C911B /* CustomDrawMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDrawMenuVC.swift; sourceTree = "<group>"; };
+		2827919A2A337FC4002C911B /* BaseMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuVC.swift; sourceTree = "<group>"; };
+		2827919C2A3380F0002C911B /* CustomDrawLayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDrawLayerVC.swift; sourceTree = "<group>"; };
+		2827919E2A338105002C911B /* CustomDrawUIViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDrawUIViewVC.swift; sourceTree = "<group>"; };
 		2827C2D32835F46500330685 /* C2OcTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2OcTestVC.h; sourceTree = "<group>"; };
 		2827C2D42835F47000330685 /* Oc2Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
@@ -244,6 +252,7 @@
 			children = (
 				28090DC0288505F000B91331 /* BaseVC.h */,
 				28090DC1288505FA00B91331 /* BaseVC.m */,
+				2827919A2A337FC4002C911B /* BaseMenuVC.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -294,6 +303,16 @@
 				281B884F28901C7D007DD0BE /* AnimationVC.swift */,
 			);
 			path = animation;
+			sourceTree = "<group>";
+		};
+		282791972A337F59002C911B /* draw */ = {
+			isa = PBXGroup;
+			children = (
+				282791982A337F76002C911B /* CustomDrawMenuVC.swift */,
+				2827919E2A338105002C911B /* CustomDrawUIViewVC.swift */,
+				2827919C2A3380F0002C911B /* CustomDrawLayerVC.swift */,
+			);
+			path = draw;
 			sourceTree = "<group>";
 		};
 		28317177287C0F9B00018486 /* invocation */ = {
@@ -374,6 +393,7 @@
 		28B038732835081C007B3817 /* Oc2Swift */ = {
 			isa = PBXGroup;
 			children = (
+				282791972A337F59002C911B /* draw */,
 				2837322B2A0D1CE700345D11 /* popview */,
 				2839EBAB29CE92E500C518EA /* event */,
 				28B9C7E129CC255200347117 /* cell */,
@@ -879,8 +899,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				28B038792835081C007B3817 /* ViewController.swift in Sources */,
+				2827919D2A3380F0002C911B /* CustomDrawLayerVC.swift in Sources */,
 				DA159F592886D3DB0041188C /* TabArrView.swift in Sources */,
 				285E7C6429F8FA510048AAF0 /* ReviewInWindowVC.swift in Sources */,
+				2827919F2A338105002C911B /* CustomDrawUIViewVC.swift in Sources */,
 				28CC039028AE08B3005497ED /* FastCellList.swift in Sources */,
 				28CBCA1728A0F0BE0050AE67 /* BlkObject.m in Sources */,
 				2862544728C71268007E3163 /* HomeModule.m in Sources */,
@@ -893,8 +915,10 @@
 				28B038A528350888007B3817 /* CustomNavVC.swift in Sources */,
 				28B9C7E029CC21E200347117 /* SwitchCell.swift in Sources */,
 				28B038752835081C007B3817 /* AppDelegate.swift in Sources */,
+				282791992A337F76002C911B /* CustomDrawMenuVC.swift in Sources */,
 				280A48E3289AF3F2005DE4AE /* NSURLSessionVC.m in Sources */,
 				28090DCC288522AA00B91331 /* RuntimeModel.m in Sources */,
+				2827919B2A337FC4002C911B /* BaseMenuVC.swift in Sources */,
 				2831717C287C17B500018486 /* NSInvocationVC.m in Sources */,
 				DA159F502886B61C0041188C /* TabVCs.swift in Sources */,
 				DA159F532886CF3A0041188C /* HomePage.swift in Sources */,

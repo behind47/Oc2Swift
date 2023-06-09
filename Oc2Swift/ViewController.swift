@@ -89,6 +89,9 @@ public class ViewController: BaseVC {
         viewModels.append(ViewModel.init(title: "事件菜单", subTitle: "", callback: {
             self.navigationController?.pushViewController(EventMenuVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "自定义绘制菜单", subTitle: "", callback: {
+            self.navigationController?.pushViewController(CustomDrawMenuVC(), animated: true)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }
