@@ -50,8 +50,8 @@ public class ViewController: BaseVC {
         viewModels.append(ViewModel.init(title: "弹窗", subTitle: "", callback: {
             self.navigationController?.pushViewController(PopMenuView(), animated: true)
         }))
-        viewModels.append(ViewModel.init(title: "run loop的fake实现", subTitle: "测试", callback: {
-            self.navigationController?.pushViewController(RunLoopVC(), animated: true)
+        viewModels.append(ViewModel.init(title: "runloop menu", subTitle: "测试", callback: {
+            self.navigationController?.pushViewController(RunLoopMenuVC(), animated: true)
         }))
         viewModels.append(ViewModel.init(title: "invocation测试", subTitle: "反射", callback: {
             self.navigationController?.pushViewController(NSInvocationVC(), animated: true)
