@@ -1,3 +1,4 @@
+platform :ios, '12.0'
 workspace 'learnios'
 
 source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
