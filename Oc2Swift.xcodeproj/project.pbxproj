@@ -65,6 +65,7 @@
 		28CC039028AE08B3005497ED /* FastCellList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC038F28AE08B3005497ED /* FastCellList.swift */; };
 		28D601862A592F37002D2C6C /* RunLoopMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D601852A592F37002D2C6C /* RunLoopMenuVC.swift */; };
 		28D601892A59331A002D2C6C /* DynamicUIViewCheckVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D601882A59331A002D2C6C /* DynamicUIViewCheckVC.m */; };
+		28D6018B2A6665C9002D2C6C /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D6018A2A6665C9002D2C6C /* ImageUtil.swift */; };
 		28D77C5F2899420C0076B8A3 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D77C5E2899420C0076B8A3 /* ImageVC.swift */; };
 		28D77C622899453D0076B8A3 /* cat.webp in Resources */ = {isa = PBXBuildFile; fileRef = 28D77C612899453D0076B8A3 /* cat.webp */; };
 		28DB903B28904F5A00F2F141 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DB903A28904F5A00F2F141 /* NavigationVC.swift */; };
@@ -194,6 +195,7 @@
 		28D601852A592F37002D2C6C /* RunLoopMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLoopMenuVC.swift; sourceTree = "<group>"; };
 		28D601872A593315002D2C6C /* DynamicUIViewCheckVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicUIViewCheckVC.h; sourceTree = "<group>"; };
 		28D601882A59331A002D2C6C /* DynamicUIViewCheckVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicUIViewCheckVC.m; sourceTree = "<group>"; };
+		28D6018A2A6665C9002D2C6C /* ImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUtil.swift; sourceTree = "<group>"; };
 		28D77C5E2899420C0076B8A3 /* ImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		28D77C612899453D0076B8A3 /* cat.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = cat.webp; sourceTree = "<group>"; };
 		28DB903A28904F5A00F2F141 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 				28FF63C82893121A00DEF69A /* Device.swift */,
 				28CC038F28AE08B3005497ED /* FastCellList.swift */,
 				2815963928B3848E0015D720 /* RouterManager.swift */,
+				28D6018A2A6665C9002D2C6C /* ImageUtil.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -962,6 +965,7 @@
 				2881D0C92A540B2F006420B1 /* ReviewInWindowVC.m in Sources */,
 				28FB4AF62871940A008B7BF7 /* LayoutTestVC.swift in Sources */,
 				282C7E4E29DFB05400BC91C0 /* CordinateVC.swift in Sources */,
+				28D6018B2A6665C9002D2C6C /* ImageUtil.swift in Sources */,
 				2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */,
 				28D601892A59331A002D2C6C /* DynamicUIViewCheckVC.m in Sources */,
 				28AE614F28A3DF9A00AB6739 /* MiddleProxy.m in Sources */,
