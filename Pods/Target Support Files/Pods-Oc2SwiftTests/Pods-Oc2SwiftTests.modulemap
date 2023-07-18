@@ -1,6 +1,0 @@
-module Pods_Oc2SwiftTests {
-  umbrella header "Pods-Oc2SwiftTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
