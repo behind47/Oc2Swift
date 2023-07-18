@@ -23,7 +23,7 @@
         Method originAddObserverMethod = class_getInstanceMethod(self, oriSel);
         Method swizzledAddObserverMethod = class_getInstanceMethod(self, swiSel);
         if (class_addMethod(UIView.class, oriSel, method_getImplementation(swizzledAddObserverMethod), method_getTypeEncoding(swizzledAddObserverMethod))) {
-            class_replaceMethod(UIView.class, oriSel, method_getImplementation(originAddObserverMethod), method_getTypeEncoding(originAddObserverMethod));//TODO:  这一步的意义是啥？用swizzledSel暂存oriMethod的IMP?——没用的话可以删掉。
+            class_replaceMethod(UIView.class, oriSel, method_getImplementation(originAddObserverMethod), method_getTypeEncoding(originAddObserverMethod));
         } else {
             method_exchangeImplementations(originAddObserverMethod, swizzledAddObserverMethod);
         }
@@ -31,7 +31,7 @@
 }
 
 - (void)uicheck_layoutSubviews {
-    [self uicheck_layoutSubviews]; // 这不是循环调用？
+    [self uicheck_layoutSubviews]; // load()里交换了uicheck_layoutSubviews与layoutSubviews的IMP，所以这里的[self uicheck_layoutSubviews]实际上调用的是layoutSubviews的IMP。相当于在layoutSubviews方法后面追加了以下的逻辑。
     if ([UIViewCheckConfig shared].uiCheckStatus) {
         [self recurseiveShowUIBorder:[UIViewCheckConfig shared].uiCheckOn];
     }
