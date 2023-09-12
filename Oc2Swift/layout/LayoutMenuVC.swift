@@ -55,6 +55,9 @@ class LayoutMenuVC: BaseVC {
         viewModels.append(ViewModel.init(title: "UIWindow中UIView添加相对布局的坑", subTitle: "", callback: {
             self.navigationController?.pushViewController(ReviewInWindowVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "Masonry使用的注意事项", subTitle: "", callback: {
+            self.navigationController?.pushViewController(ErrorMasonryVC(), animated: true)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }
