@@ -38,7 +38,7 @@ class LayoutMenuVC: BaseVC {
             self.navigationController?.pushViewController(LayoutTestVC(), animated: true)
         }))
         viewModels.append(ViewModel.init(title: "iOS约束布局流程", subTitle: "测试", callback: {
-            self.navigationController?.pushViewController(AutoLayoutTestVC(), animated: true)
+            self.navigationController?.pushViewController(LayoutOrderTestVC(), animated: true)
         }))
         viewModels.append(ViewModel.init(title: "iOS约束布局tableHeaderView高度自适应", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(AutoTableHeaderVC(), animated: true)

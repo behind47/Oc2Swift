@@ -1,5 +1,5 @@
 //
-//  AutoLayoutTestVC.swift
+//  LayoutOrderTestVC.swift
 //  Oc2Swift
 //
 //  Created by behind47 on 2022/7/3.
@@ -14,7 +14,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-open class AutoLayoutTestVC : BaseVC {
+open class LayoutOrderTestVC : BaseVC {
     var autoTopicView : UIView
     var autoTopicView2 : UIView
     
