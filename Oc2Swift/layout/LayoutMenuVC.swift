@@ -58,6 +58,9 @@ class LayoutMenuVC: BaseVC {
         viewModels.append(ViewModel.init(title: "Masonry使用的注意事项", subTitle: "", callback: {
             self.navigationController?.pushViewController(ErrorMasonryVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "Auto Layout的案例", subTitle: "", callback: {
+            self.navigationController?.pushViewController(AutoLayoutTestVC(), animated: true)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }
