@@ -199,6 +199,7 @@
 		28CC038B28ADE8F8005497ED /* UIOptimizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIOptimizationVC.swift; sourceTree = "<group>"; };
 		28CC038D28ADEAB5005497ED /* TableViewOptimizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewOptimizationVC.swift; sourceTree = "<group>"; };
 		28CC038F28AE08B3005497ED /* FastCellList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCellList.swift; sourceTree = "<group>"; };
+		28D570272AD647B700335851 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		28D601852A592F37002D2C6C /* RunLoopMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLoopMenuVC.swift; sourceTree = "<group>"; };
 		28D601872A593315002D2C6C /* DynamicUIViewCheckVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicUIViewCheckVC.h; sourceTree = "<group>"; };
 		28D601882A59331A002D2C6C /* DynamicUIViewCheckVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicUIViewCheckVC.m; sourceTree = "<group>"; };
@@ -439,6 +440,7 @@
 				28A0A795283B891E00A6C2EF /* flutterPlugins */,
 				28B038742835081C007B3817 /* AppDelegate.swift */,
 				28B038762835081C007B3817 /* SceneDelegate.swift */,
+				28D570272AD647B700335851 /* README.md */,
 				28B038782835081C007B3817 /* ViewController.swift */,
 				2827C2D32835F46500330685 /* C2OcTestVC.h */,
 				2827C2D52835F47000330685 /* C2OcTestVC.m */,
