@@ -16,3 +16,4 @@
 #import "DynamicUIViewCheckVC.h"
 #import "ErrorMasonryVC.h"
 #import "AutoLayoutTestVC.h"
+#import "PanGestureError.h"

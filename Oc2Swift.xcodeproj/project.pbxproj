@@ -27,6 +27,7 @@
 		2827919D2A3380F0002C911B /* CustomDrawLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2827919C2A3380F0002C911B /* CustomDrawLayerVC.swift */; };
 		2827919F2A338105002C911B /* CustomDrawUIViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2827919E2A338105002C911B /* CustomDrawUIViewVC.swift */; };
 		2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2827C2D52835F47000330685 /* C2OcTestVC.m */; };
+		2828FB092AF0DC24004E74AF /* PanGestureError.m in Sources */ = {isa = PBXBuildFile; fileRef = 2828FB082AF0DC24004E74AF /* PanGestureError.m */; };
 		282C7E4A29DAF6E200BC91C0 /* FocusIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282C7E4929DAF6E200BC91C0 /* FocusIcon.swift */; };
 		282C7E4C29DEADE900BC91C0 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 282C7E4B29DEADE900BC91C0 /* close.png */; };
 		282C7E4E29DFB05400BC91C0 /* CordinateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282C7E4D29DFB05400BC91C0 /* CordinateVC.swift */; };
@@ -146,6 +147,8 @@
 		2827C2D32835F46500330685 /* C2OcTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = C2OcTestVC.h; sourceTree = "<group>"; };
 		2827C2D42835F47000330685 /* Oc2Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc2Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		2827C2D52835F47000330685 /* C2OcTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C2OcTestVC.m; sourceTree = "<group>"; };
+		2828FB072AF0DC1E004E74AF /* PanGestureError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanGestureError.h; sourceTree = "<group>"; };
+		2828FB082AF0DC24004E74AF /* PanGestureError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanGestureError.m; sourceTree = "<group>"; };
 		282C7E4929DAF6E200BC91C0 /* FocusIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusIcon.swift; sourceTree = "<group>"; };
 		282C7E4B29DEADE900BC91C0 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		282C7E4D29DFB05400BC91C0 /* CordinateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CordinateVC.swift; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 			children = (
 				2839EBAC29CE92EF00C518EA /* TouchEventVC.swift */,
 				2891154B29ECE3EA009C25FA /* EventMenuVC.swift */,
+				2828FB072AF0DC1E004E74AF /* PanGestureError.h */,
+				2828FB082AF0DC24004E74AF /* PanGestureError.m */,
 				2809B08D29ECE608009F7FE5 /* ScrollTableViewVC.swift */,
 			);
 			path = event;
@@ -954,6 +959,7 @@
 				2831717C287C17B500018486 /* NSInvocationVC.m in Sources */,
 				DA159F502886B61C0041188C /* TabVCs.swift in Sources */,
 				DA159F532886CF3A0041188C /* HomePage.swift in Sources */,
+				2828FB092AF0DC24004E74AF /* PanGestureError.m in Sources */,
 				DA159F572886CF550041188C /* Contacts.swift in Sources */,
 				DA159F552886CF430041188C /* Personal.swift in Sources */,
 				28FF63C92893121A00DEF69A /* Device.swift in Sources */,
