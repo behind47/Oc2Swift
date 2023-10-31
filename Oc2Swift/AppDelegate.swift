@@ -98,6 +98,7 @@ public class AppDelegate: FlutterAppDelegate {
 
     // MARK: UISceneSession Lifecycle
 
+    @available(iOS 13.0, *)
     public override func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
@@ -131,8 +132,10 @@ private var loadInjectionOnce: () = {
     Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/"+bundleName)!.load()
 }()
 
+@available(iOS 13.0, *)
 public let injectionObserver = InjectionObserver()
 
+@available(iOS 13.0, *)
 public class InjectionObserver: ObservableObject {
     @Published var injectionNumber = 0
     var cancellable: AnyCancellable? = nil
@@ -147,6 +150,7 @@ public class InjectionObserver: ObservableObject {
     }
 }
 
+@available(iOS 13.0, *)
 extension SwiftUI.View {
     public func eraseToAnyView() -> some SwiftUI.View {
         _ = loadInjectionOnce
