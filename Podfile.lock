@@ -68,7 +68,7 @@ EXTERNAL SOURCES:
     :path: "~/SDWebImage"
 
 SPEC CHECKSUMS:
-  AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
+  AFNetworking: 42892080606935f7a9ec3fda4927fdd37e9cd369
   BeeHive: 81b697e94e1ae0993eccf5388e195f3fbfe707a6
   bridge: 19e67a95fbc57851d07b6d3ca114a09188599452
   Flutter: bdfa2e8fe0e2880a2c6a58a0b1a8675c262a07af
