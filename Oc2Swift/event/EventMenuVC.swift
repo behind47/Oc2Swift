@@ -40,6 +40,9 @@ class EventMenuVC: BaseVC {
         viewModels.append(ViewModel.init(title: "scrollView嵌套UITableView的坑", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(ScrollTableViewVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "requireGestureRecognizerToFail的版本差异", subTitle: "测试", callback: {
+            self.navigationController?.pushViewController(PanGestureError(), animated: true)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }

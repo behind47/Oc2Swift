@@ -99,12 +99,12 @@ open class TabArrView : UICollectionView, UICollectionViewDataSource {
 
 public struct TabModel {
     public var text : String
-    public var highlightColor : Color
-    public var normalColor : Color
+    public var highlightColor : UIColor
+    public var normalColor : UIColor
     
-    init(text : String?, highlightColor : Color?, normalColor : Color?) {
+    init(text : String?, highlightColor : UIColor?, normalColor : UIColor?) {
         self.text = text ?? "default Tab"
-        self.highlightColor = highlightColor ?? Color.yellow
-        self.normalColor = normalColor ?? Color.green
+        self.highlightColor = highlightColor ?? UIColor.yellow
+        self.normalColor = normalColor ?? UIColor.green
     }
 }
