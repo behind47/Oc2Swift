@@ -7,33 +7,8 @@
 
 import Foundation
 
-class RunLoopMenuVC: BaseVC {
-    var viewModels : [ViewModel]
-    var fastCellList : FastCellList
-
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.addSubview(fastCellList)
-        fastCellList.snp.makeConstraints { make in
-            make.edges.equalTo(view)
-        }
-    }
-    
-    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        viewModels = [ViewModel]()
-        fastCellList = FastCellList()
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        commonInit()
-    }
-    
-    required init?(coder: NSCoder) {
-        viewModels = [ViewModel]()
-        fastCellList = FastCellList()
-        super.init(coder: coder)
-        commonInit()
-    }
-    
-    func commonInit() {
+class RunLoopMenuVC: BaseMenuVC {
+    override func commonInit() {
         viewModels.append(ViewModel.init(title: "run loop的fake实现", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(RunLoopVC(), animated: true)
         }))

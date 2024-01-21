@@ -7,33 +7,8 @@
 
 import Foundation
 
-class ContainerMenuVC: BaseVC {
-    var viewModels : [ViewModel]
-    var fastCellList : FastCellList
-
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.addSubview(fastCellList)
-        fastCellList.snp.makeConstraints { make in
-            make.edges.equalTo(view)
-        }
-    }
-    
-    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        viewModels = [ViewModel]()
-        fastCellList = FastCellList()
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        commonInit()
-    }
-    
-    required init?(coder: NSCoder) {
-        viewModels = [ViewModel]()
-        fastCellList = FastCellList()
-        super.init(coder: coder)
-        commonInit()
-    }
-    
-    func commonInit() {
+class ContainerMenuVC: BaseMenuVC {
+    override func commonInit() {
         viewModels.append(ViewModel.init(title: "scrollView测试", subTitle: "结合masonry实现滚动", callback: {
             self.navigationController?.pushViewController(RelativeScrollVC(), animated: true)
         }))

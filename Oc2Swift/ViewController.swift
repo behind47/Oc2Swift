@@ -57,7 +57,7 @@ public class ViewController: BaseVC {
             self.navigationController?.pushViewController(NSInvocationVC(), animated: true)
         }))
         viewModels.append(ViewModel.init(title: "runtime测试", subTitle: "", callback: {
-            self.navigationController?.pushViewController(RuntimeVC(), animated: true)
+            self.navigationController?.pushViewController(RuntimeMenuVC(), animated: true)
         }))
         viewModels.append(ViewModel.init(title: "泛型测试", subTitle: "", callback: {
             self.navigationController?.pushViewController(MathFunctionVC(), animated: true)

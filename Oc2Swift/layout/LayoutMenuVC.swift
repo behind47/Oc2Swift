@@ -7,33 +7,9 @@
 
 import Foundation
 
-class LayoutMenuVC: BaseVC {
-    var viewModels : [ViewModel]
-    var fastCellList : FastCellList
-
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.addSubview(fastCellList)
-        fastCellList.snp.makeConstraints { make in
-            make.edges.equalTo(view)
-        }
-    }
+class LayoutMenuVC: BaseMenuVC {
     
-    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        viewModels = [ViewModel]()
-        fastCellList = FastCellList()
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        commonInit()
-    }
-    
-    required init?(coder: NSCoder) {
-        viewModels = [ViewModel]()
-        fastCellList = FastCellList()
-        super.init(coder: coder)
-        commonInit()
-    }
-    
-    func commonInit() {
+    override func commonInit() {
         viewModels.append(ViewModel.init(title: "iOS布局流程", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(LayoutTestVC(), animated: true)
         }))
