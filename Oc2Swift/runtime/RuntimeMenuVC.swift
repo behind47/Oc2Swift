@@ -12,6 +12,9 @@ class RuntimeMenuVC: BaseMenuVC {
         viewModels.append(ViewModel.init(title: "runtime消息机制", subTitle: "待拆分", callback: {
             self.navigationController?.pushViewController(RuntimeVC(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "NS_DESIGNATED_INITIALIZER", subTitle: "待拆分", callback: {
+            self.navigationController?.pushViewController(DesignClientViewController(), animated: true)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }

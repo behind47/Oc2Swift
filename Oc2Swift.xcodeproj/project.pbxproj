@@ -40,6 +40,8 @@
 		2862544828C71268007E3163 /* HomeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2862544628C71268007E3163 /* HomeModule.m */; };
 		2873784C2895087D00977826 /* KeyBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2873784B2895087D00977826 /* KeyBoardVC.swift */; };
 		288147EF2B5CFD270043F547 /* RuntimeMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288147EE2B5CFD270043F547 /* RuntimeMenuVC.swift */; };
+		288147F32B5D5F280043F547 /* DesignAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 288147F22B5D5F280043F547 /* DesignAnimal.m */; };
+		288147F62B5D6A140043F547 /* DesignClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 288147F52B5D6A140043F547 /* DesignClientViewController.m */; };
 		2881D0C92A540B2F006420B1 /* ReviewInWindowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2881D0C82A540B2F006420B1 /* ReviewInWindowVC.m */; };
 		2891154C29ECE3EA009C25FA /* EventMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2891154B29ECE3EA009C25FA /* EventMenuVC.swift */; };
 		289F03CB2924BD1400D183E3 /* FlexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F03CA2924BD1400D183E3 /* FlexVC.swift */; };
@@ -163,6 +165,10 @@
 		2862544628C71268007E3163 /* HomeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeModule.m; sourceTree = "<group>"; };
 		2873784B2895087D00977826 /* KeyBoardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardVC.swift; sourceTree = "<group>"; };
 		288147EE2B5CFD270043F547 /* RuntimeMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeMenuVC.swift; sourceTree = "<group>"; };
+		288147F12B5D5F280043F547 /* DesignAnimal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignAnimal.h; sourceTree = "<group>"; };
+		288147F22B5D5F280043F547 /* DesignAnimal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignAnimal.m; sourceTree = "<group>"; };
+		288147F42B5D6A140043F547 /* DesignClientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DesignClientViewController.h; sourceTree = "<group>"; };
+		288147F52B5D6A140043F547 /* DesignClientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DesignClientViewController.m; sourceTree = "<group>"; };
 		2881D0C72A540B29006420B1 /* ReviewInWindowVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReviewInWindowVC.h; sourceTree = "<group>"; };
 		2881D0C82A540B2F006420B1 /* ReviewInWindowVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReviewInWindowVC.m; sourceTree = "<group>"; };
 		2891154B29ECE3EA009C25FA /* EventMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMenuVC.swift; sourceTree = "<group>"; };
@@ -291,6 +297,7 @@
 		280EB5D528842E6E00D22AFB /* runtime */ = {
 			isa = PBXGroup;
 			children = (
+				288147F02B5D5E9B0043F547 /* NS_DESIGNATED_INITIALIZER */,
 				28090DBE288505D500B91331 /* RuntimeVC.h */,
 				28090DC3288506B000B91331 /* RuntimeVC.m */,
 				28090DD32885624500B91331 /* RtmCar.h */,
@@ -374,6 +381,17 @@
 				2873784B2895087D00977826 /* KeyBoardVC.swift */,
 			);
 			path = keyboard;
+			sourceTree = "<group>";
+		};
+		288147F02B5D5E9B0043F547 /* NS_DESIGNATED_INITIALIZER */ = {
+			isa = PBXGroup;
+			children = (
+				288147F12B5D5F280043F547 /* DesignAnimal.h */,
+				288147F22B5D5F280043F547 /* DesignAnimal.m */,
+				288147F42B5D6A140043F547 /* DesignClientViewController.h */,
+				288147F52B5D6A140043F547 /* DesignClientViewController.m */,
+			);
+			path = NS_DESIGNATED_INITIALIZER;
 			sourceTree = "<group>";
 		};
 		28A0A795283B891E00A6C2EF /* flutterPlugins */ = {
@@ -1005,8 +1023,10 @@
 				28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */,
 				28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */,
 				28B6358829E8EE4700C5F1F7 /* UIView+Check.m in Sources */,
+				288147F62B5D6A140043F547 /* DesignClientViewController.m in Sources */,
 				28F2C5EE2881443900A23E84 /* RelativeScrollVC.swift in Sources */,
 				2839EBAD29CE92EF00C518EA /* TouchEventVC.swift in Sources */,
+				288147F32B5D5F280043F547 /* DesignAnimal.m in Sources */,
 				28FB4AF92871D915008B7BF7 /* LayoutOrderTestVC.swift in Sources */,
 				289F03CB2924BD1400D183E3 /* FlexVC.swift in Sources */,
 			);
