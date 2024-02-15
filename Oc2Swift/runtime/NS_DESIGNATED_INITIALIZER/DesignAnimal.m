@@ -33,10 +33,12 @@
     }
     return self;
 }
+
 - (instancetype)initWithName:(NSString *)name {
     /// Convenience initializer missing a 'self' call to another initializer——convenience initializer需要指向self的designated initializer。
     return [self initWithName:name andType:DesignAnimalTypeFly];
 }
+
 - (instancetype)initWithType:(DesignAnimalType)type {
     return [self initWithName:@"四不像" andType:type];
 }

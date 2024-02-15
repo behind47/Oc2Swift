@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _designAnimal = [[DesignAnimal alloc] initWithName:@"designAnimal" andType:DesignAnimalTypeFly];
+    _designAnimal = [[DesignAnimal alloc] initWithName:@"designAnimal"];
 }
 
 /*
