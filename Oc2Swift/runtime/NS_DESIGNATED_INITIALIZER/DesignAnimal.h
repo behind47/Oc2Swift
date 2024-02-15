@@ -16,8 +16,9 @@ typedef enum : NSUInteger {
 } DesignAnimalType;
 
 @interface DesignAnimal : NSObject
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithName:(NSString *)name andType:(DesignAnimalType)type NS_DESIGNATED_INITIALIZER;
-- (instancetype)initWithName:(NSString *)name NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithName:(NSString *)name;
 - (instancetype)initWithType:(DesignAnimalType)type;
 @end
 
