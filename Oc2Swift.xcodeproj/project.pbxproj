@@ -69,6 +69,8 @@
 		28CC038C28ADE8F8005497ED /* UIOptimizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC038B28ADE8F8005497ED /* UIOptimizationVC.swift */; };
 		28CC038E28ADEAB5005497ED /* TableViewOptimizationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC038D28ADEAB5005497ED /* TableViewOptimizationVC.swift */; };
 		28CC039028AE08B3005497ED /* FastCellList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CC038F28AE08B3005497ED /* FastCellList.swift */; };
+		28D038362C1941AC00AD4ABC /* NSURLSessionMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D038352C1941AC00AD4ABC /* NSURLSessionMenuVC.swift */; };
+		28D038382C1943CE00AD4ABC /* URLSessionMemoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D038372C1943CE00AD4ABC /* URLSessionMemoryVC.swift */; };
 		28D601862A592F37002D2C6C /* RunLoopMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D601852A592F37002D2C6C /* RunLoopMenuVC.swift */; };
 		28D601892A59331A002D2C6C /* DynamicUIViewCheckVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D601882A59331A002D2C6C /* DynamicUIViewCheckVC.m */; };
 		28D6018B2A6665C9002D2C6C /* ImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D6018A2A6665C9002D2C6C /* ImageUtil.swift */; };
@@ -209,6 +211,8 @@
 		28CC038B28ADE8F8005497ED /* UIOptimizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIOptimizationVC.swift; sourceTree = "<group>"; };
 		28CC038D28ADEAB5005497ED /* TableViewOptimizationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewOptimizationVC.swift; sourceTree = "<group>"; };
 		28CC038F28AE08B3005497ED /* FastCellList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastCellList.swift; sourceTree = "<group>"; };
+		28D038352C1941AC00AD4ABC /* NSURLSessionMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSURLSessionMenuVC.swift; sourceTree = "<group>"; };
+		28D038372C1943CE00AD4ABC /* URLSessionMemoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMemoryVC.swift; sourceTree = "<group>"; };
 		28D570272AD647B700335851 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		28D601852A592F37002D2C6C /* RunLoopMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLoopMenuVC.swift; sourceTree = "<group>"; };
 		28D601872A593315002D2C6C /* DynamicUIViewCheckVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicUIViewCheckVC.h; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 			children = (
 				280A48E2289AF3F2005DE4AE /* NSURLSessionVC.m */,
 				280A48E1289AF3AF005DE4AE /* NSURLSessionVC.h */,
+				28D038352C1941AC00AD4ABC /* NSURLSessionMenuVC.swift */,
+				28D038372C1943CE00AD4ABC /* URLSessionMemoryVC.swift */,
 			);
 			path = net;
 			sourceTree = "<group>";
@@ -887,7 +893,7 @@
 			name = "[CP-User] Run Flutter Build learnflutter Script";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../learnflutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../learnflutter/.ios/Flutter/flutter_export_environment.sh\"\nexport VERBOSE_SCRIPT_LOGGING=1 && \"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build\n";
 		};
 		D975387FC90D89FA5EB4D278 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1011,6 +1017,7 @@
 				2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */,
 				28D601892A59331A002D2C6C /* DynamicUIViewCheckVC.m in Sources */,
 				28AE614F28A3DF9A00AB6739 /* MiddleProxy.m in Sources */,
+				28D038382C1943CE00AD4ABC /* URLSessionMemoryVC.swift in Sources */,
 				28DEA62728ACE08800B2299B /* KVOVC.m in Sources */,
 				2815963A28B3848E0015D720 /* RouterManager.swift in Sources */,
 				28B9C7DE29CC214A00347117 /* DebugMenu.swift in Sources */,
@@ -1022,6 +1029,7 @@
 				28090DCF288523C400B91331 /* RuntimeModel+Property.m in Sources */,
 				28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */,
 				28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */,
+				28D038362C1941AC00AD4ABC /* NSURLSessionMenuVC.swift in Sources */,
 				28B6358829E8EE4700C5F1F7 /* UIView+Check.m in Sources */,
 				288147F62B5D6A140043F547 /* DesignClientViewController.m in Sources */,
 				28F2C5EE2881443900A23E84 /* RelativeScrollVC.swift in Sources */,
@@ -1216,9 +1224,9 @@
 				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(FLUTTER_APPLICATION_PATH)/$(FLUTTER_BUILD_DIR)/Debug/\"",
 					"\"${PODS_ROOT}/Flutter\"",
 					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flutter\"",
-					"\"$(PROJECT_DIR)/Flutter/Debug/\"",
 					"\"$(PROJECT_DIR)/Flutter/\"",
 				);
 				GENERATE_INFOPLIST_FILE = YES;

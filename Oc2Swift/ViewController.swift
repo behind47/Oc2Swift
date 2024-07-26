@@ -72,7 +72,7 @@ public class ViewController: BaseVC {
             self.navigationController?.pushViewController(ImageVC(), animated: true)
         }))
         viewModels.append(ViewModel.init(title: "网络", subTitle: "", callback: {
-            self.navigationController?.pushViewController(NSURLSessionVC(), animated: true)
+            self.navigationController?.pushViewController(NSURLSessionMenuVC(), animated: true)
         }))
         viewModels.append(ViewModel.init(title: "Operation使用", subTitle: "", callback: {
             self.navigationController?.pushViewController(OperationVC(), animated: true)
