@@ -7,9 +7,6 @@ flutter_application_path = '../learnflutter'
 load File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')
 
 def commonPods
-  flutter_application_path = '../learnflutter'
-  install_all_flutter_pods(flutter_application_path)
-  
   pod 'SnapKit', '5.6.0'
   pod 'AFNetworking', '4.0'
   pod 'SDWebImage', :path => '~/SDWebImage', :branch => 'learn'
@@ -19,10 +16,12 @@ def commonPods
 end
 
 target :Oc2Swift do
+  install_all_flutter_pods(flutter_application_path)
   commonPods
 end
 
 target :Oc2SwiftTests do
+  install_all_flutter_pods(flutter_application_path)
   commonPods
 end
 

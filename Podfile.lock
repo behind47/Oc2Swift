@@ -21,12 +21,11 @@ PODS:
   - FlutterPluginRegistrant (0.0.1):
     - bridge
     - Flutter
-    - path_provider_ios
-  - learnflutter (0.0.1):
-    - Flutter
+    - path_provider_foundation
   - Masonry (1.1.0)
-  - path_provider_ios (0.0.1):
+  - path_provider_foundation (0.0.1):
     - Flutter
+    - FlutterMacOS
   - SDWebImage (5.8.0):
     - SDWebImage/Core (= 5.8.0)
   - SDWebImage/Core (5.8.0)
@@ -36,11 +35,10 @@ DEPENDENCIES:
   - AFNetworking (= 4.0)
   - BeeHive (= 1.1.1)
   - bridge (from `../learnflutter/.ios/.symlinks/plugins/bridge/ios`)
-  - Flutter (from `../learnflutter/.ios/Flutter/engine`)
+  - Flutter (from `../learnflutter/.ios/Flutter`)
   - FlutterPluginRegistrant (from `../learnflutter/.ios/Flutter/FlutterPluginRegistrant`)
-  - learnflutter (from `../learnflutter/.ios/Flutter`)
   - Masonry
-  - path_provider_ios (from `../learnflutter/.ios/.symlinks/plugins/path_provider_ios/ios`)
+  - path_provider_foundation (from `../learnflutter/.ios/.symlinks/plugins/path_provider_foundation/darwin`)
   - SDWebImage (from `~/SDWebImage`)
   - SnapKit (= 5.6.0)
 
@@ -56,13 +54,11 @@ EXTERNAL SOURCES:
   bridge:
     :path: "../learnflutter/.ios/.symlinks/plugins/bridge/ios"
   Flutter:
-    :path: "../learnflutter/.ios/Flutter/engine"
+    :path: "../learnflutter/.ios/Flutter"
   FlutterPluginRegistrant:
     :path: "../learnflutter/.ios/Flutter/FlutterPluginRegistrant"
-  learnflutter:
-    :path: "../learnflutter/.ios/Flutter"
-  path_provider_ios:
-    :path: "../learnflutter/.ios/.symlinks/plugins/path_provider_ios/ios"
+  path_provider_foundation:
+    :path: "../learnflutter/.ios/.symlinks/plugins/path_provider_foundation/darwin"
   SDWebImage:
     :branch: learn
     :path: "~/SDWebImage"
@@ -71,14 +67,13 @@ SPEC CHECKSUMS:
   AFNetworking: 42892080606935f7a9ec3fda4927fdd37e9cd369
   BeeHive: 81b697e94e1ae0993eccf5388e195f3fbfe707a6
   bridge: 19e67a95fbc57851d07b6d3ca114a09188599452
-  Flutter: bdfa2e8fe0e2880a2c6a58a0b1a8675c262a07af
-  FlutterPluginRegistrant: ca3cc5588dba746d8bc6203e85b394c3f5e0a0ee
-  learnflutter: 725b5a0f03f936907572b9d081a3741bc35895b6
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  FlutterPluginRegistrant: 45484738953c68f665c77129d4e3f91ba623bc0d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
+  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 813768524539b7e66e3632aff8254fee863b5fdf
+PODFILE CHECKSUM: 3f47bd99f3541de85a481bc81faf1761decb9cb6
 
 COCOAPODS: 1.11.3
