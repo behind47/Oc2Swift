@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>适配刘海屏的网页</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+  
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+  
+        .content {
+            padding: 20px;
+            background-color: #f4f4f4;
+            height: calc(100% - 80px); /* Adjust based on header size */
+            box-sizing: border-box;
+        }
+  
+        /* 使用CSS环境变量或媒体查询来适配刘海屏 */
+        @supports (padding: max(0px)) {
+            .header {
+                padding-top: env(safe-area-inset-top);
+            }
+  
+            .content {
+                padding-top: calc(20px + env(safe-area-inset-top));
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+    </style>
+    <script>
+    function goBack() {
+        if (window.history.length > 1) {
+            window.history.back();
+        } else {
+            callNative();
+        }
+    }
+    function callNative() {
+        window.webkit.messageHandlers.pop2Native.postMessage("Hello from JavaScript");
+    }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>欢迎来到我的网页</h1>
+        <button onclick="goBack()">后退</button>
+    </div>
+    <div class="content">
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+        <p>这里是内容区域，它会自动适配刘海屏。</p>
+    </div>
+</body>
+</html>
