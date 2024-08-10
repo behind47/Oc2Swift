@@ -24,7 +24,7 @@ class ScrollTableViewVC : BaseVC {
         viewModels = [ViewModel]()
         fastCellList = FastCellList()
         mainScroll = CustomScrollView()
-        super.init(frame: self.view.frame)
+        super.init(frame: frame)
         commonInit()
     }
     

@@ -12,22 +12,28 @@ import UIKit
 import WebKit
 import SnapKit
 
-class URLSessionMemoryVC: BaseVC {
+class URLSessionMemoryVC: BaseVC, URLSessionDataDelegate {
     
-    let webView: WKWebView
-    let loadButton: UIButton?
-    let loadButton2: UIButton?
+    var webView: WKWebView
+    var loadButton: UIButton
+    var loadButton2: UIButton
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override init!(frame: CGRect) {
+        loadButton = UIButton(type: UIButton.ButtonType.system)
+        webView = WKWebView(frame: CGRectZero)
+        loadButton2 = UIButton(type: UIButton.ButtonType.system)
+        super.init(frame: frame)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadButton = UIButton(type: UIButton.ButtonType.plain)
-        loadButton?.setTitle("用completion处理task的res", for: UIControl.State.normal)
-        loadButton?.addTarget(self, action: #selector(startLoad()), for: UIControl.Event.touchUpInside)
+        loadButton.setTitle("用completion处理task的res", for: UIControl.State.normal)
+        loadButton.addTarget(self, action: #selector(startLoad), for: UIControl.Event.touchUpInside)
         self.view?.addSubview(loadButton)
         loadButton.snp.makeConstraints { make in
             make.left.equalTo(self.view).offset(20);
@@ -36,9 +42,8 @@ class URLSessionMemoryVC: BaseVC {
             make.height.equalTo(24)
         }
         
-        loadButton2 = UIButton(type: UIButton.ButtonType.plain)
-        loadButton2?.setTitle("用delegate处理task的res", for: UIControl.State.normal)
-        loadButton2?.addTarget(self, action: #selector(startLoad2()), for: UIControl.Event.touchUpInside)
+        loadButton2.setTitle("用delegate处理task的res", for: UIControl.State.normal)
+        loadButton2.addTarget(self, action: #selector(startLoad2), for: UIControl.Event.touchUpInside)
         self.view?.addSubview(loadButton2)
         loadButton2.snp.makeConstraints { make in
             make.left.equalTo(self.view).offset(20);
@@ -47,7 +52,6 @@ class URLSessionMemoryVC: BaseVC {
             make.height.equalTo(24)
         }
         
-        webView = WKWebView(frame: CGRectZero)
         self.view?.addSubview(webView)
         webView.snp.makeConstraints { make in
             make.top.equalTo(loadButton2.snp.bottom).offset(10)
@@ -56,7 +60,7 @@ class URLSessionMemoryVC: BaseVC {
     }
     
     //MARK: create a task which uses a completion handler
-    func startLoad() {
+    @objc func startLoad() {
         let url = URL(string: "https://www.jianshu.com/p/a8305f4cb686")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error { //
@@ -82,21 +86,17 @@ class URLSessionMemoryVC: BaseVC {
     func handleServerError(response: URLResponse?) {
         
     }
-
-}
-
-extension URLSessionMemoryVC: URLSessionDataDelegate {
     
     var receiveData: Data?
     
     //MARK: receive transfer details and results with a delegate
     private lazy var session: URLSession = {
-        let configuration: URLSessionConfiguration.default
+        let configuration = URLSessionConfiguration.default
         configuration.waitsForConnectivity = true
         return URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
-    }
+    }()
     
-    func startLoad2() {
+    @objc func startLoad2() {
         let url = URL(string: "https://www.jianshu.com/p/a8305f4cb686")!
         receiveData = Data()
         let task = session.dataTask(with: url)
@@ -111,16 +111,17 @@ extension URLSessionMemoryVC: URLSessionDataDelegate {
               let mimeType = response.mimeType,
               mimeType == "text/html" else {
             completionHandler(.cancel)
+            return
         }
         completionHandler(.allow)
     }
     
-    func urlSession(_ session: URLSession, task: URLSessionTask, didReceive data: Data) {
+    private func urlSession(_ session: URLSession, task: URLSessionTask, didReceive data: Data) {
         self.receiveData?.append(data)
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [self] in
             if let error = error {
                 handleClientError(error: error)
             } else if let receiveData = self.receiveData,
