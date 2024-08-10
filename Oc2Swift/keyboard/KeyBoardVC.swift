@@ -18,8 +18,8 @@ class KeyBoardVC : BaseVC, UITextViewDelegate {
         fatalError()
     }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     
     override func viewDidLoad() {

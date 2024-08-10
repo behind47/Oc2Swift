@@ -61,9 +61,9 @@ open class AutoTableHeaderVC : BaseVC, UITableViewDelegate, UITableViewDataSourc
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    public override init(frame: CGRect) {
         tableView = UITableView()
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        super.init(frame: frame)
         self.view.backgroundColor = .gray
         tableView.backgroundColor = .white
         tableView.delegate = self

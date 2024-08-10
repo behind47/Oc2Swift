@@ -20,10 +20,10 @@ public class ViewController: BaseVC {
         }
     }
     
-    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    override public init(frame: CGRect) {
         viewModels = [ViewModel]()
         fastCellList = FastCellList()
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        super.init(frame: frame)
         commonInit()
     }
     

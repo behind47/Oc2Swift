@@ -22,10 +22,10 @@ open class LayoutOrderTestVC : BaseVC {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    public override init(frame: CGRect) {
         autoTopicView = AutoTopicView()
         autoTopicView2 = AutoTopicView()
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        super.init(frame: frame)
     }
     
     open override func viewDidLoad() {

@@ -20,11 +20,11 @@ class ScrollTableViewVC : BaseVC {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    override public init!(frame: CGRect) {
         viewModels = [ViewModel]()
         fastCellList = FastCellList()
         mainScroll = CustomScrollView()
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        super.init(frame: self.view.frame)
         commonInit()
     }
     

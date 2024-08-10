@@ -16,10 +16,10 @@ class DebugMenu : BaseVC {
         fatalError()
     }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    override init(frame: CGRect) {
         viewModels = [ViewModel]()
         fastCellList = FastCellList()
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        super.init(frame: frame)
         commonInit()
     }
     

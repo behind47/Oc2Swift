@@ -27,7 +27,7 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    public override init!(frame: CGRect) {
         headView = HeadView()
         tabArrView = TabArrView()
         tabVCs = [UIViewController]()
@@ -36,7 +36,7 @@ open class TabVCs : BaseVC, UIScrollViewDelegate, UICollectionViewDelegateFlowLa
         tabScrollView = TabScrollView()
         lastScrollOffsetX = 0.0
         lastScrollOffsetY = 0.0
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        super.init(frame: frame)
         tabArrView.delegate = self
         mainScrollView.delegate = self
         tabScrollView.delegate = self
