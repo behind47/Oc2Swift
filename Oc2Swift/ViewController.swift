@@ -26,12 +26,9 @@ public class ViewController: BaseVC {
         super.init(frame: frame)
         commonInit()
     }
-    
-    required init?(coder: NSCoder) {
-        viewModels = [ViewModel]()
-        fastCellList = FastCellList()
-        super.init(coder: coder)
-        commonInit()
+
+    public required init?(coder: NSCoder) {
+        fatalError()
     }
     
     func commonInit() {
