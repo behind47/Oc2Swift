@@ -116,7 +116,7 @@ class URLSessionMemoryVC: BaseVC, URLSessionDataDelegate {
         completionHandler(.allow)
     }
     
-    private func urlSession(_ session: URLSession, task: URLSessionTask, didReceive data: Data) {
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         self.receiveData?.append(data)
     }
     
