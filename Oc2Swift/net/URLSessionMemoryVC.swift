@@ -47,7 +47,7 @@ class URLSessionMemoryVC: BaseVC, URLSessionDataDelegate {
         self.view?.addSubview(loadButton2)
         loadButton2.snp.makeConstraints { make in
             make.left.equalTo(self.view).offset(20);
-            make.top.equalTo(loadButton2.snp.bottom).offset(10);
+            make.top.equalTo(loadButton.snp.bottom).offset(10);
             make.right.equalTo(self.view).offset(-20);
             make.height.equalTo(24)
         }
