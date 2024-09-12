@@ -48,6 +48,8 @@
 		28A0A799283B9C6700A6C2EF /* CutomFlutterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A798283B9C6700A6C2EF /* CutomFlutterVC.swift */; };
 		28A0A79D283BAC5A00A6C2EF /* native_add.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28A0A79B283BAC5A00A6C2EF /* native_add.cpp */; };
 		28AE614F28A3DF9A00AB6739 /* MiddleProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE614E28A3DF9A00AB6739 /* MiddleProxy.m */; };
+		28AF28F92C72261A00B6936C /* CustomURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF28F82C72261A00B6936C /* CustomURLProtocol.swift */; };
+		28AF28FB2C724A9900B6936C /* CustomURLProtocolClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AF28FA2C724A9900B6936C /* CustomURLProtocolClient.swift */; };
 		28B038752835081C007B3817 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038742835081C007B3817 /* AppDelegate.swift */; };
 		28B038772835081C007B3817 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038762835081C007B3817 /* SceneDelegate.swift */; };
 		28B038792835081C007B3817 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B038782835081C007B3817 /* ViewController.swift */; };
@@ -183,6 +185,8 @@
 		28A0A79C283BAC5A00A6C2EF /* native_add.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = native_add.hpp; sourceTree = "<group>"; };
 		28AE614D28A3DF9500AB6739 /* MiddleProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiddleProxy.h; sourceTree = "<group>"; };
 		28AE614E28A3DF9A00AB6739 /* MiddleProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiddleProxy.m; sourceTree = "<group>"; };
+		28AF28F82C72261A00B6936C /* CustomURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomURLProtocol.swift; sourceTree = "<group>"; };
+		28AF28FA2C724A9900B6936C /* CustomURLProtocolClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomURLProtocolClient.swift; sourceTree = "<group>"; };
 		28B038712835081C007B3817 /* Oc2Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oc2Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B038742835081C007B3817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28B038762835081C007B3817 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -296,6 +300,8 @@
 				280A48E1289AF3AF005DE4AE /* NSURLSessionVC.h */,
 				28D038352C1941AC00AD4ABC /* NSURLSessionMenuVC.swift */,
 				28D038372C1943CE00AD4ABC /* URLSessionMemoryVC.swift */,
+				28AF28F82C72261A00B6936C /* CustomURLProtocol.swift */,
+				28AF28FA2C724A9900B6936C /* CustomURLProtocolClient.swift */,
 			);
 			path = net;
 			sourceTree = "<group>";
@@ -1008,10 +1014,12 @@
 				288147EF2B5CFD270043F547 /* RuntimeMenuVC.swift in Sources */,
 				281B884D288F8D4F007DD0BE /* MathFunctionVC.swift in Sources */,
 				2891154C29ECE3EA009C25FA /* EventMenuVC.swift in Sources */,
+				28AF28F92C72261A00B6936C /* CustomURLProtocol.swift in Sources */,
 				28DEA62328AC9C9800B2299B /* LeaksVC.m in Sources */,
 				2803BD2829D3E4F900BCE031 /* LayoutMenuVC.swift in Sources */,
 				2881D0C92A540B2F006420B1 /* ReviewInWindowVC.m in Sources */,
 				28FB4AF62871940A008B7BF7 /* LayoutTestVC.swift in Sources */,
+				28AF28FB2C724A9900B6936C /* CustomURLProtocolClient.swift in Sources */,
 				282C7E4E29DFB05400BC91C0 /* CordinateVC.swift in Sources */,
 				28D6018B2A6665C9002D2C6C /* ImageUtil.swift in Sources */,
 				2827C2D62835F47000330685 /* C2OcTestVC.m in Sources */,
