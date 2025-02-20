@@ -23,6 +23,9 @@ class ContainerMenuVC: BaseMenuVC {
 //            navigationVC.viewControllers = [HomePage(), Personal(), Contacts()] // 可以设置stack里的VCs，像这样，present之后最上层显示的就是Contacts
             self.present(navigationVC, animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "轮播图", subTitle: "", callback: {
+            self.navigationController?.pushViewController(CarouselViewController(), animated: true)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }

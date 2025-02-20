@@ -86,6 +86,8 @@
 		28FB4AF92871D915008B7BF7 /* LayoutOrderTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AF82871D915008B7BF7 /* LayoutOrderTestVC.swift */; };
 		28FB4AFB2873DE34008B7BF7 /* AutoTableHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AFA2873DE34008B7BF7 /* AutoTableHeaderVC.swift */; };
 		28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AFD2876D4CE008B7BF7 /* RunLoopVC.swift */; };
+		28FD037B2D672C2000B71384 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD037A2D672C2000B71384 /* CarouselViewController.swift */; };
+		28FD037D2D672D7700B71384 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD037C2D672D7700B71384 /* CarouselView.swift */; };
 		28FF63C92893121A00DEF69A /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FF63C82893121A00DEF69A /* Device.swift */; };
 		B42F9969A5BA3CB766853FEF /* libPods-Oc2Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D99E41C315D11FE443436B5F /* libPods-Oc2Swift.a */; };
 		DA159F4A288689EF0041188C /* RtmCar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA159F49288689EF0041188C /* RtmCar.m */; };
@@ -233,6 +235,8 @@
 		28FB4AF82871D915008B7BF7 /* LayoutOrderTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutOrderTestVC.swift; sourceTree = "<group>"; };
 		28FB4AFA2873DE34008B7BF7 /* AutoTableHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoTableHeaderVC.swift; sourceTree = "<group>"; };
 		28FB4AFD2876D4CE008B7BF7 /* RunLoopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLoopVC.swift; sourceTree = "<group>"; };
+		28FD037A2D672C2000B71384 /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		28FD037C2D672D7700B71384 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		28FF63C82893121A00DEF69A /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		384AF5065E8F7541B248BDB0 /* Pods-Oc2SwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2SwiftTests.release.xcconfig"; path = "Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		52BD9016209CDFE9DFB014B6 /* libPods-Oc2SwiftTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Oc2SwiftTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -621,6 +625,15 @@
 			path = runloop;
 			sourceTree = "<group>";
 		};
+		28FD03792D672C2000B71384 /* carousel */ = {
+			isa = PBXGroup;
+			children = (
+				28FD037A2D672C2000B71384 /* CarouselViewController.swift */,
+				28FD037C2D672D7700B71384 /* CarouselView.swift */,
+			);
+			path = carousel;
+			sourceTree = "<group>";
+		};
 		28FF63C72893120C00DEF69A /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +684,7 @@
 		DA159F5C288AA7470041188C /* container */ = {
 			isa = PBXGroup;
 			children = (
+				28FD03792D672C2000B71384 /* carousel */,
 				DA159F512886CF0F0041188C /* tabVC */,
 				28F2C5ED2881443900A23E84 /* RelativeScrollVC.swift */,
 				DA159F5D288AA75B0041188C /* MyPageControllerVC.swift */,
@@ -978,6 +992,7 @@
 				28B038752835081C007B3817 /* AppDelegate.swift in Sources */,
 				282791992A337F76002C911B /* CustomDrawMenuVC.swift in Sources */,
 				280A48E3289AF3F2005DE4AE /* NSURLSessionVC.m in Sources */,
+				28FD037B2D672C2000B71384 /* CarouselViewController.swift in Sources */,
 				28090DCC288522AA00B91331 /* RuntimeModel.m in Sources */,
 				2827919B2A337FC4002C911B /* BaseMenuVC.swift in Sources */,
 				2831717C287C17B500018486 /* NSInvocationVC.m in Sources */,
@@ -997,6 +1012,7 @@
 				282C7E4A29DAF6E200BC91C0 /* FocusIcon.swift in Sources */,
 				28F2C5EB288130EC00A23E84 /* FrameBoundVC.swift in Sources */,
 				28F58991289BF9D900773AFC /* OperationVC.m in Sources */,
+				28FD037D2D672D7700B71384 /* CarouselView.swift in Sources */,
 				28B038772835081C007B3817 /* SceneDelegate.swift in Sources */,
 				281B885028901C7D007DD0BE /* AnimationVC.swift in Sources */,
 				28B9C7E529CC409D00347117 /* BaseCell.swift in Sources */,
