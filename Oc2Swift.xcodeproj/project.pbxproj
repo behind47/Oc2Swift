@@ -88,6 +88,7 @@
 		28FB4AFE2876D4CE008B7BF7 /* RunLoopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FB4AFD2876D4CE008B7BF7 /* RunLoopVC.swift */; };
 		28FD037B2D672C2000B71384 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD037A2D672C2000B71384 /* CarouselViewController.swift */; };
 		28FD037D2D672D7700B71384 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD037C2D672D7700B71384 /* CarouselView.swift */; };
+		28FD03822D6748CE00B71384 /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD03812D6748CE00B71384 /* GestureViewController.m */; };
 		28FF63C92893121A00DEF69A /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FF63C82893121A00DEF69A /* Device.swift */; };
 		B42F9969A5BA3CB766853FEF /* libPods-Oc2Swift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D99E41C315D11FE443436B5F /* libPods-Oc2Swift.a */; };
 		DA159F4A288689EF0041188C /* RtmCar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA159F49288689EF0041188C /* RtmCar.m */; };
@@ -237,6 +238,8 @@
 		28FB4AFD2876D4CE008B7BF7 /* RunLoopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLoopVC.swift; sourceTree = "<group>"; };
 		28FD037A2D672C2000B71384 /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		28FD037C2D672D7700B71384 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		28FD03802D6748CE00B71384 /* GestureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GestureViewController.h; sourceTree = "<group>"; };
+		28FD03812D6748CE00B71384 /* GestureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GestureViewController.m; sourceTree = "<group>"; };
 		28FF63C82893121A00DEF69A /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		384AF5065E8F7541B248BDB0 /* Pods-Oc2SwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oc2SwiftTests.release.xcconfig"; path = "Target Support Files/Pods-Oc2SwiftTests/Pods-Oc2SwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		52BD9016209CDFE9DFB014B6 /* libPods-Oc2SwiftTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Oc2SwiftTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -381,6 +384,8 @@
 				2828FB072AF0DC1E004E74AF /* PanGestureError.h */,
 				2828FB082AF0DC24004E74AF /* PanGestureError.m */,
 				2809B08D29ECE608009F7FE5 /* ScrollTableViewVC.swift */,
+				28FD03802D6748CE00B71384 /* GestureViewController.h */,
+				28FD03812D6748CE00B71384 /* GestureViewController.m */,
 			);
 			path = event;
 			sourceTree = "<group>";
@@ -978,6 +983,7 @@
 				285E7C6429F8FA510048AAF0 /* ReviewInWindowVC.swift in Sources */,
 				2827919F2A338105002C911B /* CustomDrawUIViewVC.swift in Sources */,
 				28CC039028AE08B3005497ED /* FastCellList.swift in Sources */,
+				28FD03822D6748CE00B71384 /* GestureViewController.m in Sources */,
 				28CBCA1728A0F0BE0050AE67 /* BlkObject.m in Sources */,
 				2862544728C71268007E3163 /* HomeModule.m in Sources */,
 				2809B08E29ECE608009F7FE5 /* ScrollTableViewVC.swift in Sources */,

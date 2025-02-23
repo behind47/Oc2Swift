@@ -18,6 +18,9 @@ class EventMenuVC: BaseMenuVC {
         viewModels.append(ViewModel.init(title: "requireGestureRecognizerToFail的版本差异", subTitle: "测试", callback: {
             self.navigationController?.pushViewController(PanGestureError(), animated: true)
         }))
+        viewModels.append(ViewModel.init(title: "手势冲突", subTitle: "测试", callback: {
+            self.navigationController?.pushViewController(GestureViewController(), animated: true)
+        }))
         fastCellList.updateWithViewModels(vms: viewModels)
     }
 }
